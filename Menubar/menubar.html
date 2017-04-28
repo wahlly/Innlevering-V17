@@ -64,12 +64,6 @@
     width:20%;
     height: 100%;
     margin: 0;
-background-image: url(logo2.png);
-
-    border-color: #E3E6EA;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
 
 }
 
@@ -94,9 +88,49 @@ background-image: url(logo2.png);
       border-color: #E3E6EA;
 
     }
+    #Hjem_Linje_Venstre {
+      position: absolute;
+        bottom:48%;
+        width:6%;
+        height: 6%;
+        margin: 0;
+        background-color: #FF4D4C;}
 
+     #Hjem_Linje_Hoyre {
+          position: absolute;
+          right: 0%;
+            bottom:48%;
+            width:6%;
+            height: 6%;
+            margin: 0;
+            background-color: #FF4D4C;}
 
-#Hjem_menu_wrapper {
+    #Hjem_Trapes_Farge {
+      position: absolute;
+     top: 46%;
+     left: 0%;
+    	border-top: 7.5vw solid #FF4D4C;
+    	border-left:  7.1vw solid transparent;
+    	border-right: 7.1vw solid transparent;
+    	height: 0;
+    	width: 30%;
+     transform: rotate(0deg);
+     overflow: hidden;
+    }
+    #Hjem_Trapes_Hvit {
+      position: absolute;
+     top: 37%;
+     left: 2%;
+    	border-top: 7.5vw solid white;
+    	border-left:  6.8vw solid transparent;
+    	border-right: 6.8vw solid transparent;
+    	height: 0;
+    	width: 28%;
+     transform: rotate(0deg);
+     overflow: hidden;
+    }
+
+#Hjem_menu_logo {
   position: absolute;
     left:40%;
     width:20%;
@@ -164,45 +198,7 @@ background-image: url(logo2.png);
 
  }
 
- #Linje {
-   position: absolute;
-     bottom:48%;
-     width:7%;
-     height: 6%;
-     margin: 0;
-     background-color: #FF4D4C;}
-     #Linje2 {
-       position: absolute;
-       right: 0%;
-         bottom:48%;
-         width:7%;
-         height: 6%;
-         margin: 0;
-         background-color: #FF4D4C;}
- #trapes {
-   position: absolute;
-  top: 46%;
-  left: 0%;
- 	border-top: 7.5vw solid #FF4D4C;
- 	border-left:  7.1vw solid transparent;
- 	border-right: 7.1vw solid transparent;
- 	height: 0;
- 	width: 30%;
-  transform: rotate(0deg);
-  overflow: hidden;
- }
- #trapes2 {
-   position: absolute;
-  top: 37%;
-  left: 2%;
- 	border-top: 7.5vw solid white;
- 	border-left:  6.8vw solid transparent;
- 	border-right: 6.8vw solid transparent;
- 	height: 0;
- 	width: 28%;
-  transform: rotate(0deg);
-  overflow: hidden;
- }
+
 
 
 </style>
@@ -229,14 +225,13 @@ background-image: url(logo2.png);
     <a href="#Hjem">
     <div id="Hjem_menu_element_bg"></div>
     <div id="Hjem_menu_element_extend">
-      <div id="trapes"></div>
-      <div id="trapes2"></div>
-      <div id="linje"></div>
-      <div id="linje2"></div>
-
+      <div id="Hjem_Trapes_Farge"></div>
+      <div id="Hjem_Trapes_Hvit"></div>
+      <div id="Hjem_Linje_Hoyre"></div>
+      <div id="Hjem_Linje_Venstre"></div>
     </div>
     <div id="Hjem_menu_element_border"></div>
-    <div id="Hjem_menu_wrapper"></div>
+    <div id="Hjem_menu_logo"></div>
   </a>
 
     <a href="#Studere">
