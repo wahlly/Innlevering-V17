@@ -1,7 +1,7 @@
 <html>
 <head>
 <style>
-body {background-color: powderblue;}
+body {background-color: white;}
 #container_main{
   position: absolute;
     top: 0%;
@@ -17,7 +17,7 @@ body {background-color: powderblue;}
     width:100%;
     height: 170px;
     margin: 0;
-    background-color: ;
+
 
 }
 
@@ -49,7 +49,6 @@ body {background-color: powderblue;}
     margin: 0;
     background-color: white;
     border-left: 1px solid;
-
     border-color: #E3E6EA;
 
 }
@@ -57,6 +56,7 @@ body {background-color: powderblue;}
   position: absolute;
   bottom:0%;
   width:100%;
+  border-right: 1px solid;
     height: 12%;
     margin: 0;
     background-color: #00A0E5;
@@ -73,6 +73,7 @@ body {background-color: powderblue;}
     height: 100%;
     margin: 0;
 background-image: url(logo.png);
+
     border-color: #E3E6EA;
     background-position: center;
     background-repeat: no-repeat;
@@ -82,7 +83,7 @@ background-image: url(logo.png);
 
 #Hjem_menu_element_bg {
   position: absolute;
-    left:41%;
+    left:40%;
     width:20%;
     height: 52%;
     margin: 0;
@@ -90,19 +91,25 @@ background-image: url(logo.png);
     border-color: #E3E6EA;
 
   }
+  #Hjem_menu_element_border {
+    position: absolute;
+      left:40%;
+      width:20%;
+      height: 52%;
+      margin: 0;
+      border-left: 1px solid;
+      border-color: #E3E6EA;
+
+    }
 
 
-#Hjem_menu_element_line {
-  position: absolute;
-  bottom:0%;
-  width:100%;
-  height: 5%;
-  margin: 0;
-
-
-
-
-}
+    #Hjem_menu_wrapper {
+      position: absolute;
+        left:40%;
+        width:20%;
+        height: 100%;
+        margin: 0;
+    }
 
 
 #Studere_menu_element_bg {
@@ -112,10 +119,12 @@ background-image: url(logo.png);
     height: 52%;
     margin: 0;
     background-color: white;
-
+    border-left: 1px solid;
 
     border-color: #E3E6EA;
 }
+
+
 
 #Studere_menu_element_line {
   position: absolute;
@@ -293,12 +302,14 @@ background-image: url(logo.png);
       <div id="Restaurant_menu_element_line">
       </div>
     </div>
+
+
     <div id="Hjem_menu_element_bg"></div>
-    <div id="Hjem_menu_element_extend">
-      <h3 id="Menu_text"></h3>
-      <div id="Hjem_menu_element_line">
-      </div>
-    </div>
+    <div id="Hjem_menu_element_extend"></div>
+    <div id="Hjem_menu_element_border"></div>
+    <div id="Hjem_menu_wrapper"></div>
+
+
 
     <div id="Studere_menu_element_bg">
       <h3 id="Menu_text">STUDERE</h3>
