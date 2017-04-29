@@ -140,6 +140,7 @@
     margin: 0;
     overflow: hidden;
 }
+
 #Hjem_menu_logo {
   position: absolute;
     top: 2%;
@@ -149,42 +150,85 @@
     overflow: hidden;
     visibility: hidden;
 }
+
 #Hjem_menu_logo_bar {
   position: absolute;
-    top: 2%;
-    left:27.5%;
-    width:45%;
+    top: 10%;
+    left:25%;
+    width:50%;
+    margin: 0;
+    overflow: hidden;
+}
+#Hjem_menu_logo_bar_box {
+  position: absolute;
+  z-index: 1;
+    left:40%;
+    width:20%;
+    height: 100%;
     margin: 0;
     overflow: hidden;
     visibility: hidden;
 }
+
 #Hjem_menu_logo_rest {
   position: absolute;
-    top: 2%;
-    left:27.5%;
-    width:45%;
+    top: 21.5%;
+    left:17.5%;
+    width:65%;
+    margin: 0;
+    overflow: hidden;
+}
+#Hjem_menu_logo_rest_box {
+  position: absolute;
+  z-index: 1;
+    left:40%;
+    width:20%;
+    height: 100%;
     margin: 0;
     overflow: hidden;
     visibility: hidden;
 }
 #Hjem_menu_logo_stud {
   position: absolute;
-    top: 2%;
-    left:27.5%;
-    width:45%;
+  z-index: 1;
+    top: 18%;
+    left:22.5%;
+    width:55%;
+    margin: 0;
+    overflow: hidden;
+}
+
+#Hjem_menu_logo_stud_box {
+  position: absolute;
+  z-index: 1;
+    left:40%;
+    width:20%;
+    height: 100%;
     margin: 0;
     overflow: hidden;
     visibility: hidden;
 }
+
 #Hjem_menu_logo_sok {
   position: absolute;
-    top: 2%;
-    left:27.5%;
-    width:45%;
+    top: 15%;
+    left:20%;
+    width:60%;
+    margin: 0;
+    overflow: hidden;
+}
+
+#Hjem_menu_logo_sok_box {
+  position: absolute;
+  z-index: 1;
+    left:40%;
+    width:20%;
+    height: 100%;
     margin: 0;
     overflow: hidden;
     visibility: hidden;
 }
+
 #Hjem_menu_logo_hjm {
   position: absolute;
     top: 20%;
@@ -248,9 +292,14 @@
   font-weight: 300;
   color: #565656;
 
+
+
  }
 
-
+#Bar_menu_element_bg:hover + #Hjem_menu_logo_bar_box { visibility: visible;}
+#Restaurant_menu_element_bg:hover + #Hjem_menu_logo_rest_box{ visibility: visible;}
+#Studere_menu_element_bg:hover + #Hjem_menu_logo_stud_box { visibility: visible;}
+#Sok_menu_element_bg:hover + #Hjem_menu_logo_sok_box { visibility: visible;}
 
 
 </style>
@@ -264,6 +313,9 @@
       <div id="Bar_menu_element_line">
       </div>
     </div>
+    <div id="Hjem_menu_logo_bar_box">
+    <img id="Hjem_menu_logo_bar" src="w_logo_prpl.png"/>
+    </div>
   </a>
 
    <a href="#Restaurant">
@@ -271,6 +323,9 @@
       <h3 id="Menu_text">RESTAURANTER</h3>
       <div id="Restaurant_menu_element_line">
       </div>
+    </div>
+    <div id="Hjem_menu_logo_rest_box">
+    <img id="Hjem_menu_logo_rest" src="w_logo_ble.png"/>
     </div>
   </a>
 
@@ -284,13 +339,7 @@
     </div>
     <div id="Hjem_menu_element_border"></div>
     <div id="Hjem_menu_logo_box">
-      <img id="Hjem_menu_logo_bar" src="w_logo_prpl.png"/>
-      <img id="Hjem_menu_logo_rest" src="w_logo_ble.png"/>
-      <img id="Hjem_menu_logo_stud" src="w_logo_ylw.png"/>
-      <img id="Hjem_menu_logo_sok" src="w_logo_grn.png"/>
-      <img id="Hjem_menu_logo_hjm" src="w_logo_rd.png"/>
       <img id="Hjem_menu_logo" src="w_logo.png"/>
-
     </div>
   </a>
 
@@ -300,6 +349,9 @@
       <div id="Studere_menu_element_line">
       </div>
     </div>
+    <div id="Hjem_menu_logo_stud_box">
+    <img id="Hjem_menu_logo_stud" src="w_logo_ylw.png"/>
+    </div>
   </a>
 
   <a href="#Sok">
@@ -307,6 +359,9 @@
       <h3 id="Menu_text">S&Oslash;K</h3>
       <div id="Sok_menu_element_line">
       </div>
+    </div>
+    <div id="Hjem_menu_logo_sok_box">
+    <img id="Hjem_menu_logo_sok" src="w_logo_grn.png"/>
     </div>
 </a>
 
