@@ -2,6 +2,7 @@
 <head>
 <style>
 
+
 #menubar_container {
   left: 0;
   top:0;
@@ -11,6 +12,15 @@
     margin: 0;
     background-color: ;
 
+
+}
+
+#Menu_text{
+ margin-top: 10%;
+ text-align: center;
+ font-family: sans-serif;
+ font-weight: 300;
+ color: #565656;
 }
 
 #Bar_menu_element_bg {
@@ -27,7 +37,7 @@
   width:100%;
     height: 12%;
     margin: 0;
-    background-color: #773C81;
+    background-color: #795682;
 
 
 
@@ -52,7 +62,7 @@
   width:100%;
     height: 12%;
     margin: 0;
-    background-color: #00A0E5;
+    background-color: #61B0C5;
     border-right: 1px solid;
 
 
@@ -96,7 +106,7 @@
         width:6%;
         height: 6%;
         margin: 0;
-        background-color: #FF4D4C;}
+        background-color: #F27263;}
 
      #Hjem_Linje_Hoyre {
           position: absolute;
@@ -105,13 +115,13 @@
             width:6%;
             height: 6%;
             margin: 0;
-            background-color: #FF4D4C;}
+            background-color: #F27263;}
 
     #Hjem_Trapes_Farge {
       position: absolute;
      top: 46%;
      left: 0%;
-    	border-top: 7.5vw solid #FF4D4C;
+    	border-top: 7.5vw solid #F27263;
     	border-left:  7.1vw solid transparent;
     	border-right: 7.1vw solid transparent;
     	height: 0;
@@ -267,7 +277,7 @@
   width:100%;
     height: 12%;
     margin: 0;
-    background-color: #FFCD50;
+    background-color: #FFD269;
 
 
 }
@@ -289,25 +299,28 @@
     width:100%;
     height: 12%;
     margin: 0;
-    background-color: #2AC693;
+    background-color: #7CC396;
 
 }
-
- #Menu_text{
-  margin-top: 10%;
-  text-align: center;
-  font-family: sans-serif;
-  font-weight: 300;
-  color: #565656;
-
-
-
- }
 
 #Bar_menu_element_bg:hover + #Hjem_menu_logo_bar_box { visibility: visible;}
 #Restaurant_menu_element_bg:hover + #Hjem_menu_logo_rest_box{ visibility: visible;}
 #Studere_menu_element_bg:hover + #Hjem_menu_logo_stud_box { visibility: visible;}
 #Sok_menu_element_bg:hover + #Hjem_menu_logo_sok_box { visibility: visible;}
+#Bar_menu_element_bg:hover > #Bar_menu_element_line  { background-color: #E3E6EA;}
+#Bar_menu_element_bg:hover{background-color:  #795682;}
+#Restaurant_menu_element_bg:hover > #Restaurant_menu_element_line  { background-color: #E3E6EA;}
+#Restaurant_menu_element_bg:hover{background-color:  #61B0C5;}
+#Studere_menu_element_bg:hover > #Studere_menu_element_line  { background-color: #E3E6EA;}
+#Studere_menu_element_bg:hover{background-color:  #FFD269;}
+#Sok_menu_element_bg:hover > #Sok_menu_element_line  { background-color: #E3E6EA;}
+#Sok_menu_element_bg:hover{background-color:  #7CC396;}
+#Bar_menu_element_bg:hover > #Menu_text { color: white;}
+#Restaurant_menu_element_bg:hover > #Menu_text { color: white;}
+#Studere_menu_element_bg:hover > #Menu_text { color: white;}
+#Sok_menu_element_bg:hover > #Menu_text { color: white;}
+
+
 
 
 </style>
@@ -367,9 +380,9 @@
 
   <a href="#Sok">
     <div id="Sok_menu_element_bg">
+      <div id="Sok_menu_element_line"></div>
       <h3 id="Menu_text">S&Oslash;K</h3>
-      <div id="Sok_menu_element_line">
-      </div>
+
     </div>
     <div id="Hjem_menu_logo_sok_box">
       <img id="Hjem_menu_logo_wht" src="w_logo_wht.png"/>
