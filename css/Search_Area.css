@@ -13,7 +13,7 @@
 
 .search-box-input:hover,
 .search-box-input:focus {
-    border-color: dimgrey;
+    border-color: grey;
 }
 
 .search-box-button {
