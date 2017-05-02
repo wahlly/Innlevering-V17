@@ -22,7 +22,6 @@ body {background-color: white;}
 
 
 }
-
 #Menu_text{
  margin-top: 10%;
  text-align: center;
@@ -311,6 +310,43 @@ body {background-color: white;}
 
 }
 
+#search-box-wrapper {
+  position: absolute;
+  top: 14%;
+  left: 5%;
+  width: 90%;
+  height: 60%;
+  border-radius: 2vw;
+
+  background-color: #7CC396;
+}
+
+#search-box-input{
+position: absolute;
+top: 15%;
+left: 5%;
+width: 75%;
+height: 70%;
+font-size: 1em;
+border: none;
+background-color: transparent;
+}
+
+#search_img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+#search-box-button{
+position: absolute;
+top: 15%;
+left: 80%;
+width: 15%;
+height: 70%:
+
+}
+
 #Bar_menu_element_bg:hover + #Hjem_menu_logo_bar_box { visibility: visible;}
 #Restaurant_menu_element_bg:hover + #Hjem_menu_logo_rest_box{ visibility: visible;}
 #Studere_menu_element_bg:hover + #Hjem_menu_logo_stud_box { visibility: visible;}
@@ -326,7 +362,9 @@ body {background-color: white;}
 #Bar_menu_element_bg:hover > #Menu_text { color: white;}
 #Restaurant_menu_element_bg:hover > #Menu_text { color: white;}
 #Studere_menu_element_bg:hover > #Menu_text { color: white;}
-#Sok_menu_element_bg:hover > #Menu_text { color: white;}
+#Sok_menu_element_bg:hover > #search-box-wrapper { background-color: white;}
+#Sok_menu_element_bg:hover > #search-box-input { background-color: white;}
+
 
 #btttnrow_container {
   position: absolute;
@@ -520,17 +558,17 @@ body {background-color: white;}
     </div>
   </a>
 
-  <a href="#Sok">
-    <div id="Sok_menu_element_bg">
-      <div id="Sok_menu_element_line"></div>
-      <h3 id="Menu_text">S&Oslash;K</h3>
-
+  <div id="Sok_menu_element_bg">
+    <div id="search-box-wrapper">
+        <input type="text" placeholder="Hvor vil du?" id="search-box-input">
+        <input id="search-box-button" type="image" src="search.png" />
     </div>
-    <div id="Hjem_menu_logo_sok_box">
-      <img id="Hjem_menu_logo_wht" src="w_logo_wht.png"/>
-    <img id="Hjem_menu_logo_sok" src="w_logo_grn.png"/>
-    </div>
-</a>
+    <div id="Sok_menu_element_line"></div>
+  </div>
+  <div id="Hjem_menu_logo_sok_box">
+    <img id="Hjem_menu_logo_wht" src="w_logo_wht.png"/>
+  <img id="Hjem_menu_logo_sok" src="w_logo_grn.png"/>
+  </div>
 
   </div>
 </div>
