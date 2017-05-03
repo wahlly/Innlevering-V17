@@ -1,0 +1,83 @@
+#btttnrow_container {
+  position: absolute;
+    width: 30%;
+    height: 10%;
+    margin: 0;
+}
+
+#prtybutton_container {
+    position: absolute;
+    left: 0%;
+    width: 20%;
+    height: 88%;
+    border: 0.41vw solid;
+    border-color: rgba(235, 236, 238, .5);
+    margin: 0;
+    background-color: white;
+
+}
+
+#prtybutton_icn {
+    width: 80%;
+    height: 80%;
+    margin-top:10%;
+    margin-left:10%;
+  }
+{22.8}
+
+  #stdybutton_container {
+      position: absolute;
+      left: 25.41%;
+      width: 20%;
+      height: 88%;
+      border: 0.41vw solid;
+      border-color: rgba(235, 236, 238, .5);
+      margin: 0;
+      background-color: white;
+
+  }
+
+  #stdybutton_icn {
+    width: 80%;
+    height: 80%;
+    margin-top:10%;
+    margin-left:10%;
+    }
+
+    #eatybutton_container {
+      position: absolute;
+      left: 51%;
+      width: 20%;
+      height: 88%;
+        border: 0.41vw solid;
+        border-color: rgba(235, 236, 238, .5);
+        margin: 0;
+        background-color: white;
+        z-index: 1;
+    }
+
+    #eatybutton_icn {
+      width: 80%;
+      height: 80%;
+      margin-top:10%;
+      margin-left:10%;
+      }
+
+      #sprtybutton_container {
+          position: absolute;
+          left: 77%;
+          width: 20%;
+          height: 88%;
+          border: 0.41vw solid;
+          border-color: rgba(235, 236, 238, .5);
+          margin: 0;
+          background-color: white;
+
+      }
+
+      #sprtybutton_icn {
+        width: 80%;
+        height: 80%;
+        margin-top:10%;
+        margin-left:10%;
+        }
