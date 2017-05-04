@@ -78,7 +78,7 @@
 <div id="Sok_menu_element_bg">
   <div id="search-box-wrapper">
       <input type="text" placeholder="Hvor vil du?" id="search-box-input">
-      <input id="search-box-button" type="image" src="../img/icons/search.png" />
+      <input id="search-box-button" type="image" src="../img/img_layout/layout_icons/search.png" />
   </div>
   <div id="Sok_menu_element_line"></div>
 </div>

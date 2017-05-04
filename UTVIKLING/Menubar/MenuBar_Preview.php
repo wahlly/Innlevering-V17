@@ -138,26 +138,26 @@ body {background-color: white;}
 
   <a href="#FilterParty">
   <div id="prtybutton_container">
-  <img src="../../img/icons/ol.png" id="Prtybutton_icn"/>
+  <img src="../../img/img_layout/layout_icons/ol.png" id="Prtybutton_icn"/>
   </div>
   </a>
 
   <a href="#FilterLeseSteder">
   <div id="stdybutton_container">
-  <img src="../../img/icons/les.png" id="stdybutton_icn"/>
+  <img src="../../img/img_layout/layout_icons/les.png" id="stdybutton_icn"/>
   </div>
   </a>
 
   <a href="#FilterSpise">
   <div id="eatybutton_container">
-  <img src="../../img/icons/burger.png" id="eatybutton_icn"/>
+  <img src="../../img/img_layout/layout_icons/burger.png" id="eatybutton_icn"/>
   </div>
   </a>
 
 
   <a href="#FilterTrening">
   <div id="sprtybutton_container">
-  <img src="../../img/icons/tren.png" id="sprtybutton_icn"/>
+  <img src="../../img/img_layout/layout_icons/tren.png" id="sprtybutton_icn"/>
   </div>
   </a>
 
@@ -218,7 +218,7 @@ body {background-color: white;}
   <div id="Sok_menu_element_bg">
     <div id="search-box-wrapper">
         <input type="text" placeholder="Hvor vil du?" id="search-box-input">
-        <input id="search-box-button" type="image" src="../../img/icons/search.png" />
+        <input id="search-box-button" type="image" src="../../img/img_layout/layout_icons/search.png" />
     </div>
     <div id="Sok_menu_element_line"></div>
   </div>
