@@ -98,7 +98,7 @@ body {background-color: white;}
   alert("Vend telefonen til landskapsmodus for å bruke denne siden!");
 }
 </script>
-
+ 
   <div id="container_main">
 
   <div id="imgmap">
