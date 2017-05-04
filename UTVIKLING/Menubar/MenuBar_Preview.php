@@ -82,7 +82,7 @@ body {background-color: white;}
 
           }
           ?>
-            #poired{
+            #poi{
               position: absolute;
               height: 100%;
               width: 50%;
@@ -113,14 +113,14 @@ body {background-color: white;}
        die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT html FROM sted";
+    $sql = "SELECT html_unactive FROM sted";
     $result = $conn->query($sql);
-    $css_pososv = array();
+    $html_unactive = array();
     $i = 0;
     if ($result->num_rows > 0) {
        // output data of each row
        while($row = $result->fetch_assoc()) {
-           $css_pososv[$i] = $row["html"];
+           $html_unactive[$i] = $row["html_unactive"];
            $i++;
        }
     } else {
@@ -129,39 +129,150 @@ body {background-color: white;}
     $conn->close();
     $arrlength = count($css_pososv);
     for($x = 0; $x < $arrlength; $x++) {
-      echo $css_pososv[$x];
+      echo $html_unactive[$x];
 
     }
     ?>
 
+    <?php
+    $servername = "martinwahlberg.no.mysql";
+    $username = "martinwahlberg_no_westerdals_";
+    $password = "westerdals123";
+    $dbname = "martinwahlberg_no_westerdals_";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+       die("Connection failed: " . $conn->connect_error);
+    }
+
+
+    //Spørring for prtybutton start
+    $sql = "SELECT html_active FROM sted WHERE id = 1";
+    $result = $conn->query($sql);
+    $prtybutton = array();
+    $i = 0;
+    if ($result->num_rows > 0) {
+       // output data of each row
+       while($row = $result->fetch_assoc()) {
+           $prtybutton[$i] = $row["html_active"];
+           $i++;
+       }
+    }
+    //Spørring for prtybutton slutt
+
+
+    //Spørring for stdybutton start
+    $sql = "SELECT html_active FROM sted WHERE id != 1";
+    $result = $conn->query($sql);
+    $stdybutton = array();
+    $i = 0;
+    if ($result->num_rows > 0) {
+       // output data of each row
+       while($row = $result->fetch_assoc()) {
+           $stdybutton[$i] = $row["html_active"];
+           $i++;
+       }
+    }
+    //Spørring for stdybutton slutt
+
+
+    //Spørring for eatybutton start
+    $sql = "SELECT * FROM sted";
+    $result = $conn->query($sql);
+    $eatybutton = array();
+    $i = 0;
+    if ($result->num_rows > 0) {
+       // output data of each row
+       while($row = $result->fetch_assoc()) {
+           $eatybutton[$i] = $row["html_active"];
+           $i++;
+       }
+    }
+    //Spørring for eatybutton slutt
+
+    //Spørring for sprtybutton start
+    $sql = "SELECT html_unactive FROM sted";
+    $result = $conn->query($sql);
+    $sprtybutton = array();
+    $i = 0;
+    if ($result->num_rows > 0) {
+       // output data of each row
+       while($row = $result->fetch_assoc()) {
+           $sprtybutton[$i] = $row["html_unactive"];
+           $i++;
+       }
+    }
+    //Spørring for sprtybutton slutt
+
+
+    $conn->close();
+
+    ?>
+
+
+    //Knapper Start
+    <?php
+    if(isset($_POST['prtybutton'])){
+      $arrlength = count($prtybutton);
+      for($x = 0; $x < $arrlength; $x++) {
+        echo $prtybutton[$x];
+      }
+    }
+    if(isset($_POST['stdybutton'])){
+      $arrlength = count($stdybutton);
+      for($x = 0; $x < $arrlength; $x++) {
+        echo $stdybutton[$x];
+      }
+    }
+    if(isset($_POST['eatybutton'])){
+      $arrlength = count($eatybutton);
+      for($x = 0; $x < $arrlength; $x++) {
+        echo $eatybutton[$x];
+      }
+    }
+    if(isset($_POST['sprtybutton'])){
+      $arrlength = count($sprtybutton);
+      for($x = 0; $x < $arrlength; $x++) {
+        echo $sprtybutton[$x];
+      }
+    }
+    ?>
+    //Knapper Slutt
+
+
+ <form  method="post">
+   <input type="text" name="txt" value="<?php if(isset($message)){ echo $message;}?>" >
   <div id="btttnrow_container">
 
   <a href="#FilterParty">
   <div id="prtybutton_container">
-  <img src="../../img/img_layout/layout_icons/ol.png" id="Prtybutton_icn"/>
+  <input type="image" name="prtybutton" value="prtybutton" src="../../img/img_layout/layout_icons/ol.png" id="Prtybutton_icn"/>
   </div>
   </a>
 
-  <a href="#FilterLeseSteder">
+
   <div id="stdybutton_container">
-  <img src="../../img/img_layout/layout_icons/les.png" id="stdybutton_icn"/>
+  <input type="image" name="stdybutton" value="stdybutton" src="../../img/img_layout/layout_icons/les.png" id="stdybutton_icn">
   </div>
-  </a>
+
 
   <a href="#FilterSpise">
   <div id="eatybutton_container">
-  <img src="../../img/img_layout/layout_icons/burger.png" id="eatybutton_icn"/>
+  <input type="image" name="eatybutton" value="eatybutton" src="../../img/img_layout/layout_icons/burger.png" id="eatybutton_icn">
   </div>
   </a>
 
 
   <a href="#FilterTrening">
   <div id="sprtybutton_container">
-  <img src="../../img/img_layout/layout_icons/tren.png" id="sprtybutton_icn"/>
+  <input type="image" name="sprtybutton" value="sprtybutton" src="../../img/img_layout/layout_icons/tren.png" id="sprtybutton_icn"/>
   </div>
   </a>
 
   </div>
+  </form>
   </div>
   <div id="menubar_container">
 
