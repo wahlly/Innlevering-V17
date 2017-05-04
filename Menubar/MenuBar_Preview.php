@@ -49,14 +49,39 @@ body {background-color: white;}
               height: 100%;
             }
 
-            #Cafe_sara{
-              position: absolute;
-              top: 40%;
-              left: 33%;
-              height: 10%;
-              width:10%;
+            <?php
+            $servername = "martinwahlberg.no.mysql";
+            $username = "martinwahlberg_no_westerdals_";
+            $password = "westerdals123";
+            $dbname = "martinwahlberg_no_westerdals_";
 
-            }
+          // Create connection
+          $conn = new mysqli($servername, $username, $password, $dbname);
+          // Check connection
+          if ($conn->connect_error) {
+               die("Connection failed: " . $conn->connect_error);
+          }
+
+          $sql = "SELECT css_pososv FROM sted";
+          $result = $conn->query($sql);
+          $css_pososv = array();
+          $i = 0;
+          if ($result->num_rows > 0) {
+               // output data of each row
+               while($row = $result->fetch_assoc()) {
+                   $css_pososv[$i] = $row["css_pososv"];
+                   $i++;
+               }
+          } else {
+               echo "0 results";
+          }
+          $conn->close();
+          $arrlength = count($css_pososv);
+          for($x = 0; $x < $arrlength; $x++) {
+              echo $css_pososv[$x];
+
+          }
+          ?>
             #poired{
               position: absolute;
               height: 100%;
@@ -74,8 +99,40 @@ body {background-color: white;}
   <div id="imgmap">
     <img id="kartet" src="../Bilder/18049879_10154249201006923_140799690_o.png"/>
     </div>
-    <div id="Cafe_Sara"> <img id="poired" src="../Bilder/icons/poi_red.png"/> </div>
 
+    <?php
+    $servername = "martinwahlberg.no.mysql";
+    $username = "martinwahlberg_no_westerdals_";
+    $password = "westerdals123";
+    $dbname = "martinwahlberg_no_westerdals_";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+       die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT html FROM sted";
+    $result = $conn->query($sql);
+    $css_pososv = array();
+    $i = 0;
+    if ($result->num_rows > 0) {
+       // output data of each row
+       while($row = $result->fetch_assoc()) {
+           $css_pososv[$i] = $row["html"];
+           $i++;
+       }
+    } else {
+       echo "0 results";
+    }
+    $conn->close();
+    $arrlength = count($css_pososv);
+    for($x = 0; $x < $arrlength; $x++) {
+      echo $css_pososv[$x];
+
+    }
+    ?>
 
   <div id="btttnrow_container">
 
