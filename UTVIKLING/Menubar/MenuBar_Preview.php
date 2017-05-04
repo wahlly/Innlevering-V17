@@ -50,6 +50,7 @@ body {background-color: white;}
               height: 100%;
             }
 
+          /* Henter inn posisjonene til alle de forskjellige nålene */
             <?php
             $servername = "martinwahlberg.no.mysql";
             $username = "martinwahlberg_no_westerdals_";
@@ -83,6 +84,7 @@ body {background-color: white;}
 
           }
           ?>
+          /* Her avsluttes innhentingen av alle posisjonen til de forskjellige nålene */
             #poi{
               position: absolute;
               height: 100%;
@@ -94,18 +96,24 @@ body {background-color: white;}
 </head>
 
 <body>
+
+<!--Liten advarsel om å snu telefonen -->
  <script> if(window.innerHeight > window.innerWidth){
   alert("Vend telefonen til landskapsmodus for å bruke denne siden!");
 }
 </script>
- 
+ <!-- Slutt på advarselen -->
+
+
   <div id="container_main">
 
   <div id="imgmap">
     <img id="kartet" src="../../img/img_pictures/index_kart.png"/>
     </div>
 
+
     <?php
+    //Login info db
     $servername = "martinwahlberg.no.mysql";
     $username = "martinwahlberg_no_westerdals_";
     $password = "westerdals123";
@@ -118,6 +126,7 @@ body {background-color: white;}
        die("Connection failed: " . $conn->connect_error);
     }
 
+    //Her hentes htmlen til de uaktive elementene
     $sql = "SELECT html_unactive FROM sted";
     $result = $conn->query($sql);
     $html_unactive = array();
@@ -131,26 +140,13 @@ body {background-color: white;}
     } else {
        echo "0 results";
     }
-    $conn->close();
+
     $arrlength = count($css_pososv);
     for($x = 0; $x < $arrlength; $x++) {
       echo $html_unactive[$x];
 
     }
-    ?>
 
-    <?php
-    $servername = "martinwahlberg.no.mysql";
-    $username = "martinwahlberg_no_westerdals_";
-    $password = "westerdals123";
-    $dbname = "martinwahlberg_no_westerdals_";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-       die("Connection failed: " . $conn->connect_error);
-    }
 
 
     //Spørring for prtybutton start
@@ -244,7 +240,7 @@ body {background-color: white;}
       }
     }
     ?>
-    //Knapper Slutt
+  <!-- Knapper Slutt -->
 
 
  <form  method="post">
