@@ -97,7 +97,7 @@ body {background-color: white;}
   <div id="container_main">
 
   <div id="imgmap">
-    <img id="kartet" src="../../img/18049879_10154249201006923_140799690_o.png"/>
+    <img id="kartet" src="../../img/img_pictures/index_kart.png"/>
     </div>
 
     <?php
