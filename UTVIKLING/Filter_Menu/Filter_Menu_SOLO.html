@@ -6,33 +6,36 @@
 </head>
 <body>
 
-  <div id="btttnrow_container">
-
-  <a href="#FilterParty">
-  <div id="prtybutton_container">
-  <img src="../../img/img_layout/layout_icons/ol.png" id="Prtybutton_icn"/>
-  </div>
-  </a>
-
-  <a href="#FilterLeseSteder">
-  <div id="stdybutton_container">
-  <img src="../../img/img_layout/layout_icons/les.png" id="stdybutton_icn"/>
-  </div>
-  </a>
-
-  <a href="#FilterSpise">
-  <div id="eatybutton_container">
-  <img src="../../img/img_layout/layout_icons/burger.png" id="eatybutton_icn"/>
-  </div>
-  </a>
+  <form  method="post">
+    <input type="text" name="txt" value="<?php if(isset($message)){ echo $message;}?>" >
+   <div id="btttnrow_container">
 
 
-  <a href="#FilterTrening">
-  <div id="sprtybutton_container">
-  <img src="../../img/img_layout/layout_icons/tren.png" id="sprtybutton_icn"/>
-  </div>
-  </a>
+   <div id="prtybutton_container">
+   <input type="image" name="prtybutton" value="prtybutton" src="../../img/img_layout/layout_icons/ol.png" id="Prtybutton_icn"/>
+   </div>
 
-  </div>
+
+
+   <div id="stdybutton_container">
+   <input type="image" name="stdybutton" value="stdybutton" src="../../img/img_layout/layout_icons/les.png" id="stdybutton_icn">
+   </div>
+
+
+
+   <div id="eatybutton_container">
+   <input type="image" name="eatybutton" value="eatybutton" src="../../img/img_layout/layout_icons/burger.png" id="eatybutton_icn">
+   </div>
+
+
+
+
+   <div id="sprtybutton_container">
+   <input type="image" name="sprtybutton" value="sprtybutton" src="../../img/img_layout/layout_icons/tren.png" id="sprtybutton_icn"/>
+   </div>
+
+
+   </div>
+   </form>
 </body>
 </html>

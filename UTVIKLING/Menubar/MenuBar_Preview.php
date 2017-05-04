@@ -1,5 +1,6 @@
 <html>
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="../../css/menubar.css">
   <link rel="stylesheet" href="../../css/filter_menu.css">
 <style>
@@ -93,6 +94,10 @@ body {background-color: white;}
 </head>
 
 <body>
+ <script> if(window.innerHeight > window.innerWidth){
+  alert("Vend telefonen til landskapsmodus for å bruke denne siden!");
+}
+</script>
 
   <div id="container_main">
 
@@ -246,11 +251,11 @@ body {background-color: white;}
    <input type="text" name="txt" value="<?php if(isset($message)){ echo $message;}?>" >
   <div id="btttnrow_container">
 
-  <a href="#FilterParty">
+
   <div id="prtybutton_container">
   <input type="image" name="prtybutton" value="prtybutton" src="../../img/img_layout/layout_icons/ol.png" id="Prtybutton_icn"/>
   </div>
-  </a>
+
 
 
   <div id="stdybutton_container">
@@ -258,18 +263,16 @@ body {background-color: white;}
   </div>
 
 
-  <a href="#FilterSpise">
+
   <div id="eatybutton_container">
   <input type="image" name="eatybutton" value="eatybutton" src="../../img/img_layout/layout_icons/burger.png" id="eatybutton_icn">
   </div>
-  </a>
 
 
-  <a href="#FilterTrening">
+
   <div id="sprtybutton_container">
   <input type="image" name="sprtybutton" value="sprtybutton" src="../../img/img_layout/layout_icons/tren.png" id="sprtybutton_icn"/>
   </div>
-  </a>
 
   </div>
   </form>
