@@ -136,18 +136,18 @@
 
 #Hjem_menu_logo {
   position: absolute;
-    top: 2%;
-    left:27.5%;
-    width:45%;
+    top: 5%;
+    left:31.5%;
+    width:37%;
     margin: 0;
     overflow: hidden;
     visibility: visible;
 }
 #Hjem_menu_logo_wht {
   position: absolute;
-    top: 2%;
-    left:27.5%;
-    width:45%;
+    top: 5%;
+    left:31.5%;
+    width:37%;
     margin: 0;
     overflow: hidden;
 }
