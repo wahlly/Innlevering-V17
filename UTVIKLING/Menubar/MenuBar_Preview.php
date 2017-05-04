@@ -196,6 +196,7 @@ body {background-color: white;}
       <div id="Hjem_Trapes_Hvit"></div>
       <div id="Hjem_Linje_Hoyre"></div>
       <div id="Hjem_Linje_Venstre"></div>
+      <div id="Hjem_Linje"></div>
     </div>
     <div id="Hjem_menu_element_border"></div>
     <div id="Hjem_menu_logo_box">
