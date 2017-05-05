@@ -1,3 +1,4 @@
+
 <html>
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -32,7 +33,13 @@ body {background-color: white;}
     margin: 0;
 
 
-}
+  }
+
+  #map {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+        }
 
         #imgmap {
             position: absolute;
@@ -47,7 +54,7 @@ body {background-color: white;}
               top: 0%;
               left: 0%;
               width: 100%;
-              height: 100%;
+              height: 90%;
             }
 
           /* Henter inn posisjonene til alle de forskjellige nålene */
@@ -101,6 +108,7 @@ body {background-color: white;}
  <script> if(window.innerHeight > window.innerWidth){
   alert("Vend telefonen til landskapsmodus for å bruke denne siden!");
 }
+
 </script>
  <!-- Slutt på advarselen -->
 
@@ -108,7 +116,39 @@ body {background-color: white;}
   <div id="container_main">
 
   <div id="imgmap">
-    <img id="kartet" src="../../img/img_pictures/index_kart.png"/>
+    <div id="map"></div>
+    <script>
+
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 59.917376, lng: 10.756401},
+          zoom: 17
+
+        });
+        var myStyles =[
+        {
+            featureType: "poi",
+            elementType: "labels",
+            stylers: [
+                  { visibility: "off" }
+            ]
+        }
+        ];
+        map.setOptions({
+          draggable: false,
+          panControl: false,
+          disableDefaultUI: true,
+          styles: myStyles
+        });
+
+        google.maps.event.addDomListener(window, "resize", function(){
+        var center = map.getCenter();
+        google.maps.event.trigger(map, "resize");
+        map.setCenter(center); });
+      }
+    </script>
+
     </div>
 
 
@@ -341,5 +381,7 @@ body {background-color: white;}
 
   </div>
 </div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeGfGxlzHanho4vezNe-XrqMl4seyw6tw&callback=initMap"
+async defer></script>
 </body>
 </html>

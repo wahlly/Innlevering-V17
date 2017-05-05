@@ -1,3 +1,4 @@
+
 <html>
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -32,7 +33,13 @@ body {background-color: white;}
     margin: 0;
 
 
-}
+  }
+
+  #map {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+        }
 
         #imgmap {
             position: absolute;
@@ -47,7 +54,7 @@ body {background-color: white;}
               top: 0%;
               left: 0%;
               width: 100%;
-              height: 100%;
+              height: 90%;
             }
 
           /* Henter inn posisjonene til alle de forskjellige nålene */
@@ -101,6 +108,7 @@ body {background-color: white;}
  <script> if(window.innerHeight > window.innerWidth){
   alert("Vend telefonen til landskapsmodus for å bruke denne siden!");
 }
+
 </script>
  <!-- Slutt på advarselen -->
 
@@ -108,7 +116,85 @@ body {background-color: white;}
   <div id="container_main">
 
   <div id="imgmap">
-    <img id="kartet" src="../../img/img_pictures/index_kart.png"/>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: new google.maps.LatLng(59.917376, 10.756401),
+          mapTypeId: 'roadmap'
+        });
+        var myStyles =[
+        {
+            featureType: "poi",
+            elementType: "labels",
+            stylers: [
+                  { visibility: "off" }
+            ]
+        }
+        ];
+        map.setOptions({
+          draggable: false,
+          panControl: false,
+          disableDefaultUI: true,
+          styles: myStyles
+        });
+
+        var iconBase = '../../img/img_layout/layout_icons/';
+        var icons = {
+          utesteder: {
+            icon: iconBase + 'poi_purple_min.png'
+          },
+          restauranter: {
+            icon: iconBase + 'poi_blue_min.png'
+          },
+          studiesteder: {
+            icon: iconBase + 'poi_yellow_min.png'
+          }
+        };
+
+        var features = [
+          {
+            position: new google.maps.LatLng(59.917634, 10.754037),
+            type: 'utesteder'
+          },  {
+            position: new google.maps.LatLng(59.917128, 10.754842),
+            type: 'restauranter'
+          }, {
+            position: new google.maps.LatLng(59.916214, 10.751923),
+            type: 'studiesteder'
+          }
+        ];
+
+
+        //DATABASEMAT
+        var testmark = new google.maps.Marker({
+          position: new google.maps.LatLng(59.916214, 10.750923),
+          icon: icons['restauranter'].icon,
+          map: map
+        });
+
+//DATABASEMAT
+
+
+        // Create markers.
+        features.forEach(function(feature) {
+          var marker = new google.maps.Marker({
+            position: feature.position,
+            icon: icons[feature.type].icon,
+            map: map
+          });
+
+          //DATABASEMAT
+          google.maps.event.addDomListener(testmark, 'click', function() {
+      window.location.href = '?calculate-length&value=My%20example'});
+      //DATABASEMAT
+        });
+      }
+    </script>
+
+
     </div>
 
 
@@ -126,26 +212,6 @@ body {background-color: white;}
        die("Connection failed: " . $conn->connect_error);
     }
 
-    //Her hentes htmlen til de uaktive elementene
-    $sql = "SELECT html_unactive FROM sted";
-    $result = $conn->query($sql);
-    $html_unactive = array();
-    $i = 0;
-    if ($result->num_rows > 0) {
-       // output data of each row
-       while($row = $result->fetch_assoc()) {
-           $html_unactive[$i] = $row["html_unactive"];
-           $i++;
-       }
-    } else {
-       echo "0 results";
-    }
-
-    $arrlength = count($css_pososv);
-    for($x = 0; $x < $arrlength; $x++) {
-      echo $html_unactive[$x];
-
-    }
 
 
 
@@ -215,6 +281,7 @@ body {background-color: white;}
 
   <!--Knapper Start-->
     <?php
+
     if(isset($_POST['prtybutton'])){
       $arrlength = count($prtybutton);
       for($x = 0; $x < $arrlength; $x++) {
@@ -239,12 +306,16 @@ body {background-color: white;}
         echo $sprtybutton[$x];
       }
     }
+
+
     ?>
+
+    
   <!-- Knapper Slutt -->
 
 
  <form  method="post">
-   <input type="text" name="txt" value="<?php if(isset($message)){ echo $message;}?>" >
+   <input type="hidden" name="txt" value="<?php if(isset($message)){ echo $message;}?>" >
   <div id="btttnrow_container">
 
 
@@ -341,5 +412,7 @@ body {background-color: white;}
 
   </div>
 </div>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeGfGxlzHanho4vezNe-XrqMl4seyw6tw&callback=initMap"
+></script>
 </body>
 </html>
