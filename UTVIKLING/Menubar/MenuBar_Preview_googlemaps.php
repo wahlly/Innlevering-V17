@@ -35,6 +35,19 @@ body {background-color: white;}
 
   }
 
+  #Cafe_Sara_Info{
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    height: 50%;
+    width: 50%;
+    background-color: white;
+    visibility: hidden;
+
+
+
+  }
+
   #map {
           position: absolute;
           height: 100%;
@@ -135,7 +148,7 @@ body {background-color: white;}
         }
         ];
         map.setOptions({
-          draggable: false,
+          draggable: true,
           panControl: false,
           disableDefaultUI: true,
           styles: myStyles
@@ -186,11 +199,13 @@ body {background-color: white;}
             map: map
           });
 
-          //DATABASEMAT
-          google.maps.event.addDomListener(testmark, 'click', function() {
-      window.location.href = '?calculate-length&value=My%20example'});
-      //DATABASEMAT
+
         });
+        //DATABASEMAT
+        google.maps.event.addDomListener(testmark, 'click', function myFunction() {
+    document.getElementById("Cafe_Sara_Info").style.visibility = "visible";
+});
+        //DATABASEMAT
       }
     </script>
 
@@ -310,9 +325,9 @@ body {background-color: white;}
 
     ?>
 
-    
-  <!-- Knapper Slutt -->
 
+  <!-- Knapper Slutt -->
+<div id="Cafe_Sara_Info"> <h1>Cafe Sara</h1></div>
 
  <form  method="post">
    <input type="hidden" name="txt" value="<?php if(isset($message)){ echo $message;}?>" >
@@ -411,8 +426,10 @@ body {background-color: white;}
   </div>
 
   </div>
+  <div id="demo"> </div>
 </div>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeGfGxlzHanho4vezNe-XrqMl4seyw6tw&callback=initMap"
 ></script>
+
 </body>
 </html>
