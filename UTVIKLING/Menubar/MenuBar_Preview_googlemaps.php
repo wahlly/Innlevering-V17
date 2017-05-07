@@ -1,3 +1,4 @@
+
 <html>
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -32,7 +33,25 @@ body {background-color: white;}
     margin: 0;
 
 
-}
+  }
+
+  #Cafe_Sara_Info{
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    height: 50%;
+    width: 50%;
+    background-color: white;
+
+
+
+  }
+
+  #map {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+        }
 
         #imgmap {
             position: absolute;
@@ -47,43 +66,43 @@ body {background-color: white;}
               top: 0%;
               left: 0%;
               width: 100%;
-              height: 100%;
+              height: 90%;
             }
 
           /* Henter inn posisjonene til alle de forskjellige nålene */
-            <?php
-            $servername = "martinwahlberg.no.mysql";
-            $username = "martinwahlberg_no_westerdals_";
-            $password = "westerdals123";
-            $dbname = "martinwahlberg_no_westerdals_";
+          <?php
+          $servername = "martinwahlberg.no.mysql";
+          $username = "martinwahlberg_no_westerdals_";
+          $password = "westerdals123";
+          $dbname = "martinwahlberg_no_westerdals_";
 
-          // Create connection
-          $conn = new mysqli($servername, $username, $password, $dbname);
-          // Check connection
-          if ($conn->connect_error) {
-               die("Connection failed: " . $conn->connect_error);
-          }
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+             die("Connection failed: " . $conn->connect_error);
+        }
 
-          $sql = "SELECT css_pososv FROM sted";
-          $result = $conn->query($sql);
-          $css_pososv = array();
-          $i = 0;
-          if ($result->num_rows > 0) {
-               // output data of each row
-               while($row = $result->fetch_assoc()) {
-                   $css_pososv[$i] = $row["css_pososv"];
-                   $i++;
-               }
-          } else {
-               echo "0 results";
-          }
-          $conn->close();
-          $arrlength = count($css_pososv);
-          for($x = 0; $x < $arrlength; $x++) {
-              echo $css_pososv[$x];
+        $sql = "SELECT css_pososv FROM sted";
+        $result = $conn->query($sql);
+        $css_pososv = array();
+        $i = 0;
+        if ($result->num_rows > 0) {
+             // output data of each row
+             while($row = $result->fetch_assoc()) {
+                 $css_pososv[$i] = $row["css_pososv"];
+                 $i++;
+             }
+        } else {
+             echo "0 results";
+        }
+        $conn->close();
+        $arrlength = count($css_pososv);
+        for($x = 0; $x < $arrlength; $x++) {
+            echo $css_pososv[$x];
 
-          }
-          ?>
+        }
+        ?>
           /* Her avsluttes innhentingen av alle posisjonen til de forskjellige nålene */
             #poi{
               position: absolute;
@@ -101,6 +120,7 @@ body {background-color: white;}
  <script> if(window.innerHeight > window.innerWidth){
   alert("Vend telefonen til landskapsmodus for å bruke denne siden!");
 }
+
 </script>
  <!-- Slutt på advarselen -->
 
@@ -108,143 +128,137 @@ body {background-color: white;}
   <div id="container_main">
 
   <div id="imgmap">
-    <img id="kartet" src="../../img/img_pictures/index_kart.png"/>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: new google.maps.LatLng(59.917376, 10.756401),
+          mapTypeId: 'roadmap'
+        });
+        var myStyles =[
+  {
+    "featureType": "administrative",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  }
+];
+        map.setOptions({
+          draggable: true,
+          panControl: false,
+          disableDefaultUI: true,
+          styles: myStyles
+        });
+
+        var iconBase = '../../img/img_layout/layout_icons/';
+        var icons = {
+          utesteder: {
+            icon: iconBase + 'poi_purple_min.png'
+          },
+          restauranter: {
+            icon: iconBase + 'poi_blue_min.png'
+          },
+          studiesteder: {
+            icon: iconBase + 'poi_yellow_min.png'
+          }
+        };
+
+        var features = [
+          {
+            position: new google.maps.LatLng(59.917634, 10.754037),
+            type: 'utesteder'
+          },  {
+            position: new google.maps.LatLng(59.917128, 10.754842),
+            type: 'restauranter'
+          }, {
+            position: new google.maps.LatLng(59.916214, 10.751923),
+            type: 'studiesteder'
+          }
+        ];
+
+
+        //DATABASEMAT
+        var testmark = new google.maps.Marker({
+          position: new google.maps.LatLng(59.916214, 10.750923),
+          icon: icons['restauranter'].icon,
+          map: map
+        });
+
+//DATABASEMAT
+
+
+        // Create markers.
+        features.forEach(function(feature) {
+          var marker = new google.maps.Marker({
+            position: feature.position,
+            icon: icons[feature.type].icon,
+            map: map
+          });
+
+
+        });
+        //DATABASEMAT
+        google.maps.event.addDomListener(testmark, 'click', function() {
+    window.location.href = '?cafesara';
+});
+        //DATABASEMAT
+      }
+    </script>
+
+
     </div>
 
 
-    <?php
-    //Login info db
-    $servername = "martinwahlberg.no.mysql";
-    $username = "martinwahlberg_no_westerdals_";
-    $password = "westerdals123";
-    $dbname = "martinwahlberg_no_westerdals_";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-       die("Connection failed: " . $conn->connect_error);
-    }
-
-    //Her hentes htmlen til de uaktive elementene
-    $sql = "SELECT html_unactive FROM sted";
-    $result = $conn->query($sql);
-    $html_unactive = array();
-    $i = 0;
-    if ($result->num_rows > 0) {
-       // output data of each row
-       while($row = $result->fetch_assoc()) {
-           $html_unactive[$i] = $row["html_unactive"];
-           $i++;
-       }
-    } else {
-       echo "0 results";
-    }
-
-    $arrlength = count($css_pososv);
-    for($x = 0; $x < $arrlength; $x++) {
-      echo $html_unactive[$x];
-
-    }
+  <!-- DATABASEMAT -->
 
 
+  <?php
+  if (strpos($_SERVER[REQUEST_URI], '?cafesara')) { // returns false if '?' isn't there
+      //Has query params
+echo "<div id=\"Cafe_Sara_Info\"> \n";
+echo "<h1>\n";
+echo "Cafe Sara\n";
+echo "</h1>\n";
+echo "</div>\n";
+}
+?>
 
-    //Spørring for prtybutton start
-    $sql = "SELECT html_active FROM sted WHERE id = 1";
-    $result = $conn->query($sql);
-    $prtybutton = array();
-    $i = 0;
-    if ($result->num_rows > 0) {
-       // output data of each row
-       while($row = $result->fetch_assoc()) {
-           $prtybutton[$i] = $row["html_active"];
-           $i++;
-       }
-    }
-    //Spørring for prtybutton slutt
+  <!-- DATABASEMAT -->
 
-
-    //Spørring for stdybutton start
-    $sql = "SELECT html_active FROM sted WHERE id != 1";
-    $result = $conn->query($sql);
-    $stdybutton = array();
-    $i = 0;
-    if ($result->num_rows > 0) {
-       // output data of each row
-       while($row = $result->fetch_assoc()) {
-           $stdybutton[$i] = $row["html_active"];
-           $i++;
-       }
-    }
-    //Spørring for stdybutton slutt
-
-
-    //Spørring for eatybutton start
-    $sql = "SELECT * FROM sted";
-    $result = $conn->query($sql);
-    $eatybutton = array();
-    $i = 0;
-    if ($result->num_rows > 0) {
-       // output data of each row
-       while($row = $result->fetch_assoc()) {
-           $eatybutton[$i] = $row["html_active"];
-           $i++;
-       }
-    }
-    //Spørring for eatybutton slutt
-
-    //Spørring for sprtybutton start
-    $sql = "SELECT html_unactive FROM sted";
-    $result = $conn->query($sql);
-    $sprtybutton = array();
-    $i = 0;
-    if ($result->num_rows > 0) {
-       // output data of each row
-       while($row = $result->fetch_assoc()) {
-           $sprtybutton[$i] = $row["html_unactive"];
-           $i++;
-       }
-    }
-    //Spørring for sprtybutton slutt
-
-
-    $conn->close();
-
-    ?>
-
-
-  <!--Knapper Start-->
-    <?php
-    if(isset($_POST['prtybutton'])){
-      $arrlength = count($prtybutton);
-      for($x = 0; $x < $arrlength; $x++) {
-        echo $prtybutton[$x];
-      }
-    }
-    if(isset($_POST['stdybutton'])){
-      $arrlength = count($stdybutton);
-      for($x = 0; $x < $arrlength; $x++) {
-        echo $stdybutton[$x];
-      }
-    }
-    if(isset($_POST['eatybutton'])){
-      $arrlength = count($eatybutton);
-      for($x = 0; $x < $arrlength; $x++) {
-        echo $eatybutton[$x];
-      }
-    }
-    if(isset($_POST['sprtybutton'])){
-      $arrlength = count($sprtybutton);
-      for($x = 0; $x < $arrlength; $x++) {
-        echo $sprtybutton[$x];
-      }
-    }
-    ?>
-  <!-- Knapper Slutt -->
 
 
  <form  method="post">
-   <input type="text" name="txt" value="<?php if(isset($message)){ echo $message;}?>" >
+   <input type="hidden" name="txt" value="<?php if(isset($message)){ echo $message;}?>" >
   <div id="btttnrow_container">
 
 
@@ -340,6 +354,10 @@ body {background-color: white;}
   </div>
 
   </div>
+  <div id="demo"> </div>
 </div>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeGfGxlzHanho4vezNe-XrqMl4seyw6tw&callback=initMap"
+></script>
+
 </body>
 </html>

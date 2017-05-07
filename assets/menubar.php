@@ -53,10 +53,12 @@
   <div id="Hjem_menu_element_bg"></div>
   <div id="Hjem_menu_element_extend">
     <div id="Hjem_Trapes_Farge"></div>
+    <div id="Hjem_Linje_farge"></div>
     <div id="Hjem_Trapes_Hvit"></div>
     <div id="Hjem_Linje_Hoyre"></div>
-    <div id="Hjem_Linje_Venstre"></div>
+    <div id="Hjem_Linje_hvit"></div>
   </div>
+  
   <div id="Hjem_menu_element_border"></div>
   <div id="Hjem_menu_logo_box">
     <img id="Hjem_menu_logo" src="../img/img_layout/layout_menubar/w_logo.png"/>

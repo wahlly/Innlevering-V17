@@ -1,7 +1,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="../../css/menubar.css">
-  <link rel="stylesheet" href="../../../css/filter_menu.css">
+  <link rel="stylesheet" href="../../css/filter_menu.css">
 <style>
 
 body {background-color: white;}
@@ -57,7 +57,7 @@ body {background-color: white;}
               width:10%;
 
             }
-            #poired{
+            #poi{
               position: absolute;
               height: 100%;
               width: 50%;
@@ -74,28 +74,40 @@ body {background-color: white;}
   <div id="imgmap">
     <img id="kartet" src="../../img/img_pictures/index_kart.png"/>
     </div>
-    <div id="Cafe_Sara"> <img id="poired" src="../../img/img_layout/layout_icons/poi_red.png"/> </div>
+    <div id="Cafe_Sara"> <img id="poi" src="../../img/img_layout/layout_icons/poi_red.png"/> </div>
+
+ 
+    <form  method="post">
+      <input type="text" name="txt" value="<?php if(isset($message)){ echo $message;}?>" >
+     <div id="btttnrow_container">
 
 
-  <div id="btttnrow_container">
+     <div id="prtybutton_container">
+     <input type="image" name="prtybutton" value="prtybutton" src="../../img/img_layout/layout_icons/ol.png" id="Prtybutton_icn"/>
+     </div>
 
-  <a href="#FilterParty">
-  <div id="prtybutton_container">
-  <img src="../../img/img_layout/layout_icons/ol.png" id="Prtybutton_icn"/>
-  </div>
-  </a>
 
-  <a href="#FilterLeseSteder">
-  <div id="stdybutton_container">
-  <img src="../../img/img_layout/layout_icons/les.png" id="stdybutton_icn"/>
-  </div>
-  </a>
 
-  <a href="#FilterSpise">
-  <div id="eatybutton_container">
-  <img src="../../img/img_layout/layout_icons/burger.png" id="eatybutton_icn"/>
-  </div>
-  </a>
+     <div id="stdybutton_container">
+     <input type="image" name="stdybutton" value="stdybutton" src="../../img/img_layout/layout_icons/les.png" id="stdybutton_icn">
+     </div>
+
+
+
+     <div id="eatybutton_container">
+     <input type="image" name="eatybutton" value="eatybutton" src="../../img/img_layout/layout_icons/burger.png" id="eatybutton_icn">
+     </div>
+
+
+
+
+     <div id="sprtybutton_container">
+     <input type="image" name="sprtybutton" value="sprtybutton" src="../../img/img_layout/layout_icons/tren.png" id="sprtybutton_icn"/>
+     </div>
+
+
+     </div>
+     </form>
 
 
   <a href="#FilterTrening">
@@ -105,7 +117,7 @@ body {background-color: white;}
   </a>
 
   </div>
-  </div>
+
   <div id="menubar_container">
 
     <a href="#Barer">
@@ -136,9 +148,11 @@ body {background-color: white;}
     <div id="Hjem_menu_element_bg"></div>
     <div id="Hjem_menu_element_extend">
       <div id="Hjem_Trapes_Farge"></div>
+      <div id="Hjem_Linje_farge"></div>
       <div id="Hjem_Trapes_Hvit"></div>
       <div id="Hjem_Linje_Hoyre"></div>
-      <div id="Hjem_Linje_Venstre"></div>
+      <div id="Hjem_Linje_hvit"></div>
+
     </div>
     <div id="Hjem_menu_element_border"></div>
     <div id="Hjem_menu_logo_box">
@@ -161,7 +175,7 @@ body {background-color: white;}
   <div id="Sok_menu_element_bg">
     <div id="search-box-wrapper">
         <input type="text" placeholder="Hvor vil du?" id="search-box-input">
-        <input id="search-box-button" type="image" src="../../Bilder/img_layout/layout_icons/search.png" />
+        <input id="search-box-button" type="image" src="../../img/img_layout/layout_icons/search.png" />
     </div>
     <div id="Sok_menu_element_line"></div>
   </div>
@@ -169,7 +183,7 @@ body {background-color: white;}
     <img id="Hjem_menu_logo_wht" src="../../img/img_layout/layout_menubar/w_logo_wht.png"/>
   <img id="Hjem_menu_logo_sok" src="../../img/img_layout/layout_menubar/w_logo_grn.png"/>
   </div>
-
+</div>
   </div>
 </div>
 </body>
