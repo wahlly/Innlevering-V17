@@ -42,7 +42,6 @@ body {background-color: white;}
     height: 50%;
     width: 50%;
     background-color: white;
-    visibility: hidden;
 
 
 
@@ -71,39 +70,39 @@ body {background-color: white;}
             }
 
           /* Henter inn posisjonene til alle de forskjellige nålene */
-            <?php
-            $servername = "martinwahlberg.no.mysql";
-            $username = "martinwahlberg_no_westerdals_";
-            $password = "westerdals123";
-            $dbname = "martinwahlberg_no_westerdals_";
+          <?php
+          $servername = "martinwahlberg.no.mysql";
+          $username = "martinwahlberg_no_westerdals_";
+          $password = "westerdals123";
+          $dbname = "martinwahlberg_no_westerdals_";
 
-          // Create connection
-          $conn = new mysqli($servername, $username, $password, $dbname);
-          // Check connection
-          if ($conn->connect_error) {
-               die("Connection failed: " . $conn->connect_error);
-          }
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+             die("Connection failed: " . $conn->connect_error);
+        }
 
-          $sql = "SELECT css_pososv FROM sted";
-          $result = $conn->query($sql);
-          $css_pososv = array();
-          $i = 0;
-          if ($result->num_rows > 0) {
-               // output data of each row
-               while($row = $result->fetch_assoc()) {
-                   $css_pososv[$i] = $row["css_pososv"];
-                   $i++;
-               }
-          } else {
-               echo "0 results";
-          }
-          $conn->close();
-          $arrlength = count($css_pososv);
-          for($x = 0; $x < $arrlength; $x++) {
-              echo $css_pososv[$x];
+        $sql = "SELECT css_pososv FROM sted";
+        $result = $conn->query($sql);
+        $css_pososv = array();
+        $i = 0;
+        if ($result->num_rows > 0) {
+             // output data of each row
+             while($row = $result->fetch_assoc()) {
+                 $css_pososv[$i] = $row["css_pososv"];
+                 $i++;
+             }
+        } else {
+             echo "0 results";
+        }
+        $conn->close();
+        $arrlength = count($css_pososv);
+        for($x = 0; $x < $arrlength; $x++) {
+            echo $css_pososv[$x];
 
-          }
-          ?>
+        }
+        ?>
           /* Her avsluttes innhentingen av alle posisjonen til de forskjellige nålene */
             #poi{
               position: absolute;
@@ -139,14 +138,41 @@ body {background-color: white;}
           mapTypeId: 'roadmap'
         });
         var myStyles =[
-        {
-            featureType: "poi",
-            elementType: "labels",
-            stylers: [
-                  { visibility: "off" }
-            ]
-        }
-        ];
+  {
+    "featureType": "administrative",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  }
+];
         map.setOptions({
           draggable: true,
           panControl: false,
@@ -202,8 +228,8 @@ body {background-color: white;}
 
         });
         //DATABASEMAT
-        google.maps.event.addDomListener(testmark, 'click', function myFunction() {
-    document.getElementById("Cafe_Sara_Info").style.visibility = "visible";
+        google.maps.event.addDomListener(testmark, 'click', function() {
+    window.location.href = '?cafesara';
 });
         //DATABASEMAT
       }
@@ -213,121 +239,23 @@ body {background-color: white;}
     </div>
 
 
-    <?php
-    //Login info db
-    $servername = "martinwahlberg.no.mysql";
-    $username = "martinwahlberg_no_westerdals_";
-    $password = "westerdals123";
-    $dbname = "martinwahlberg_no_westerdals_";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-       die("Connection failed: " . $conn->connect_error);
-    }
+  <!-- DATABASEMAT -->
 
 
+  <?php
+  if (strpos($_SERVER[REQUEST_URI], '?cafesara')) { // returns false if '?' isn't there
+      //Has query params
+echo "<div id=\"Cafe_Sara_Info\"> \n";
+echo "<h1>\n";
+echo "Cafe Sara\n";
+echo "</h1>\n";
+echo "</div>\n";
+}
+?>
+
+  <!-- DATABASEMAT -->
 
 
-    //Spørring for prtybutton start
-    $sql = "SELECT html_active FROM sted WHERE id = 1";
-    $result = $conn->query($sql);
-    $prtybutton = array();
-    $i = 0;
-    if ($result->num_rows > 0) {
-       // output data of each row
-       while($row = $result->fetch_assoc()) {
-           $prtybutton[$i] = $row["html_active"];
-           $i++;
-       }
-    }
-    //Spørring for prtybutton slutt
-
-
-    //Spørring for stdybutton start
-    $sql = "SELECT html_active FROM sted WHERE id != 1";
-    $result = $conn->query($sql);
-    $stdybutton = array();
-    $i = 0;
-    if ($result->num_rows > 0) {
-       // output data of each row
-       while($row = $result->fetch_assoc()) {
-           $stdybutton[$i] = $row["html_active"];
-           $i++;
-       }
-    }
-    //Spørring for stdybutton slutt
-
-
-    //Spørring for eatybutton start
-    $sql = "SELECT * FROM sted";
-    $result = $conn->query($sql);
-    $eatybutton = array();
-    $i = 0;
-    if ($result->num_rows > 0) {
-       // output data of each row
-       while($row = $result->fetch_assoc()) {
-           $eatybutton[$i] = $row["html_active"];
-           $i++;
-       }
-    }
-    //Spørring for eatybutton slutt
-
-    //Spørring for sprtybutton start
-    $sql = "SELECT html_unactive FROM sted";
-    $result = $conn->query($sql);
-    $sprtybutton = array();
-    $i = 0;
-    if ($result->num_rows > 0) {
-       // output data of each row
-       while($row = $result->fetch_assoc()) {
-           $sprtybutton[$i] = $row["html_unactive"];
-           $i++;
-       }
-    }
-    //Spørring for sprtybutton slutt
-
-
-    $conn->close();
-
-    ?>
-
-
-  <!--Knapper Start-->
-    <?php
-
-    if(isset($_POST['prtybutton'])){
-      $arrlength = count($prtybutton);
-      for($x = 0; $x < $arrlength; $x++) {
-        echo $prtybutton[$x];
-      }
-    }
-    if(isset($_POST['stdybutton'])){
-      $arrlength = count($stdybutton);
-      for($x = 0; $x < $arrlength; $x++) {
-        echo $stdybutton[$x];
-      }
-    }
-    if(isset($_POST['eatybutton'])){
-      $arrlength = count($eatybutton);
-      for($x = 0; $x < $arrlength; $x++) {
-        echo $eatybutton[$x];
-      }
-    }
-    if(isset($_POST['sprtybutton'])){
-      $arrlength = count($sprtybutton);
-      for($x = 0; $x < $arrlength; $x++) {
-        echo $sprtybutton[$x];
-      }
-    }
-
-
-    ?>
-
-
-  <!-- Knapper Slutt -->
-<div id="Cafe_Sara_Info"> <h1>Cafe Sara</h1></div>
 
  <form  method="post">
    <input type="hidden" name="txt" value="<?php if(isset($message)){ echo $message;}?>" >
