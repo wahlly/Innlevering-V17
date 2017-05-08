@@ -64,8 +64,7 @@ body {background-color: white;}
     visibility: hidden;
   }
 
-  #Restaurant_Overskrift_Boks{
-    visibility: hidden;
+  #Spisested_Overskrift_Boks{
     position: absolute;
     background-color: #61B0C5;
     height: 20%;
@@ -73,11 +72,31 @@ body {background-color: white;}
     visibility: hidden;
   }
 
+  #Utested_Overskrift_Boks{
+    position: absolute;
+    background-color: #795682;
+    height: 20%;
+    width: 100%;
+    visibility: hidden;
+  }
+  #Studiested_Overskrift_Boks{
+    position: absolute;
+    background-color: #FFD269;
+    height: 20%;
+    width: 100%;
+    visibility: hidden;
+  }
+
   #Boks_Overskrift{
-   text-align: center;
-   font-family: sans-serif;
-   font-weight: 500;
-   color: white;
+   position: absolute;
+   width: 100%;
+   height: 20%;
+  }
+  #Txt_Overskift_Box{
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 500;
+    color: white;
   }
   #Boks_close{
     position: absolute;
@@ -157,9 +176,9 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
   }
 }
   if (strpos($_SERVER[REQUEST_URI], '?IS')) {
-    $arrlength = count($CssU);
+    $arrlength = count($CssS);
     for($x = 0; $x < $arrlength; $x++) {
-    echo $CssU[$x];
+    echo $CssS[$x];
   }
 }
 //Stopp url søk
@@ -237,14 +256,14 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
 
     ?>
 <div id="Boks">
-  <div id="Restaurant_Overskrift_Boks">
-  <h1 id="Boks_Overskrift"><?php echo $boks_navn ?></h1></div>
-  <div id="Studiested_Boks"></div>
-  <div id="Utested_Boks"></div>
-
+  <div id="Spisested_Overskrift_Boks"></div>
+  <div id="Studiested_Overskrift_Boks"></div>
+  <div id="Utested_Overskrift_Boks"></div>
+ <div id="Boks_Overskrift"><h1 id="Txt_Overskift_Box"><?php echo $boks_navn ?></h1></div>
   <a href="?closeboks">
 <img id="Boks_close" src="../../img/img_layout/layout_icons/close.png">
 </a>
+
 </div>
 
 
