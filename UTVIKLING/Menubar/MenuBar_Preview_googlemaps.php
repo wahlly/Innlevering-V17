@@ -260,7 +260,23 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
   <div id="Studiested_Overskrift_Boks"></div>
   <div id="Utested_Overskrift_Boks"></div>
  <div id="Boks_Overskrift"><h1 id="Txt_Overskift_Box"><?php echo $boks_navn ?></h1></div>
-  <a href="?closeboks">
+<?php
+
+
+
+if (strpos($_SERVER[REQUEST_URI], '?IR')) {
+  echo "<a href=\"?closeIR\">\n";
+}
+elseif (strpos($_SERVER[REQUEST_URI], '?IS')) {
+  echo "<a href=\"?closeIS\">\n";
+}
+elseif (strpos($_SERVER[REQUEST_URI], '?IU')) {
+  echo "<a href=\"?closeIU\">\n";
+}
+else{
+  echo "<a href=\"?closeII\">\n";
+}
+?>
 <img id="Boks_close" src="../../img/img_layout/layout_icons/close.png">
 </a>
 
@@ -268,35 +284,39 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
 
 
 
-<form  method="post">
-  <input type="hidden" name="txt" value="<?php if(isset($message)){ echo $message;}?>" >
+
+
   <div id="btttnrow_container">
 
 
   <div id="prtybutton_container">
-  <input type="image" name="prtybutton" value="prtybutton" src="../../img/img_layout/layout_icons/ol.png" id="Prtybutton_icn"/>
+    <a href="?closeIU">
+  <img src="../../img/img_layout/layout_icons/ol.png" id="Prtybutton_icn" />
+</a>
   </div>
 
 
-
   <div id="stdybutton_container">
-  <input type="image" name="stdybutton" value="stdybutton" src="../../img/img_layout/layout_icons/les.png" id="stdybutton_icn">
+    <a href="?closeIS">
+  <img src="../../img/img_layout/layout_icons/les.png" id="stdybutton_icn">
   </div>
 
 
 
   <div id="eatybutton_container">
-  <input type="image" name="eatybutton" value="eatybutton" src="../../img/img_layout/layout_icons/burger.png" id="eatybutton_icn">
+    <a href="?closeIR">
+  <img src="../../img/img_layout/layout_icons/burger.png" id="eatybutton_icn">
   </div>
 
 
 
   <div id="sprtybutton_container">
-  <input type="image" name="sprtybutton" value="sprtybutton" src="../../img/img_layout/layout_icons/tren.png" id="sprtybutton_icn"/>
+    <a href="?closeII">
+  <img src="../../img/img_layout/layout_icons/tren.png" id="sprtybutton_icn"/>
   </div>
 
   </div>
-  </form>
+
   </div>
   <div id="menubar_container">
 

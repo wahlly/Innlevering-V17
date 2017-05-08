@@ -154,8 +154,8 @@ function initMap() {
       //Slutt Henter spisesteds lokasjoner
 
   $conn->close();
-  if(isset($_POST['eatybutton'])){
-  $arrlength = count($googlemapsSPG);
+  if(strpos($_SERVER[REQUEST_URI], '?IR') || (strpos($_SERVER[REQUEST_URI], '?closeIR')) ){
+$arrlength = count($googlemapsSPG);
   for($x = 0; $x < $arrlength; $x++) {
 echo "var SP$googlemapsSPS[$x] = new google.maps.Marker({\n";
 echo "      position: new google.maps.LatLng(\n";
@@ -169,7 +169,7 @@ echo "    });\n";
 }
 
 
-elseif(isset($_POST['stdybutton'])){
+elseif(strpos($_SERVER[REQUEST_URI], '?IS') || (strpos($_SERVER[REQUEST_URI], '?closeIS')) ){
   $arrlength = count($googlemapsSTG);
   for($x = 0; $x < $arrlength; $x++) {
     echo "var ST$googlemapsSTS[$x] = new google.maps.Marker({\n";
@@ -181,7 +181,7 @@ elseif(isset($_POST['stdybutton'])){
     echo "    });\n";
   }
 }
-elseif(isset($_POST['prtybutton'])){
+elseif(strpos($_SERVER[REQUEST_URI], '?IU') || (strpos($_SERVER[REQUEST_URI], '?closeIU')) ){
   $arrlength = count($googlemapsUTG);
   for($x = 0; $x < $arrlength; $x++) {
 
@@ -309,7 +309,7 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 
-  if(isset($_POST['eatybutton'])){
+  if(strpos($_SERVER[REQUEST_URI], '?IR') || (strpos($_SERVER[REQUEST_URI], '?closeIR')) ){
 $arrlength = count($markerSP);
 for($x = 0; $x < $arrlength; $x++) {
 echo "google.maps.event.addDomListener(SP$markerSP[$x], 'click', function() {\n";
@@ -317,7 +317,7 @@ echo "window.location.href = '?IR=SP&simplename=$markerSP[$x]';\n";
 echo "});\n";
 }
 }
-elseif(isset($_POST['stdybutton'])){
+elseif(strpos($_SERVER[REQUEST_URI], '?IS') || (strpos($_SERVER[REQUEST_URI], '?closeIS')) ){
 $arrlength = count($markerST);
 for($x = 0; $x < $arrlength; $x++) {
 echo "google.maps.event.addDomListener(ST$markerST[$x], 'click', function() {\n";
@@ -325,7 +325,7 @@ echo "window.location.href = '?IS=ST&simplename=$markerST[$x]';\n";
 echo "});\n";
 }
 }
-elseif(isset($_POST['prtybutton'])){
+elseif(strpos($_SERVER[REQUEST_URI], '?IU') || (strpos($_SERVER[REQUEST_URI], '?closeIU')) ){
 $arrlength = count($markerUT);
 for($x = 0; $x < $arrlength; $x++) {
 echo "google.maps.event.addDomListener(UT$markerUT[$x], 'click', function() {\n";
