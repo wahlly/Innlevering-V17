@@ -57,6 +57,9 @@ function initMap() {
     spisesteder: {
       icon: iconBase + 'poi_blue_min.png'
     },
+    informasjon: {
+      icon: iconBase + 'poi_red_min.png'
+    },
     studiesteder: {
       icon: iconBase + 'poi_yellow_min.png'
     }
@@ -79,26 +82,149 @@ function initMap() {
      die("Connection failed: " . $conn->connect_error);
   }
 
-  $sql = "SELECT googlemaps FROM sted";
+//Henter spisesteds lokasjoner
+  $sql = "SELECT simplename, googlemaps
+  FROM spisested
+  INNER JOIN sted ON spisested.Plass_Id = sted.Id";
   $result = $conn->query($sql);
-  $googlemaps = array();
+  $googlemapsSPG = array();
+  $googlemapsSPS = array();
   $i = 0;
   if ($result->num_rows > 0) {
      // output data of each row
      while($row = $result->fetch_assoc()) {
-         $googlemaps[$i] = $row["googlemaps"];
+         $googlemapsSPG[$i] = $row["googlemaps"];
+         $googlemapsSPS[$i] = $row["simplename"];
          $i++;
      }
-  } else {
-     echo "0 results";
   }
+  //Slutt Henter spisesteds lokasjoner
+
+//Henter studiested lokasjoner
+  $sql = "SELECT simplename, googlemaps
+  FROM studiested
+  INNER JOIN sted ON studiested.Studie_id = sted.Id";
+  $result = $conn->query($sql);
+  $googlemapsSTG = array();
+  $googlemapsSTS = array();
+  $i = 0;
+  if ($result->num_rows > 0) {
+     // output data of each row
+     while($row = $result->fetch_assoc()) {
+         $googlemapsSTG[$i] = $row["googlemaps"];
+         $googlemapsSTS[$i] = $row["simplename"];
+         $i++;
+     }
+  }
+  //Slutt Henter studiested lokasjoner
+
+  //Henter utesteds lokasjoner
+    $sql = "SELECT simplename, googlemaps
+    FROM utested
+    INNER JOIN sted ON utested.Ute_id = sted.Id";
+    $result = $conn->query($sql);
+    $googlemapsUTG = array();
+    $googlemapsUTS = array();
+    $i = 0;
+    if ($result->num_rows > 0) {
+       // output data of each row
+       while($row = $result->fetch_assoc()) {
+           $googlemapsUTG[$i] = $row["googlemaps"];
+           $googlemapsUTS[$i] = $row["simplename"];
+           $i++;
+       }
+    }
+    //Slutt Henter spisesteds lokasjoner
+
+    //Henter utesteds lokasjoner
+      $sql = "SELECT simplename, googlemaps
+      FROM sted";
+      $result = $conn->query($sql);
+      $googlemapsING = array();
+      $googlemapsINS = array();
+      $i = 0;
+      if ($result->num_rows > 0) {
+         // output data of each row
+         while($row = $result->fetch_assoc()) {
+             $googlemapsING[$i] = $row["googlemaps"];
+             $googlemapsINS[$i] = $row["simplename"];
+             $i++;
+         }
+      }
+      //Slutt Henter spisesteds lokasjoner
+
   $conn->close();
-  $arrlength = count($googlemaps);
+  if(isset($_POST['eatybutton'])){
+  $arrlength = count($googlemapsSPG);
   for($x = 0; $x < $arrlength; $x++) {
-    echo $googlemaps[$x];
+echo "var SP$googlemapsSPS[$x] = new google.maps.Marker({\n";
+echo "      position: new google.maps.LatLng(\n";
+echo $googlemapsSPG[$x];
+echo "      ),\n";
+echo "      icon: icons['spisesteder'].icon,\n";
+echo "      map: map\n";
+echo "    });\n";
 
   }
+}
+
+
+elseif(isset($_POST['stdybutton'])){
+  $arrlength = count($googlemapsSTG);
+  for($x = 0; $x < $arrlength; $x++) {
+    echo "var ST$googlemapsSTS[$x] = new google.maps.Marker({\n";
+    echo "      position: new google.maps.LatLng(\n";
+    echo $googlemapsSTG[$x];
+    echo "      ),\n";
+    echo "      icon: icons['studiesteder'].icon,\n";
+    echo "      map: map\n";
+    echo "    });\n";
+  }
+}
+elseif(isset($_POST['prtybutton'])){
+  $arrlength = count($googlemapsUTG);
+  for($x = 0; $x < $arrlength; $x++) {
+
+    echo "var UT$googlemapsUTS[$x] = new google.maps.Marker({\n";
+    echo "      position: new google.maps.LatLng(\n";
+    echo $googlemapsUTG[$x];
+    echo "      ),\n";
+    echo "      icon: icons['utesteder'].icon,\n";
+    echo "      map: map\n";
+    echo "    });\n";
+
+  }
+}
+elseif(isset($_POST['sprtybutton'])){
+  $arrlength = count($googlemapsING);
+  for($x = 0; $x < $arrlength; $x++) {
+
+    echo "var IN$googlemapsINS[$x] = new google.maps.Marker({\n";
+    echo "      position: new google.maps.LatLng(\n";
+    echo $googlemapsING[$x];
+    echo "      ),\n";
+    echo "      icon: icons['informasjon'].icon,\n";
+    echo "      map: map\n";
+    echo "    });\n";
+
+  }
+}
+else{
+  $arrlength = count($googlemapsING);
+  for($x = 0; $x < $arrlength; $x++) {
+
+    echo "var IN$googlemapsINS[$x] = new google.maps.Marker({\n";
+    echo "      position: new google.maps.LatLng(\n";
+    echo $googlemapsING[$x];
+    echo "      ),\n";
+    echo "      icon: icons['informasjon'].icon,\n";
+    echo "      map: map\n";
+    echo "    });\n";
+
+  }
+}
   ?>
+
 
 //DATABASEMAT
 
@@ -119,26 +245,111 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
    die("Connection failed: " . $conn->connect_error);
 }
-
-$sql = "SELECT marker FROM sted";
+//Gjør spisested markørene klikkbare
+$sql = "SELECT simplename
+FROM spisested
+INNER JOIN sted ON spisested.Plass_Id = sted.Id";
 $result = $conn->query($sql);
-$marker = array();
+$markerSP = array();
 $i = 0;
 if ($result->num_rows > 0) {
    // output data of each row
    while($row = $result->fetch_assoc()) {
-       $marker[$i] = $row["marker"];
+       $markerSP[$i] = $row["simplename"];
        $i++;
    }
-} else {
-   echo "0 results";
 }
-$conn->close();
-$arrlength = count($marker);
-for($x = 0; $x < $arrlength; $x++) {
-  echo $marker[$x];
+//Slutt Gjør spisested markørene klikkbare
 
+//Gjør studiested markørene klikkbare
+$sql = "SELECT simplename
+FROM studiested
+INNER JOIN sted ON studiested.Studie_id = sted.Id";
+$result = $conn->query($sql);
+$markerST = array();
+$i = 0;
+if ($result->num_rows > 0) {
+   // output data of each row
+   while($row = $result->fetch_assoc()) {
+       $markerST[$i] = $row["simplename"];
+       $i++;
+   }
 }
+//Slutt Gjør studiested markørene klikkbare
+
+//Gjør utested markørene klikkbare
+$sql = "SELECT simplename
+FROM utested
+INNER JOIN sted ON utested.Ute_id = sted.Id";
+$result = $conn->query($sql);
+$markerUT = array();
+$i = 0;
+if ($result->num_rows > 0) {
+   // output data of each row
+   while($row = $result->fetch_assoc()) {
+       $markerUT[$i] = $row["simplename"];
+       $i++;
+   }
+}
+//Slutt Gjør utested markørene klikkbare
+//Gjør informasjon markørene klikkbare
+$sql = "SELECT simplename
+FROM sted";
+$result = $conn->query($sql);
+$markerIN = array();
+$i = 0;
+if ($result->num_rows > 0) {
+   // output data of each row
+   while($row = $result->fetch_assoc()) {
+       $markerIN[$i] = $row["simplename"];
+       $i++;
+   }
+}
+//Slutt Gjør informasjon markørene klikkbare
+
+$conn->close();
+
+  if(isset($_POST['eatybutton'])){
+$arrlength = count($markerSP);
+for($x = 0; $x < $arrlength; $x++) {
+echo "google.maps.event.addDomListener(SP$markerSP[$x], 'click', function() {\n";
+echo "window.location.href = '?IR=SP&simplename=$markerSP[$x]';\n";
+echo "});\n";
+}
+}
+elseif(isset($_POST['stdybutton'])){
+$arrlength = count($markerST);
+for($x = 0; $x < $arrlength; $x++) {
+echo "google.maps.event.addDomListener(ST$markerST[$x], 'click', function() {\n";
+echo "window.location.href = '?IS=ST&simplename=$markerST[$x]';\n";
+echo "});\n";
+}
+}
+elseif(isset($_POST['prtybutton'])){
+$arrlength = count($markerUT);
+for($x = 0; $x < $arrlength; $x++) {
+echo "google.maps.event.addDomListener(UT$markerUT[$x], 'click', function() {\n";
+echo "window.location.href = '?IU=UT&simplename=$markerUT[$x]';\n";
+echo "});\n";
+}
+}
+elseif(isset($_POST['sprtybutton'])){
+$arrlength = count($markerIN);
+for($x = 0; $x < $arrlength; $x++) {
+echo "google.maps.event.addDomListener(IN$markerIN[$x], 'click', function() {\n";
+echo "window.location.href = '?II=IN&simplename=$markerIN[$x]';\n";
+echo "});\n";
+}
+}
+else{
+$arrlength = count($markerIN);
+for($x = 0; $x < $arrlength; $x++) {
+echo "google.maps.event.addDomListener(IN$markerIN[$x], 'click', function() {\n";
+echo "window.location.href = '?II=IN&simplename=$markerIN[$x]';\n";
+echo "});\n";
+}
+}
+
 ?>
 //DATABASEMAT
 
