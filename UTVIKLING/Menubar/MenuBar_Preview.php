@@ -1,5 +1,6 @@
 <html>
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="../../css/menubar.css">
   <link rel="stylesheet" href="../../css/filter_menu.css">
 <style>
@@ -49,6 +50,7 @@ body {background-color: white;}
               height: 100%;
             }
 
+          /* Henter inn posisjonene til alle de forskjellige nålene */
             <?php
             $servername = "martinwahlberg.no.mysql";
             $username = "martinwahlberg_no_westerdals_";
@@ -82,7 +84,8 @@ body {background-color: white;}
 
           }
           ?>
-            #poired{
+          /* Her avsluttes innhentingen av alle posisjonen til de forskjellige nålene */
+            #poi{
               position: absolute;
               height: 100%;
               width: 50%;
@@ -94,13 +97,23 @@ body {background-color: white;}
 
 <body>
 
+<!--Liten advarsel om å snu telefonen -->
+ <script> if(window.innerHeight > window.innerWidth){
+  alert("Vend telefonen til landskapsmodus for å bruke denne siden!");
+}
+</script>
+ <!-- Slutt på advarselen -->
+
+
   <div id="container_main">
 
   <div id="imgmap">
-    <img id="kartet" src="../../img/18049879_10154249201006923_140799690_o.png"/>
+    <img id="kartet" src="../../img/img_pictures/index_kart.png"/>
     </div>
 
+
     <?php
+    //Login info db
     $servername = "martinwahlberg.no.mysql";
     $username = "martinwahlberg_no_westerdals_";
     $password = "westerdals123";
@@ -113,55 +126,152 @@ body {background-color: white;}
        die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT html FROM sted";
+    //Her hentes htmlen til de uaktive elementene
+    $sql = "SELECT html_unactive FROM sted";
     $result = $conn->query($sql);
-    $css_pososv = array();
+    $html_unactive = array();
     $i = 0;
     if ($result->num_rows > 0) {
        // output data of each row
        while($row = $result->fetch_assoc()) {
-           $css_pososv[$i] = $row["html"];
+           $html_unactive[$i] = $row["html_unactive"];
            $i++;
        }
     } else {
        echo "0 results";
     }
-    $conn->close();
+
     $arrlength = count($css_pososv);
     for($x = 0; $x < $arrlength; $x++) {
-      echo $css_pososv[$x];
+      echo $html_unactive[$x];
 
     }
+
+
+
+    //Spørring for prtybutton start
+    $sql = "SELECT html_active FROM sted WHERE id = 1";
+    $result = $conn->query($sql);
+    $prtybutton = array();
+    $i = 0;
+    if ($result->num_rows > 0) {
+       // output data of each row
+       while($row = $result->fetch_assoc()) {
+           $prtybutton[$i] = $row["html_active"];
+           $i++;
+       }
+    }
+    //Spørring for prtybutton slutt
+
+
+    //Spørring for stdybutton start
+    $sql = "SELECT html_active FROM sted WHERE id != 1";
+    $result = $conn->query($sql);
+    $stdybutton = array();
+    $i = 0;
+    if ($result->num_rows > 0) {
+       // output data of each row
+       while($row = $result->fetch_assoc()) {
+           $stdybutton[$i] = $row["html_active"];
+           $i++;
+       }
+    }
+    //Spørring for stdybutton slutt
+
+
+    //Spørring for eatybutton start
+    $sql = "SELECT * FROM sted";
+    $result = $conn->query($sql);
+    $eatybutton = array();
+    $i = 0;
+    if ($result->num_rows > 0) {
+       // output data of each row
+       while($row = $result->fetch_assoc()) {
+           $eatybutton[$i] = $row["html_active"];
+           $i++;
+       }
+    }
+    //Spørring for eatybutton slutt
+
+    //Spørring for sprtybutton start
+    $sql = "SELECT html_unactive FROM sted";
+    $result = $conn->query($sql);
+    $sprtybutton = array();
+    $i = 0;
+    if ($result->num_rows > 0) {
+       // output data of each row
+       while($row = $result->fetch_assoc()) {
+           $sprtybutton[$i] = $row["html_unactive"];
+           $i++;
+       }
+    }
+    //Spørring for sprtybutton slutt
+
+
+    $conn->close();
+
     ?>
 
+
+  <!--Knapper Start-->
+    <?php
+    if(isset($_POST['prtybutton'])){
+      $arrlength = count($prtybutton);
+      for($x = 0; $x < $arrlength; $x++) {
+        echo $prtybutton[$x];
+      }
+    }
+    if(isset($_POST['stdybutton'])){
+      $arrlength = count($stdybutton);
+      for($x = 0; $x < $arrlength; $x++) {
+        echo $stdybutton[$x];
+      }
+    }
+    if(isset($_POST['eatybutton'])){
+      $arrlength = count($eatybutton);
+      for($x = 0; $x < $arrlength; $x++) {
+        echo $eatybutton[$x];
+      }
+    }
+    if(isset($_POST['sprtybutton'])){
+      $arrlength = count($sprtybutton);
+      for($x = 0; $x < $arrlength; $x++) {
+        echo $sprtybutton[$x];
+      }
+    }
+    ?>
+  <!-- Knapper Slutt -->
+
+
+ <form  method="post">
+   <input type="text" name="txt" value="<?php if(isset($message)){ echo $message;}?>" >
   <div id="btttnrow_container">
 
-  <a href="#FilterParty">
+
   <div id="prtybutton_container">
-  <img src="../../img/icons/ol.png" id="Prtybutton_icn"/>
+  <input type="image" name="prtybutton" value="prtybutton" src="../../img/img_layout/layout_icons/ol.png" id="Prtybutton_icn"/>
   </div>
-  </a>
 
-  <a href="#FilterLeseSteder">
+
+
   <div id="stdybutton_container">
-  <img src="../../img/icons/les.png" id="stdybutton_icn"/>
+  <input type="image" name="stdybutton" value="stdybutton" src="../../img/img_layout/layout_icons/les.png" id="stdybutton_icn">
   </div>
-  </a>
 
-  <a href="#FilterSpise">
+
+
   <div id="eatybutton_container">
-  <img src="../../img/icons/burger.png" id="eatybutton_icn"/>
+  <input type="image" name="eatybutton" value="eatybutton" src="../../img/img_layout/layout_icons/burger.png" id="eatybutton_icn">
   </div>
-  </a>
 
 
-  <a href="#FilterTrening">
+
   <div id="sprtybutton_container">
-  <img src="../../img/icons/tren.png" id="sprtybutton_icn"/>
+  <input type="image" name="sprtybutton" value="sprtybutton" src="../../img/img_layout/layout_icons/tren.png" id="sprtybutton_icn"/>
   </div>
-  </a>
 
   </div>
+  </form>
   </div>
   <div id="menubar_container">
 
@@ -193,9 +303,11 @@ body {background-color: white;}
     <div id="Hjem_menu_element_bg"></div>
     <div id="Hjem_menu_element_extend">
       <div id="Hjem_Trapes_Farge"></div>
+      <div id="Hjem_Linje_farge"></div>
       <div id="Hjem_Trapes_Hvit"></div>
       <div id="Hjem_Linje_Hoyre"></div>
-      <div id="Hjem_Linje_Venstre"></div>
+      <div id="Hjem_Linje_hvit"></div>
+
     </div>
     <div id="Hjem_menu_element_border"></div>
     <div id="Hjem_menu_logo_box">
@@ -218,7 +330,7 @@ body {background-color: white;}
   <div id="Sok_menu_element_bg">
     <div id="search-box-wrapper">
         <input type="text" placeholder="Hvor vil du?" id="search-box-input">
-        <input id="search-box-button" type="image" src="../../img/icons/search.png" />
+        <input id="search-box-button" type="image" src="../../img/img_layout/layout_icons/search.png" />
     </div>
     <div id="Sok_menu_element_line"></div>
   </div>
