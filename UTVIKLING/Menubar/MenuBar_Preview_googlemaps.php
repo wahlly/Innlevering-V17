@@ -57,17 +57,19 @@ body {background-color: white;}
   #Boks{
     position: absolute;
     top: 25%;
-    left: 25%;
+    left: 40%;
     height: 50%;
-    width: 50%;
+    width: 20%;
     background-color: white;
     visibility: hidden;
+
   }
 
   #Spisested_Overskrift_Boks{
     position: absolute;
     background-color: #61B0C5;
-    height: 20%;
+    top:40%;
+    height: 15%;
     width: 100%;
     visibility: hidden;
   }
@@ -75,28 +77,39 @@ body {background-color: white;}
   #Utested_Overskrift_Boks{
     position: absolute;
     background-color: #795682;
-    height: 20%;
+    top:40%;
+    height: 15%;
     width: 100%;
     visibility: hidden;
   }
   #Studiested_Overskrift_Boks{
     position: absolute;
     background-color: #FFD269;
-    height: 20%;
+    top:40%;
+    height: 15%;
     width: 100%;
     visibility: hidden;
   }
 
   #Boks_Overskrift{
    position: absolute;
+   position: absolute;
+   top: 37%;
    width: 100%;
-   height: 20%;
+   height: 15%;
   }
   #Txt_Overskift_Box{
+
     text-align: center;
     font-family: sans-serif;
     font-weight: 500;
     color: white;
+  }
+  #Boks_bilde{
+    position: absolute;
+    top: 0%;
+    height: 40%;
+    width: 100%;
   }
   #Boks_close{
     position: absolute;
@@ -248,6 +261,7 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
      // output data of each row
      while($row = $result->fetch_assoc()) {
          $boks_navn = $row["Navn"];
+         $boks_image = $row["image_path"];
 
      }
     } else {
@@ -260,6 +274,7 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
   <div id="Studiested_Overskrift_Boks"></div>
   <div id="Utested_Overskrift_Boks"></div>
  <div id="Boks_Overskrift"><h1 id="Txt_Overskift_Box"><?php echo $boks_navn ?></h1></div>
+ <img id="Boks_bilde" src="<?php echo $boks_image?>"/>
 <?php
 
 
