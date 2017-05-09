@@ -51,7 +51,6 @@ body {background-color: white;}
     top: 85%;
     margin: 0;
 
-
   }
 
   #Boks{
@@ -72,6 +71,30 @@ body {background-color: white;}
     height: 15%;
     width: 100%;
     visibility: hidden;
+  }
+  #Spisested_hurtiginfo_boks1{
+    position: absolute;
+    width:33.333333333333333333%;
+    height: 15%;
+    bottom: 0%;
+    left:0%;
+    background-color: #ff0000;
+  }
+  #Spisested_hurtiginfo_boks2{
+    position: absolute;
+    width:33.333333333333333333%;
+    height: 15%;
+    bottom: 0%;
+    left:33.333333333333333333%;
+    background-color: #00ff00;
+  }
+  #Spisested_hurtiginfo_boks3{
+    position: absolute;
+    width:33.333333333333333333%;
+    height: 15%;
+    bottom: 0%;
+    left:66.666666666666%;
+    background-color: #0000ff;
   }
 
   #Utested_Overskrift_Boks{
@@ -271,6 +294,9 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
     ?>
 <div id="Boks">
   <div id="Spisested_Overskrift_Boks"></div>
+  <div id="Spisested_hurtiginfo_boks1"></div>
+  <div id="Spisested_hurtiginfo_boks2"></div>
+  <div id="Spisested_hurtiginfo_boks3"></div>
   <div id="Studiested_Overskrift_Boks"></div>
   <div id="Utested_Overskrift_Boks"></div>
  <div id="Boks_Overskrift"><h1 id="Txt_Overskift_Box"><?php echo $boks_navn ?></h1></div>
