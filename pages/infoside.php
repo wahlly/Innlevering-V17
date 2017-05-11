@@ -15,15 +15,19 @@
         left: 0;
       }
 
-      .event_img{
+      #event_img{
         position: absolute;
         margin-left: 19.5%;
-        background-color: #795682;
         top: 9%;
         width: 60%;
         height: 50%;
         z-index: -1;
+        overflow: hidden;
+      }
 
+      #info_img {
+        position: absolute;
+        width: 100%;
       }
 
       #title {
@@ -34,7 +38,7 @@
         width: 40%;
         height: 20%;
         font-family: sans-serif;
-        font-size: 3em;
+        font-size: 2.7vw;
         color: black;
         border-bottom: solid black 2px;
       }
@@ -46,7 +50,7 @@
         width: 60%;
         height: 20%;
         text-align: center;
-        font-size: 1.5em;
+        font-size: 1.2vw;
         font-family: sans-serif;
         font-weight: 300;
         color: #565656;
@@ -88,9 +92,9 @@
 
       .infoline_box {
         position: absolute;
+        text-align: center;
         width: 33.333%;
         height: 33.333%;
-        border: solid black 1px;
       }
 
       #box1 {
@@ -136,6 +140,7 @@
        while($row = $result->fetch_assoc()) {
            $code = $row["Id"];
            $infonavn = $row["Navn"];
+           $imgsti = $row["image_path"];
            $i++;
 
        }
@@ -183,7 +188,8 @@
 
       <div id"info_conteiner">
       <?php require '../assets/menubar.php' ?>
-      <div class="event_img" id="cafesarah_img">
+      <div id="event_img">
+          <img id="info_img" src="<?php echo "$imgsti" ?>"/>
       </div>
       <div id="title">
         <h1><?php echo $infonavn ?><h1>
@@ -200,19 +206,36 @@
 
       <div id="db_box">
         <div class="infoline" id="line1">
-            <div class="infoline_box" id="box1"></div>
-            <div class="infoline_box" id="box2"></div>
-            <div class="infoline_box" id="box3"></div>
+            <div class="infoline_box" id="box1">
+              <p>Prisnivå:</br><?php echo "$prisniva" ?></p>
+            </div>
+            <div class="infoline_box" id="box2">
+              <p>Vegetarvennelig:</br><?php echo "$vegetar" ?></p>
+            </div>
+            <div class="infoline_box" id="box3">
+              <p>Levering:</br><?php echo "$levering" ?></p>
+            </div>
         </div>
         <div class="infoline" id="line2">
-          <div class="infoline_box" id="box1"></div>
-          <div class="infoline_box" id="box2"></div>
-          <div class="infoline_box" id="box3"></div>
+          <div class="infoline_box" id="box1">
+            <p>Strømuttak:</br><?php echo "$strom" ?></p>
+          </div>
+          <div class="infoline_box" id="box2">
+            <p>Wifi:</br><?php echo "$wifi" ?></p>
+          </div>
+          <div class="infoline_box" id="box3">
+            <p>Pris kaffe:</br><?php echo "$kaffe" ?></p>
+          </div>
         </div>
         <div class="infoline" id="line3">
-          <div class="infoline_box" id="box1"></div>
-          <div class="infoline_box" id="box2"></div>
-          <div class="infoline_box" id="box3"></div>
+          <div class="infoline_box" id="box1">
+            <p>Ølpris:</br><?php echo "$olpril" ?></p>
+          </div>
+          <div class="infoline_box" id="box2">
+            <p>Aldersgrense:</br><?php echo "$alder" ?></p>
+          </div>
+          <div class="infoline_box" id="box3">
+          </div>
         </div>
       </div>
       <div id="footer"></div>
