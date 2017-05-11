@@ -62,23 +62,26 @@
         height: 30%;
         top:100%;
         margin-left: 19.5%;
-        border: solid grey 1px;
+        border-top: solid 1px #f1f1f1;
+        border-left: solid 1px #f1f1f1;
 
       }
 
       .infoline{
         width: 100%;
         height: 33.333%;
+        background-color: #fafafa;
       }
 
       #line1 {
+
       }
 
       #line2 {
-
       }
 
       #line3{
+
       }
 
       #footer {
