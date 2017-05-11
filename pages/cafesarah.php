@@ -136,7 +136,7 @@
        while($row = $result->fetch_assoc()) {
            $code = $row["Id"];
            $infonavn = $row["Navn"]
-
+           $i++;
 
        }
       }
@@ -150,6 +150,7 @@
            $prisniva = $row["Prisniva"];
            $vegetar = $row["Vegetar"];
            $levering = $row["Levering"];
+           $i++;
        }
       }
 
@@ -162,6 +163,7 @@
            $strom = $row["Stromuttak"];
            $wifi = $row["Wifi"];
            $kaffe = $row["KaffePris"];
+           $i++;
        }
       }
 
@@ -173,6 +175,7 @@
        while($row = $result->fetch_assoc()) {
            $olpril = $row["OlPris"];
            $alder = $row["Aldersgrense"];
+           $i++;
        }
       }
 
