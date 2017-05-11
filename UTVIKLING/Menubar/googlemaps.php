@@ -6,6 +6,38 @@ function initMap() {
     center: new google.maps.LatLng(59.917376, 10.756401),
     mapTypeId: 'roadmap'
   });
+
+  var allowedBounds = new google.maps.LatLngBounds(
+    new google.maps.LatLng(59.899227, 10.701060),
+  new google.maps.LatLng(59.925699, 10.777372)
+);
+// Listen for the dragend event
+  google.maps.event.addListener(map, 'dragend', function() {
+    if (allowedBounds.contains(map.getCenter())) return;
+
+    // Out of bounds - Move the map back within the bounds
+
+    var c = map.getCenter(),
+        x = c.lng(),
+        y = c.lat(),
+        maxX = allowedBounds.getNorthEast().lng(),
+        maxY = allowedBounds.getNorthEast().lat(),
+        minX = allowedBounds.getSouthWest().lng(),
+        minY = allowedBounds.getSouthWest().lat();
+
+    if (x < minX) x = minX;
+    if (x > maxX) x = maxX;
+    if (y < minY) y = minY;
+    if (y > maxY) y = maxY;
+
+    map.setCenter(new google.maps.LatLng(y, x));
+  });
+
+  // Limit the zoom level
+  google.maps.event.addListener(map, 'zoom_changed', function() {
+    if (map.getZoom() < minZoomLevel) map.setZoom(minZoomLevel);
+  });
+
   var myStyles =[
   {
     "elementType": "geometry",
@@ -225,7 +257,10 @@ function initMap() {
     draggable: true,
     panControl: false,
     disableDefaultUI: true,
-    styles: myStyles
+    styles: myStyles,
+    minZoom: 14,
+    zoomControl: true
+
   });
 
   var iconBase = '../../img/img_layout/layout_icons/';
@@ -241,6 +276,9 @@ function initMap() {
     },
     studiesteder: {
       icon: iconBase + 'poi_yellow_min.png'
+    },
+    skole: {
+      icon: iconBase + 'skole_poi.png'
     }
   };
 
@@ -404,6 +442,11 @@ else{
   }
 }
   ?>
+var fjerdingen = new google.maps.Marker({
+position: new google.maps.LatLng(59.916237, 10.760186),
+icon: icons['skole'].icon,
+map: map
+});
 
 
 //DATABASEMAT
