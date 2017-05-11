@@ -135,7 +135,7 @@
        // output data of each row
        while($row = $result->fetch_assoc()) {
            $code = $row["Id"];
-           $infonavn = $row["Navn"]
+           $infonavn = $row["Navn"];
            $i++;
 
        }
