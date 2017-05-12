@@ -220,6 +220,9 @@
           <img id="info_img" src="<?php echo "$imgsti" ?>"/>
       </div>
 
+
+
+      <!---Bruke tabell her istedet --->
       <div id="db_box">
         <div class="infoline" id="line1">
             <div class="infoline_box" id="box1">
@@ -254,6 +257,7 @@
           </div>
         </div>
       </div>
+        <!---Bruke tabell her istedet --->
     </div>
     <?php require '../assets/menubar.php' ?>
     <div id="footer"></div>
