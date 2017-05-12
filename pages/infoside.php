@@ -8,21 +8,32 @@
     <title>Cafe Sarah</title>
 
     <style>
-      #info_conteiner{
+
+      #container_main{
+        position: absolute;
         width: 100%;
         height: 100%;
         top: 0;
         left: 0;
-      }
 
+      }
+      #container_innhold{
+        position: absolute;
+        top:2%;
+        width: 60%;
+        height: 100%;
+        left:20%;
+        background-color: #fcfcfc;
+
+
+      }
       #event_img{
         position: absolute;
-        margin-left: 19.5%;
         top: 9%;
-        width: 60%;
+        width: 100%;
         height: 50%;
-        z-index: -1;
         overflow: hidden;
+        left:0%;
       }
 
       #info_img {
@@ -32,36 +43,36 @@
 
       #title {
         position: absolute;
-        margin-left: 30%;
         top: 55%;
         text-align: center;
-        width: 40%;
+        width: 66.6666667%;
         height: 20%;
         font-family: sans-serif;
         font-size: 2.7vw;
         color: black;
         border-bottom: solid black 2px;
+
+        left:16.666665%;
       }
 
       #textbox {
         position: absolute;
-        margin-left: 19.5%;
         top: 75%;
-        width: 60%;
+        width: 100%;
         height: 20%;
         text-align: center;
         font-size: 1.2vw;
         font-family: sans-serif;
         font-weight: 300;
         color: #565656;
+
       }
 
       #db_box{
         position: absolute;
-        width: 60%;
+        width: 100%;
         height: 30%;
         top:100%;
-        margin-left: 19.5%;
         border-top: solid 1px #f1f1f1;
         border-left: solid 1px #f1f1f1;
 
@@ -189,11 +200,10 @@
 
       ?>
 
-      <div id"info_conteiner">
-      <?php require '../assets/menubar.php' ?>
-      <div id="event_img">
-          <img id="info_img" src="<?php echo "$imgsti" ?>"/>
-      </div>
+      <div id"container_main">
+
+      <div id="container_innhold">
+
       <div id="title">
         <h1><?php echo $infonavn ?><h1>
       </div>
@@ -206,6 +216,9 @@
       </div>
 
 
+      <div id="event_img">
+          <img id="info_img" src="<?php echo "$imgsti" ?>"/>
+      </div>
 
       <div id="db_box">
         <div class="infoline" id="line1">
@@ -241,9 +254,10 @@
           </div>
         </div>
       </div>
-      <div id="footer"></div>
     </div>
-
+    <?php require '../assets/menubar.php' ?>
+    <div id="footer"></div>
+</div>
 
 
 </body>
