@@ -301,6 +301,7 @@
 }
 
 #search-box-input{
+
 position: absolute;
 top: 15%;
 left: 5%;
@@ -316,8 +317,11 @@ background-color: transparent;
   height: 100%;
   width: 100%;
 }
-
 #search-box-button{
+  outline:0;
+}
+#search-box-button{
+  outline:0;
 position: absolute;
 top: 15%;
 left: 80%;
@@ -325,6 +329,8 @@ width: 15%;
 height: 70%
 
 }
+
+
 
 #Bar_menu_element_bg:hover + #Hjem_menu_logo_bar_box { visibility: visible;}
 #Restaurant_menu_element_bg:hover + #Hjem_menu_logo_rest_box{ visibility: visible;}
