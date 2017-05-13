@@ -24,10 +24,12 @@
         height: 100%;
         left:20%;
         background-color: #fcfcfc;
+        z-index: -1;
 
 
       }
       #event_img{
+        z-index: -1;
         position: absolute;
         top: 9%;
         width: 100%;
@@ -202,7 +204,11 @@
 
       <div id"container_main">
 
+        <?php require '../assets/menubar.php' ?>
+
       <div id="container_innhold">
+
+
 
       <div id="title">
         <h1><?php echo $infonavn ?><h1>
@@ -223,7 +229,63 @@
 
 
       <!---Bruke tabell her istedet --->
+      <?php
+
+        if ($vegetar != NULL) {
+          $spisested = array();
+          $spisested[0] = "<tr>\n";
+          $spisested[1] = "<th> Vegetar </br> $vegetar </th>\n";
+          $spisested[2] = "<th> Prisnivå </br> $prisniva </th>\n";
+          $spisested[3] = "<th> Levering </br> $levering </th>\n";
+          $spisested[4] = "</tr>\n";
+        };
+
+        if ($wifi != NULL) {
+          $studie = array();
+          $studie[0] = "<tr>\n";
+          $studie[1] = "<th> Wifi </br> $wifi </th>\n";
+          $studie[2] = "<th> Strømuttak </br> $strom </th>\n";
+          $studie[3] = "<th> Pris kaffe </br> $kaffe </th>\n";
+          $studie[4] = "</tr>\n";
+        };
+
+        if ($alder != NULL) {
+          $baar = array();
+          $baar[0] = "<tr>\n";
+          $baar[1] = "<th> Aldersgrense </br> $alder </th>\n";
+          $baar[2] = "<th> Ølpris </br> $olpris </th>\n";
+          $baar[3] = "</tr>\n";
+        };
+
+
+
+       ?>
+
+
+
+
       <div id="db_box">
+
+      <table style="width:100%">
+        <?php
+        $arrlength = count($spisested);
+         for($x = 0; $x < $arrlength; $x++) {
+           echo $spisested[$x];
+         }
+
+         $arrlength = count($studie);
+          for($x = 0; $x < $arrlength; $x++) {
+            echo $studie[$x];
+          }
+
+          $arrlength = count($baar);
+           for($x = 0; $x < $arrlength; $x++) {
+             echo $baar[$x];
+           }
+         ?>
+      </table>
+
+      <!--
 
         <table style="width:100%">
           <tr>
@@ -242,49 +304,13 @@
             <th>Ølpris:</br><?php echo "$olpril" ?></th>
             <th>Aldersgrense:</br><?php echo "$alder" ?></th>
           </tr>
-
-      <!--      //*
-      *  <div class="infoline" id="line1">
-      *      <div class="infoline_box" id="box1">
-      *       <p>Prisnivå:</br><?php //echo "$prisniva" ?></p>
-      *      </div>
-      *      <div class="infoline_box" id="box2">
-      *        <p>Vegetarvennelig:</br><?php //echo "$vegetar" ?></p>
-      *      </div>
-      *      <div class="infoline_box" id="box3">
-      *        <p>Levering:</br><?php //echo "$levering" ?></p>
-      *      </div>
-      *  </div>
-      *  <div class="infoline" id="line2">
-      *    <div class="infoline_box" id="box1">
-      *      <p>Strømuttak:</br><?php //echo "$strom" ?></p>
-      **    </div>
-        *  <div class="infoline_box" id="box2">
-        *    <p>Wifi:</br><?php// echo "$wifi" ?></p>
-        *  </div>
-        *  <div class="infoline_box" id="box3">
-        *    <p>Pris kaffe:</br><?php// echo "$kaffe" ?></p>
-        *  </div>
-      *  </div>
-      *  <div class="infoline" id="line3">
-      *    <div class="infoline_box" id="box1">
-      *      <p>Ølpris:</br><?php// echo "$olpril" ?></p>
-      *    </div>
-      *    <div class="infoline_box" id="box2">
-      *      <p>Aldersgrense:</br><?php// echo "$alder" ?></p>
-      *    </div>
-      *    <div class="infoline_box" id="box3">
-      *    </div>
-      *  </div>
-      *</div> -->
-*
-
+           -->
+        </div>
 
         <!---Bruke tabell her istedet --->
 
 
     <div id="footer"></div>
-      <?php require '../assets/menubar.php' ?>
       </div>
 </div>
 
