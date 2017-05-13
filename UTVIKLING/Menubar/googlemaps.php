@@ -278,7 +278,7 @@ function initMap() {
       icon: iconBase + 'poi_yellow_min.png'
     },
     skole: {
-      icon: iconBase + 'skole_poi.png'
+      icon: iconBase + 'poi_skole_poi.png'
     }
   };
 
@@ -448,6 +448,12 @@ icon: icons['skole'].icon,
 map: map
 });
 
+var vulkan = new google.maps.Marker({
+position: new google.maps.LatLng(59.923320, 10.752175),
+icon: icons['skole'].icon,
+map: map
+});
+
 
 //DATABASEMAT
 
@@ -568,7 +574,7 @@ else{
 $arrlength = count($markerIN);
 for($x = 0; $x < $arrlength; $x++) {
 echo "google.maps.event.addDomListener(IN$markerIN[$x], 'click', function() {\n";
-echo "window.location.href = '?II=IN&simplename=$markerIN[$x]';\n";
+echo "window.location.href = '../../pages/infoside.php?simplename=$markerIN[$x]';\n";
 echo "});\n";
 }
 }
