@@ -125,6 +125,12 @@
         left: 66.666%;
       }
 
+      #tbl {
+        width: 100%;
+        height: 100%;
+        //størrelse på celler
+      }
+
 
 
     </style>
@@ -266,7 +272,7 @@
 
       <div id="db_box">
 
-      <table style="width:100%">
+      <table id="tbl">
         <?php
         $arrlength = count($spisested);
          for($x = 0; $x < $arrlength; $x++) {
