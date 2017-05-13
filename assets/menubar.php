@@ -41,7 +41,7 @@
   </div>
 </a>
 
-  <a href="#Hjem">
+  <a href="/index.php">
   <div id="Hjem_menu_element_bg"></div>
   <div id="Hjem_menu_element_extend">
     <div id="Hjem_Trapes_Farge"></div>
