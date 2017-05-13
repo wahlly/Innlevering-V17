@@ -259,7 +259,8 @@ function initMap() {
     disableDefaultUI: true,
     styles: myStyles,
     minZoom: 14,
-    zoomControl: true
+    zoomControl: true,
+    scrollwheel: false
 
   });
 
