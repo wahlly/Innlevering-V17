@@ -6,5 +6,7 @@
             "email": "andtro16@student.westerdals.no"
         }
     ],
-    "require": {}
+    "require": {
+        "nesbot/carbon": "^1.22"
+    }
 }
