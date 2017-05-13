@@ -224,43 +224,68 @@
 
       <!---Bruke tabell her istedet --->
       <div id="db_box">
-        <div class="infoline" id="line1">
-            <div class="infoline_box" id="box1">
-              <p>Prisnivå:</br><?php echo "$prisniva" ?></p>
-            </div>
-            <div class="infoline_box" id="box2">
-              <p>Vegetarvennelig:</br><?php echo "$vegetar" ?></p>
-            </div>
-            <div class="infoline_box" id="box3">
-              <p>Levering:</br><?php echo "$levering" ?></p>
-            </div>
-        </div>
-        <div class="infoline" id="line2">
-          <div class="infoline_box" id="box1">
-            <p>Strømuttak:</br><?php echo "$strom" ?></p>
-          </div>
-          <div class="infoline_box" id="box2">
-            <p>Wifi:</br><?php echo "$wifi" ?></p>
-          </div>
-          <div class="infoline_box" id="box3">
-            <p>Pris kaffe:</br><?php echo "$kaffe" ?></p>
-          </div>
-        </div>
-        <div class="infoline" id="line3">
-          <div class="infoline_box" id="box1">
-            <p>Ølpris:</br><?php echo "$olpril" ?></p>
-          </div>
-          <div class="infoline_box" id="box2">
-            <p>Aldersgrense:</br><?php echo "$alder" ?></p>
-          </div>
-          <div class="infoline_box" id="box3">
-          </div>
-        </div>
-      </div>
+
+        <table style="width:100%">
+          <tr>
+            <th>Prisnivå:</br><?php echo "$prisniva" ?></th>
+            <th>Vegetarvennelig:</br><?php echo "$vegetar" ?></th>
+            <th>Levering:</br><?php echo "$levering" ?></th>
+          </tr>
+
+          <tr>
+            <th>Strømuttak:</br><?php echo "$strom" ?></th>
+            <th>Wifi:</br><?php echo "$wifi" ?></th>
+            <th>Pris kaffe:</br><?php echo "$kaffe" ?></th>
+          </tr>
+
+          <tr>
+            <th>Ølpris:</br><?php echo "$olpril" ?></th>
+            <th>Aldersgrense:</br><?php echo "$alder" ?></th>
+          </tr>
+
+      <!--      //*
+      *  <div class="infoline" id="line1">
+      *      <div class="infoline_box" id="box1">
+      *       <p>Prisnivå:</br><?php //echo "$prisniva" ?></p>
+      *      </div>
+      *      <div class="infoline_box" id="box2">
+      *        <p>Vegetarvennelig:</br><?php //echo "$vegetar" ?></p>
+      *      </div>
+      *      <div class="infoline_box" id="box3">
+      *        <p>Levering:</br><?php //echo "$levering" ?></p>
+      *      </div>
+      *  </div>
+      *  <div class="infoline" id="line2">
+      *    <div class="infoline_box" id="box1">
+      *      <p>Strømuttak:</br><?php //echo "$strom" ?></p>
+      **    </div>
+        *  <div class="infoline_box" id="box2">
+        *    <p>Wifi:</br><?php// echo "$wifi" ?></p>
+        *  </div>
+        *  <div class="infoline_box" id="box3">
+        *    <p>Pris kaffe:</br><?php// echo "$kaffe" ?></p>
+        *  </div>
+      *  </div>
+      *  <div class="infoline" id="line3">
+      *    <div class="infoline_box" id="box1">
+      *      <p>Ølpris:</br><?php// echo "$olpril" ?></p>
+      *    </div>
+      *    <div class="infoline_box" id="box2">
+      *      <p>Aldersgrense:</br><?php// echo "$alder" ?></p>
+      *    </div>
+      *    <div class="infoline_box" id="box3">
+      *    </div>
+      *  </div>
+      *</div> -->
+*
+
+
         <!---Bruke tabell her istedet --->
-    </div>
-    <?php require '../assets/menubar.php' ?>
+
+
     <div id="footer"></div>
+      <?php require '../assets/menubar.php' ?>
+      </div>
 </div>
 
 
