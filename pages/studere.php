@@ -15,15 +15,58 @@
         height: 100%;
       }
 
-      #card_container {
-        background-color: #f2f2f2;
+      #cardwrap{
+
         position: absolute;
-        margin-left: 10%;
-        top: 30%;
-        width: 80%;
-        height: 100%;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+        height: 40%;
+        width: 35%;
       }
 
+      #card_imag{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        /*z-index: -1; **/
+      }
+
+      #infowrap {
+        position: absolute;
+        height: 35%;
+        width: 100%;
+        bottom: 0;
+      }
+
+      #mer {
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 20%;
+        background-color: #795682;
+        text-align: center;
+        font-family: sans-serif;
+      }
+
+      #detalj{
+        color: white;
+      }
+
+      #navnbox{
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 80%;
+        background: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,1));
+      }
+
+      #pa{
+        position: absolute;
+        left: 10%;
+        margin: auto;
+        top: 20%;
+        font-family: sans-serif;
+        font-size: 3vw;
+      }
       #footer {
         position: absolute;
         width: 100%;
@@ -33,27 +76,29 @@
 
       }
 
-      .card{
-        position: absolute;
-        margin: auto;
-        width: 20%;
-        height: 35%;
-        background-color: blue;
-      }
+
     </style>
 </head>
 <body>
+
+
       <div id="container_m">
         <?php require '../assets/menubar.php' ?>
 
-        <div id="card_container">
-          <div class="card" id="card1"></div>
-          <div class="card" id="card2"></div>
-          <div class="card" id="card3"></div>
-          <div class="card" id="card4"></div>
+          <div id="cardwrap">
+                <img id="card_imag" src="../../img/img_pictures/restaurant.jpg"/>
+                <div id="infowrap">
+                    <div id="mer">
+                      <p id="detalj">Detaljer</p>
+                    </div>
+                    <div id="navnbox">
+                      <p id="pa">Cafe Sara</p>
+                    </div>
+
+                </div>
+
           </div>
 
-        </div>
 
         <div id="footer"></div>
 
