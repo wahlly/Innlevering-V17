@@ -63,7 +63,7 @@ body {background-color: white;}
 
   #Boks{
     position: absolute;
-    top: 25%;
+    top: 125%;
     left: 40%;
     height: 50%;
     width: 20%;
@@ -279,6 +279,7 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
   <div id="container_main">
 
   <div id="imgmap">
+    <a name="kartet"></a>
     <div id="map"></div>
     <?php require './assets/googlemaps.php' ?>
 
@@ -329,16 +330,16 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
 
 
 if (strpos($_SERVER[REQUEST_URI], '?IR')) {
-  echo "<a href=\"?closeIR\">\n";
+  echo "<a href=\"?closeIR#kartet\">\n";
 }
 elseif (strpos($_SERVER[REQUEST_URI], '?IS')) {
-  echo "<a href=\"?closeIS\">\n";
+  echo "<a href=\"?closeIS#kartet\">\n";
 }
 elseif (strpos($_SERVER[REQUEST_URI], '?IU')) {
-  echo "<a href=\"?closeIU\">\n";
+  echo "<a href=\"?closeIU#kartet\">\n";
 }
 else{
-  echo "<a href=\"?closeII\">\n";
+  echo "<a href=\"?closeII#kartet\">\n";
 }
 ?>
 <img id="Boks_close" src="./img/img_layout/layout_icons/close.png">
@@ -354,28 +355,28 @@ else{
 
 
   <div id="prtybutton_container">
-    <a href="?closeIU">
+    <a href="?closeIU#kartet">
   <img src="./img/img_layout/layout_icons/ol.png" id="Prtybutton_icn" />
 </a>
   </div>
 
 
   <div id="stdybutton_container">
-    <a href="?closeIS">
+    <a href="?closeIS#kartet">
   <img src="./img/img_layout/layout_icons/les.png" id="stdybutton_icn">
   </div>
 
 
 
   <div id="eatybutton_container">
-    <a href="?closeIR">
+    <a href="?closeIR#kartet">
   <img src="./img/img_layout/layout_icons/burger.png" id="eatybutton_icn">
   </div>
 
 
 
   <div id="sprtybutton_container">
-    <a href="?closeII">
+    <a href="?closeII#kartet">
   <img src="./img/img_layout/layout_icons/tren.png" id="sprtybutton_icn"/>
   </div>
 

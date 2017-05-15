@@ -543,7 +543,7 @@ $conn->close();
 $arrlength = count($markerSP);
 for($x = 0; $x < $arrlength; $x++) {
 echo "google.maps.event.addDomListener(SP$markerSP[$x], 'click', function() {\n";
-echo "window.location.href = '?IR=SP&simplename=$markerSP[$x]';\n";
+echo "window.location.href = '?IR=SP&simplename=$markerSP[$x]#kartet';\n";
 echo "});\n";
 }
 }
@@ -551,7 +551,7 @@ elseif(strpos($_SERVER[REQUEST_URI], '?IS') || (strpos($_SERVER[REQUEST_URI], '?
 $arrlength = count($markerST);
 for($x = 0; $x < $arrlength; $x++) {
 echo "google.maps.event.addDomListener(ST$markerST[$x], 'click', function() {\n";
-echo "window.location.href = '?IS=ST&simplename=$markerST[$x]';\n";
+echo "window.location.href = '?IS=ST&simplename=$markerST[$x]#kartet';\n";
 echo "});\n";
 }
 }
@@ -559,7 +559,7 @@ elseif(strpos($_SERVER[REQUEST_URI], '?IU') || (strpos($_SERVER[REQUEST_URI], '?
 $arrlength = count($markerUT);
 for($x = 0; $x < $arrlength; $x++) {
 echo "google.maps.event.addDomListener(UT$markerUT[$x], 'click', function() {\n";
-echo "window.location.href = '?IU=UT&simplename=$markerUT[$x]';\n";
+echo "window.location.href = '?IU=UT&simplename=$markerUT[$x]#kartet';\n";
 echo "});\n";
 }
 }
@@ -567,7 +567,7 @@ elseif(isset($_POST['sprtybutton'])){
 $arrlength = count($markerIN);
 for($x = 0; $x < $arrlength; $x++) {
 echo "google.maps.event.addDomListener(IN$markerIN[$x], 'click', function() {\n";
-echo "window.location.href = '?II=IN&simplename=$markerIN[$x]';\n";
+echo "window.location.href = '?II=IN&simplename=$markerIN[$x]#kartet';\n";
 echo "});\n";
 }
 }
