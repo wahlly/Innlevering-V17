@@ -94,19 +94,21 @@
        die("Connection failed: " . $conn->connect_error);
       }
 
-      $sql = "SELECT * FROM sted WHERE simplename = '$simplename1'";
+      $sql = "SELECT simplename, Navn, image_path
+      FROM studiested inner join sted on studiested.Studie_id = sted.id";
       $result = $conn->query($sql);
+      $studieSIM = array();
+      $studieNAV = array();
+      $studieIMG = array();
       $i = 0;
       if ($result->num_rows > 0) {
-       // output data of each row
-       while($row = $result->fetch_assoc()) {
-           $code = $row["Id"];
-           $infonavn = $row["Navn"];
-           $imgsti = $row["image_path"];
-           $beskrivelse = $row["beskrivelse"];
-           $i++;
-
-       }
+         // output data of each row
+         while($row = $result->fetch_assoc()) {
+             $studieSIM[$i] = $row["simplename"];
+             $studieNAV[$i] = $row["Navn"];
+             $studieIMG[$i] = $row["image_path"];
+             $i++;
+         }
       }
        ?>
 
@@ -114,37 +116,27 @@
         <?php require '../assets/menubar.php' ?>
 
         <?php
-        $arraylength = count($array);
+
+
+
+        $arraylength = count($studieSIM);
         for ($i = 0; $i < $arraylength; $i++) {
           echo "<div id=\"cardwrap\">\n";
-          echo "                <img id=\"card_imag\" src=\"tullepikk\"/>\n";
+          echo "                <img id=\"card_imag\" src=\"$studieIMG[$i]\"/>\n";
           echo "                <div id=\"infowrap\">\n";
           echo "                    <div id=\"mer\">\n";
           echo "                      <p id=\"detalj\">Detaljer</p>\n";
           echo "                    </div>\n";
           echo "                    <div id=\"navnbox\">\n";
-          echo "                      <p id=\"pa\">Cafe Sara</p>\n";
+          echo "                      <p id=\"pa\">$studieNAV[$i]</p>\n";
           echo "                    </div>\n";
-          echo "\n"; 
+          echo "\n";
           echo "                </div>\n";
           echo "\n";
           echo "          </div>\n";
         }
 
         ?>
-          <div id="cardwrap">
-                <img id="card_imag" src="tullepikk"/>
-                <div id="infowrap">
-                    <div id="mer">
-                      <p id="detalj">Detaljer</p>
-                    </div>
-                    <div id="navnbox">
-                      <p id="pa">Cafe Sara</p>
-                    </div>
-
-                </div>
-
-          </div>
 
 
 
