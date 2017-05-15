@@ -63,6 +63,7 @@ body {background-color: white;}
 
   #Boks{
     position: absolute;
+    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.5);
     top: 125%;
     left: 40%;
     height: 50%;
