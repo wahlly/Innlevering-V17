@@ -57,13 +57,14 @@
         height: 100%;
         width: 80%;
         background: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,1));
+        background-color: white;
       }
 
       #pa{
         position: absolute;
         left: 10%;
         margin: auto;
-        top: 20%;
+        top: 25%;
         font-family: sans-serif;
         font-size: 3vw;
       }
@@ -80,13 +81,59 @@
     </style>
 </head>
 <body>
+      <?php
+      $servername = "martinwahlberg.no.mysql";
+      $username = "martinwahlberg_no_westerdals_";
+      $password = "westerdals123";
+      $dbname = "martinwahlberg_no_westerdals_";
 
+      // Create connection
+      $conn = new mysqli($servername, $username, $password, $dbname);
+      // Check connection
+      if ($conn->connect_error) {
+       die("Connection failed: " . $conn->connect_error);
+      }
+
+      $sql = "SELECT * FROM sted WHERE simplename = '$simplename1'";
+      $result = $conn->query($sql);
+      $i = 0;
+      if ($result->num_rows > 0) {
+       // output data of each row
+       while($row = $result->fetch_assoc()) {
+           $code = $row["Id"];
+           $infonavn = $row["Navn"];
+           $imgsti = $row["image_path"];
+           $beskrivelse = $row["beskrivelse"];
+           $i++;
+
+       }
+      }
+       ?>
 
       <div id="container_m">
         <?php require '../assets/menubar.php' ?>
 
+        <?php
+        $arraylength = count($array);
+        for ($i = 0; $i < $arraylength; $i++) {
+          echo "<div id=\"cardwrap\">\n";
+          echo "                <img id=\"card_imag\" src=\"tullepikk\"/>\n";
+          echo "                <div id=\"infowrap\">\n";
+          echo "                    <div id=\"mer\">\n";
+          echo "                      <p id=\"detalj\">Detaljer</p>\n";
+          echo "                    </div>\n";
+          echo "                    <div id=\"navnbox\">\n";
+          echo "                      <p id=\"pa\">Cafe Sara</p>\n";
+          echo "                    </div>\n";
+          echo "\n"; 
+          echo "                </div>\n";
+          echo "\n";
+          echo "          </div>\n";
+        }
+
+        ?>
           <div id="cardwrap">
-                <img id="card_imag" src="../../img/img_pictures/restaurant.jpg"/>
+                <img id="card_imag" src="tullepikk"/>
                 <div id="infowrap">
                     <div id="mer">
                       <p id="detalj">Detaljer</p>
@@ -98,6 +145,8 @@
                 </div>
 
           </div>
+
+
 
 
         <div id="footer"></div>
