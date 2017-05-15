@@ -95,7 +95,7 @@
       }
 
       $sql = "SELECT simplename, Navn, image_path
-      FROM studiested inner join sted on studiested.Studie_id = sted.id";
+      FROM sted";
       $result = $conn->query($sql);
       $studieSIM = array();
       $studieNAV = array();
@@ -135,7 +135,6 @@
           echo "\n";
           echo "          </div>\n";
         }
-
         ?>
 
 
