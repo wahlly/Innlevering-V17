@@ -1,3 +1,5 @@
+<?php header('Content-Type: text/html; charset=ISO-8859-1'); ?>
+
 <!DOCTYPE html>
 <html lang="nb">
 <head>
@@ -163,6 +165,7 @@
            $code = $row["Id"];
            $infonavn = $row["Navn"];
            $imgsti = $row["image_path"];
+           $beskrivelse = $row["beskrivelse"];
            $i++;
 
        }
@@ -220,11 +223,7 @@
         <h1><?php echo $infonavn ?><h1>
       </div>
       <div id="textbox">
-        <p>Café Sara er en kombinert kafé/restaurant og bar med matservering.</p>
-          <p>De åpnet dørene første gang i 1989 og har servert god mat og drikke i over 20 år.
-          Café Sara har et godt utvalg i drikke, øl, vin, meksikansk, grill, pizza, småretter som tilfredsstiller mangt og mange.
-          Om sommeren er det en hyggelig bakgård, om vinteren en koselig peis.
-          Café Sara ligger sentralt i Oslo, på hjørnet av Torggata og Hausmannsgata i Oslo</p>
+        <p><?php echo $beskrivelse ?></p>
       </div>
 
 
