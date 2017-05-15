@@ -35,7 +35,9 @@
             height: 90%;
           }
 
-body {background-color: white;}
+body {background-color: white;
+    overflow-x:hidden;
+}
 
 #container_main{
   position: absolute;
