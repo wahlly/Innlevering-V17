@@ -15,6 +15,16 @@
         height: 100%;
       }
 
+<<<<<<< HEAD
+=======
+      #cardwrap{
+
+        position: absolute;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+        height: 40%;
+        width: 35%;
+      }
+>>>>>>> parent of 6a1e75c... Posisjonering kategorikort
 
       #card_imag{
         position: absolute;
@@ -111,6 +121,10 @@
         <?php
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 6a1e75c... Posisjonering kategorikort
         $arraylength = count($studieSIM);
         for ($i = 0; $i < $arraylength; $i++) {
           echo "<div id=\"cardwrap$i\">\n";
@@ -127,9 +141,15 @@
           echo "\n";
           echo "          </div>\n";
         }
+<<<<<<< HEAD
 
         ?>
 
+=======
+        ?>
+
+
+>>>>>>> parent of 6a1e75c... Posisjonering kategorikort
 
 
         <div id="footer"></div>
