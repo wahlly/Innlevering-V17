@@ -19,10 +19,10 @@
 
 #prtybutton_icn {
   position: absolute;
-    width: 80%;
+    width: 60%;
     height: 80%;
     margin-top:10%;
-    margin-left:10%;
+    margin-left:20%;
   }
 {22.8}
 
@@ -62,7 +62,7 @@
       position: absolute;
       width: 80%;
       height: 80%;
-      margin-top:10%;
+      margin-top:5%;
       margin-left:10%;
       }
 
