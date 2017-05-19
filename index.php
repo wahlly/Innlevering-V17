@@ -268,7 +268,7 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
 
 <body>
 
-  <div id="sliderbox"></div>
+  <div id="sliderbox"><img src="./img/img_layout/layout_icons/pil.png"/></div>
 
 <!--Liten advarsel om å snu telefonen -->
  <script> if(window.innerHeight > window.innerWidth){
