@@ -23,26 +23,6 @@
         width: 35%;
       }
 
-      #cardwrap2{
-
-        position: absolute;
-        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
-        height: 40%;
-        width: 35%;
-        left: 10%;
-        top: 25%;
-      }
-
-      #cardwrap3{
-
-        position: absolute;
-        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
-        height: 40%;
-        width: 35%;
-        left: 10%;
-        top: 75%
-      }
-
       #card_imag{
         position: absolute;
         width: 100%;
@@ -138,7 +118,7 @@
         <?php
 
 
-/**
+
         $arraylength = count($studieSIM);
         for ($i = 0; $i < $arraylength; $i++) {
           echo "<div id=\"cardwrap\">\n";
@@ -155,35 +135,9 @@
           echo "\n";
           echo "          </div>\n";
         }
-        */
         ?>
-        <div id="cardwrap2">
-        <img id="card_imag" src="$studieIMG[$i]"/>
-        <div id="infowrap">
-        <div id="mer">
-        <p id="detalj">Detaljer</p>
-        </div>
-        <div id="navnbox">
-        <p id="pa">$studieNAV[$i]</p>
-        </div>
 
-        </div>
 
-        </div>
-
-        <div id="cardwrap3">
-        <img id="card_imag" src="$studieIMG[$i]"/>
-        <div id="infowrap">
-        <div id="mer">
-        <p id="detalj">Detaljer</p>
-        </div>
-        <div id="navnbox">
-        <p id="pa">$studieNAV[$i]</p>
-        </div>
-
-        </div>
-
-        </div>
 
 
         <div id="footer"></div>
