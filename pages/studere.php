@@ -13,23 +13,13 @@
 
 </head>
 <body>
-
+      <?php include '../assets/connection.php' ?>
       <?php
-      $servername = "martinwahlberg.no.mysql";
-      $username = "martinwahlberg_no_westerdals_";
-      $password = "westerdals123";
-      $dbname = "martinwahlberg_no_westerdals_";
 
-      // Create connection
-      $conn = new mysqli($servername, $username, $password, $dbname);
-      // Check connection
-      if ($conn->connect_error) {
-       die("Connection failed: " . $conn->connect_error);
-      }
 
       $sql = "SELECT simplename, studiested.Navn, image_path
-FROM studiested
-INNER JOIN sted ON studiested.Studie_id = sted.Id";
+      FROM studiested
+      INNER JOIN sted ON studiested.Studie_id = sted.Id";
       $result = $conn->query($sql);
       $studieSIM = array();
       $studieNAV = array();
@@ -46,8 +36,8 @@ INNER JOIN sted ON studiested.Studie_id = sted.Id";
       }
        ?>
 
-       <?php require '../assets/menubar.php' ?>
-<div id="conainer_hoved">
+
+
       <div id="container_m">
 
 
@@ -80,12 +70,8 @@ INNER JOIN sted ON studiested.Studie_id = sted.Id";
 
       </div>
 
-
-
-
-      </div>
-
 <?php require '../assets/menubar.php' ?>
+
 
 </body>
 </html>

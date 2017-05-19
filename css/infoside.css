@@ -1,10 +1,6 @@
 
-#conainer_hoved{
-  height: 100%;
-  width: 100%;
-  background: -webkit-linear-gradient(40deg, #f3c680, #a1e3e2);
-  background: linear-gradient(50deg, #f3c680, #a1e3e2);
-}
+
+
 
 #container_m {
   position: absolute;
@@ -21,12 +17,12 @@
 #cardwrap{
   position: relative;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  top: 50%;
   height: 25vw;
   width: 20vw;
+  top: 10vw;
   float: left;
   margin: 3vw;
-  margin-left: 8.8%;
+  margin-left: 8.75%;
   background-color: white;
 
 
