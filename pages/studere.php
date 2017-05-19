@@ -15,34 +15,6 @@
         height: 100%;
       }
 
-      <?php
-
-      $variabelvenstre = 10;
-      $variabeltopp = 25;
-
-      $arraylength = count($studieSIM);
-      for ($i = 0; $i < $arraylength; $i++) {
-        if($variabelvenstre = 10) {
-          echo"left:$variabelvenstre%;";
-          echo"  top:$variabeltopp%;";
-          $variabelvenstre = 55;
-        }
-
-        elseif($variabelvenstre = 55){
-        echo"left:$variabelvenstre%;";
-        echo"  top:$variabeltopp%;";
-        $variabelvenstre = 10;
-        $variabelhøyde = ($variabelhøyde + 45);
-        }
-
-      echo "#cardwrap$i{";
-      echo"  position: absolute;";
-      echo"  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);";
-      echo"  height: 40%;";
-      echo"  width: 35%; ";
-      echo"}";
-      }
-?>
 
       #card_imag{
         position: absolute;
@@ -157,33 +129,7 @@
         }
 
         ?>
-        <div id="cardwrap2">
-        <img id="card_imag" src="$studieIMG[$i]"/>
-        <div id="infowrap">
-        <div id="mer">
-        <p id="detalj">Detaljer</p>
-        </div>
-        <div id="navnbox">
-        <p id="pa">$studieNAV[$i]</p>
-        </div>
 
-        </div>
-
-        </div>
-
-        <div id="cardwrap3">
-        <img id="card_imag" src="$studieIMG[$i]"/>
-        <div id="infowrap">
-        <div id="mer">
-        <p id="detalj">Detaljer</p>
-        </div>
-        <div id="navnbox">
-        <p id="pa">$studieNAV[$i]</p>
-        </div>
-
-        </div>
-
-        </div>
 
 
         <div id="footer"></div>
