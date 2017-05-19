@@ -17,20 +17,20 @@
       <?php
 
 
-      $sql = "SELECT simplename, utested.Navn, image_path
-      FROM utested
-      INNER JOIN sted ON utested.Ute_id = sted.Id";
+      $sql = "SELECT simplename, spisested.Navn, image_path
+      FROM spisested
+      INNER JOIN sted ON spisested.Plass_Id = sted.Id";
       $result = $conn->query($sql);
-      $uteSIM = array();
-      $uteNAV = array();
-      $uteIMG = array();
+      $spiseSIM = array();
+      $spiseNAV = array();
+      $spiseIMG = array();
       $i = 0;
       if ($result->num_rows > 0) {
          // output data of each row
          while($row = $result->fetch_assoc()) {
-             $uteSIM[$i] = $row["simplename"];
-             $uteNAV[$i] = $row["Navn"];
-             $uteIMG[$i] = $row["image_path"];
+             $spiseSIM[$i] = $row["simplename"];
+             $spiseNAV[$i] = $row["Navn"];
+             $spiseIMG[$i] = $row["image_path"];
              $i++;
          }
       }
@@ -47,18 +47,18 @@
 
 
 
-        $arraylength = count($uteSIM);
+        $arraylength = count($spiseSIM);
         for ($i = 0; $i < $arraylength; $i++) {
-          $uteNAVS = strtoupper($uteNAV[$i]);
-          echo "<a href=\"/pages/infoside.php?simplename=$uteSIM[$i]\"a>\n";
+          $spiseNAVS = strtoupper($spiseNAV[$i]);
+          echo "<a href=\"/pages/infoside.php?simplename=$spiseSIM[$i]\"a>\n";
           echo "<div id=\"cardwrap\">\n";
-          echo "                <img id=\"card_imag\" src=\"$uteIMG[$i]\"/>\n";
+          echo "                <img id=\"card_imag\" src=\"$spiseIMG[$i]\"/>\n";
           echo "                <div id=\"infowrap\">\n";
           echo "                    <div id=\"mer\">\n";
           echo "                      <p id=\"detalj\"></p>\n";
           echo "                    </div>\n";
           echo "                    <div id=\"navnbox\">\n";
-          echo "                      <p id=\"pa\" >$uteNAVS</p>\n";
+          echo "                      <p id=\"pa\" >$spiseNAVS</p>\n";
           echo "                    </div>\n";
           echo "\n";
           echo "                </div>\n";
