@@ -268,7 +268,14 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
 
 <body>
 
-  <div id="sliderbox"><img src="./img/img_layout/layout_icons/pil.png"/></div>
+  <div id="sliderbox">
+
+    <div>
+    <a href="#kartet">
+    <div style="position:absolute; top:73%; left:46%; color:white; opacity:0.7; font-family:sans-serif;"> <h2>VIS KART</h2> </div>
+    <img src="./img/img_layout/layout_icons/pil.png" style="position:absolute; top:80%; left:46%; width:8%;"/></div>
+    </a>
+  </div>
 
 <!--Liten advarsel om å snu telefonen -->
  <script> if(window.innerHeight > window.innerWidth){
