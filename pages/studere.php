@@ -15,34 +15,33 @@
         height: 100%;
       }
 
-      <?php
+      #cardwrap{
 
-      $variabelvenstre = 10;
-      $variabeltopp = 25;
-
-      $arraylength = count($studieSIM);
-      for ($i = 0; $i < $arraylength; $i++) {
-        if($variabelvenstre = 10) {
-          echo"left:$variabelvenstre%;";
-          echo"  top:$variabeltopp%;";
-          $variabelvenstre = 55;
-        }
-
-        elseif($variabelvenstre = 55){
-        echo"left:$variabelvenstre%;";
-        echo"  top:$variabeltopp%;";
-        $variabelvenstre = 10;
-        $variabelhøyde = ($variabelhøyde + 45);
-        }
-
-      echo "#cardwrap$i{";
-      echo"  position: absolute;";
-      echo"  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);";
-      echo"  height: 40%;";
-      echo"  width: 35%; ";
-      echo"}";
+        position: absolute;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+        height: 40%;
+        width: 35%;
       }
-?>
+
+      #cardwrap2{
+
+        position: absolute;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+        height: 40%;
+        width: 35%;
+        left: 10%;
+        top: 25%;
+      }
+
+      #cardwrap3{
+
+        position: absolute;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+        height: 40%;
+        width: 35%;
+        left: 10%;
+        top: 75%
+      }
 
       #card_imag{
         position: absolute;
@@ -139,9 +138,10 @@
         <?php
 
 
+/**
         $arraylength = count($studieSIM);
         for ($i = 0; $i < $arraylength; $i++) {
-          echo "<div id=\"cardwrap$i\">\n";
+          echo "<div id=\"cardwrap\">\n";
           echo "                <img id=\"card_imag\" src=\"$studieIMG[$i]\"/>\n";
           echo "                <div id=\"infowrap\">\n";
           echo "                    <div id=\"mer\">\n";
@@ -155,7 +155,7 @@
           echo "\n";
           echo "          </div>\n";
         }
-
+        */
         ?>
         <div id="cardwrap2">
         <img id="card_imag" src="$studieIMG[$i]"/>
