@@ -9,22 +9,33 @@
 
     <style>
       #container_m {
-        top: 0;
+        position: absolute;
+        top: 20%;
         left: 0;
         width: 100%;
         height: 100%;
       }
 
-      #cardwrap{
-
+      .container_box{
         position: absolute;
-        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
         height: 40%;
         width: 35%;
+
+      }
+
+      #cardwrap{
+        position: relative;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+        height: 20vw;
+        width: 35vw;
+        float: left;
+        margin: 3vw;
+        margin-left: 8.8%;
+
       }
 
       #card_imag{
-        position: absolute;
+        position: relative;
         width: 100%;
         height: 100%;
         /*z-index: -1; **/
@@ -94,8 +105,9 @@
        die("Connection failed: " . $conn->connect_error);
       }
 
-      $sql = "SELECT simplename, Navn, image_path
-      FROM sted";
+      $sql = "SELECT simplename, studiested.Navn, image_path
+FROM studiested
+INNER JOIN sted ON studiested.Studie_id = sted.Id";
       $result = $conn->query($sql);
       $studieSIM = array();
       $studieNAV = array();
@@ -112,8 +124,13 @@
       }
        ?>
 
+       <?php require '../assets/menubar.php' ?>
       <div id="container_m">
-        <?php require '../assets/menubar.php' ?>
+
+
+        <div class="container_box">
+
+        </div>
 
         <?php
 
@@ -137,10 +154,12 @@
         }
         ?>
 
+      </div>
 
 
+        <div id="footer">
 
-        <div id="footer"></div>
+        </div>
 
       </div>
 
