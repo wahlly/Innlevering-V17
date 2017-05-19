@@ -269,7 +269,7 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
 <body>
 
   <div id="sliderbox">
-
+    <h1 style="position:absolute; top:35%; left:2.5%; color:#eeeeee; font-family:sans-serif; font-size:5em; text-shadow: 3px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;">Finn interessante steder i nærheten</h1>
     <a href="#kartet">
     <div style="z-index:1; position:absolute; top:73%; left:46%; color:white; opacity:0.7; font-family:sans-serif;"> <h2>VIS KART</h2> </div>
   </a>
@@ -277,14 +277,6 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
     <img src="./img/img_layout/layout_icons/pil.png" style=" z-index:1; position:absolute; top:80%; left:46%; width:8%;"></div>
     </a>
 
-
-<!--Liten advarsel om å snu telefonen -->
- <script> if(window.innerHeight > window.innerWidth){
-  alert("Vend telefonen til landskapsmodus for å få best utbytte av siden!");
-}
-
-</script>
- <!-- Slutt på advarselen -->
 
 
   <div id="container_main">
