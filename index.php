@@ -165,20 +165,9 @@ body {background-color: white;
     background-size: cover;
     background-repeat: no-repeat;
   }
+
+    <?php include './assets/connection.php' ?>
   <?php
-
-
-    $servername = "martinwahlberg.no.mysql";
-    $username = "martinwahlberg_no_westerdals_";
-    $password = "westerdals123";
-    $dbname = "martinwahlberg_no_westerdals_";
-
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  // Check connection
-  if ($conn->connect_error) {
-       die("Connection failed: " . $conn->connect_error);
-  }
 
 //Start Restauranter
   $sql = "SELECT Css FROM UI WHERE Type = 'Spisested'";
@@ -289,20 +278,9 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
 
 
     </div>
-
+  <?php include '../assets/connection.php' ?>
     <?php
-    $simplename1 = $_GET['simplename'];
-    $servername = "martinwahlberg.no.mysql";
-    $username = "martinwahlberg_no_westerdals_";
-    $password = "westerdals123";
-    $dbname = "martinwahlberg_no_westerdals_";
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
-    }
 
     $sql = "SELECT * FROM sted WHERE simplename = '$simplename1'";
     $result = $conn->query($sql);
@@ -386,75 +364,7 @@ else{
   </div>
 
   </div>
-  <div id="menubar_container">
-
-    <a href="#Barer">
-    <div id="Bar_menu_element_bg">
-      <h3 id="Menu_text">BARER</h3>
-      <div id="Bar_menu_element_line">
-      </div>
-    </div>
-    <div id="Hjem_menu_logo_bar_box">
-      <img id="Hjem_menu_logo_wht" src="./img/img_layout/layout_menubar/w_logo_wht.png"/>
-    <img id="Hjem_menu_logo_bar" src="./img/img_layout/layout_menubar/w_logo_prpl.png"/>
-    </div>
-  </a>
-
-   <a href="#Restaurant">
-    <div id="Restaurant_menu_element_bg">
-      <h3 id="Menu_text">RESTAURANTER</h3>
-      <div id="Restaurant_menu_element_line">
-      </div>
-    </div>
-    <div id="Hjem_menu_logo_rest_box">
-      <img id="Hjem_menu_logo_wht" src="./img/img_layout/layout_menubar/w_logo_wht.png"/>
-    <img id="Hjem_menu_logo_rest" src="./img/img_layout/layout_menubar/w_logo_ble.png"/>
-    </div>
-  </a>
-
-
-    <div id="Hjem_menu_element_bg"></div>
-    <div id="Hjem_menu_element_extend">
-      <div id="Hjem_Trapes_Farge"></div>
-      <div id="Hjem_Linje_farge"></div>
-      <div id="Hjem_Trapes_Hvit"></div>
-      <div id="Hjem_Linje_Hoyre"></div>
-      <div id="Hjem_Linje_hvit"></div>
-
-    </div>
-    <div id="Hjem_menu_element_border"></div>
-    <div id="Hjem_menu_logo_box">
-      <a href="<?php echo$_SERVER['REQUEST_URI']?>">
-      <img id="Hjem_menu_logo" src="./img/img_layout/layout_menubar/w_logo.png"/>
-      </a>
-    </div>
-
-
-    <a href="#Studere">
-    <div id="Studere_menu_element_bg">
-      <h3 id="Menu_text">STUDERE</h3>
-      <div id="Studere_menu_element_line">
-      </div>
-    </div>
-    <div id="Hjem_menu_logo_stud_box">
-      <img id="Hjem_menu_logo_wht" src="./img/img_layout/layout_menubar/w_logo_wht.png"/>
-    <img id="Hjem_menu_logo_stud" src="./img/img_layout/layout_menubar/w_logo_ylw.png"/>
-    </div>
-  </a>
-
-  <div id="Sok_menu_element_bg">
-    <div id="search-box-wrapper">
-        <input type="text" placeholder="Hvor vil du?" id="search-box-input">
-        <input id="search-box-button" type="image" src="./img/img_layout/layout_icons/search.png" />
-    </div>
-    <div id="Sok_menu_element_line"></div>
-  </div>
-  <div id="Hjem_menu_logo_sok_box">
-    <img id="Hjem_menu_logo_wht" src="./img/img_layout/layout_menubar/w_logo_wht.png"/>
-  <img id="Hjem_menu_logo_sok" src="./img/img_layout/layout_menubar/w_logo_grn.png"/>
-  </div>
-
-  </div>
+   <?php require './assets/menubar.php' ?>
   <div id="demo"> </div>
 </div>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeGfGxlzHanho4vezNe-XrqMl4seyw6tw&callback=initMap"

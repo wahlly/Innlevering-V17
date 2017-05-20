@@ -287,19 +287,8 @@ function initMap() {
 
 
   //DATABASEMAT
-
+<?php include './assets/connection.php' ?>
   <?php
-  $servername = "martinwahlberg.no.mysql";
-  $username = "martinwahlberg_no_westerdals_";
-  $password = "westerdals123";
-  $dbname = "martinwahlberg_no_westerdals_";
-
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  // Check connection
-  if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
-  }
 
 //Henter spisesteds lokasjoner
   $sql = "SELECT simplename, googlemaps
@@ -462,19 +451,9 @@ map: map
   // Create markers.
 
   //DATABASEMAT
-
+<?php include './assets/connection.php' ?>
   <?php
-$servername = "martinwahlberg.no.mysql";
-$username = "martinwahlberg_no_westerdals_";
-$password = "westerdals123";
-$dbname = "martinwahlberg_no_westerdals_";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-   die("Connection failed: " . $conn->connect_error);
-}
 //Gjør spisested markørene klikkbare
 $sql = "SELECT simplename
 FROM spisested
