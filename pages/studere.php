@@ -58,7 +58,7 @@
           echo "                      <p id=\"detalj\"></p>\n";
           echo "                    </div>\n";
           echo "                    <div id=\"navnbox\">\n";
-          echo "                      <p id=\"pa\" >$studieNAVS</p>\n";
+          echo "                      <p id=\"pa\" ><span>$studieNAVS</span></p>\n";
           echo "                    </div>\n";
           echo "\n";
           echo "                </div>\n";
