@@ -2,8 +2,8 @@
 <html>
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="./css/menubar.css">
-  <link rel="stylesheet" href="./css/filter_menu.css">
+  <link rel="stylesheet" href="../../css/menubar.css">
+  <link rel="stylesheet" href="../../css/filter_menu.css">
 <style>
 #map {
         position: absolute;
@@ -11,20 +11,12 @@
         width: 100%;
       }
 
-      #container_main{
-        position: absolute;
-          top: 0%;
-          left: 0%;
-          width:100%;
-          height: 200%;
-      }
-
       #imgmap {
           position: absolute;
-          top: 100%;
+          top: 10%;
           left: 0%;
           width: 100%;
-          height: 100%;
+          height: 90%;
 
         }
         #kartet {
@@ -35,9 +27,7 @@
             height: 90%;
           }
 
-body {background-color: white;
-    overflow-x:hidden;
-}
+body {background-color: white;}
 
 #container_main{
   position: absolute;
@@ -58,15 +48,14 @@ body {background-color: white;
 
 #btttnrow_container {
     right: 5%;
-    top: 185%;
+    top: 85%;
     margin: 0;
 
   }
 
   #Boks{
     position: absolute;
-    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.5);
-    top: 125%;
+    top: 25%;
     left: 40%;
     height: 50%;
     width: 20%;
@@ -151,19 +140,6 @@ body {background-color: white;
     right: 2%;
     height: 3vw;
     width: 3vw;
-  }
-  #sliderbox{
-
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #f1f1f1;
-    background-image: url(http://byhusene.no/assets/img/barcode/Barcode_by_night.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
   }
   <?php
 
@@ -268,23 +244,20 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
 
 <body>
 
-  <div id="sliderbox">
-    <h1 style="position:absolute; top:35%; left:2.5%; color:#eeeeee; font-family:sans-serif; font-size:5em; text-shadow: 3px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;">Finn interessante steder i nærheten</h1>
-    <a href="#kartet">
-    <div style="z-index:1; position:absolute; top:73%; left:46%; color:white; opacity:0.7; font-family:sans-serif;"> <h2>VIS KART</h2> </div>
-  </a>
-    <a href="#kartet">
-    <img src="./img/img_layout/layout_icons/pil.png" style=" z-index:1; position:absolute; top:80%; left:46%; width:8%;"></div>
-    </a>
+<!--Liten advarsel om å snu telefonen -->
+ <script> if(window.innerHeight > window.innerWidth){
+  alert("Vend telefonen til landskapsmodus for å få best utbytte av siden!");
+}
 
+</script>
+ <!-- Slutt på advarselen -->
 
 
   <div id="container_main">
 
   <div id="imgmap">
-    <a name="kartet"></a>
     <div id="map"></div>
-    <?php require './assets/googlemaps.php' ?>
+    <?php require './googlemaps.php' ?>
 
 
 
@@ -333,19 +306,19 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
 
 
 if (strpos($_SERVER[REQUEST_URI], '?IR')) {
-  echo "<a href=\"?closeIR#kartet\">\n";
+  echo "<a href=\"?closeIR\">\n";
 }
 elseif (strpos($_SERVER[REQUEST_URI], '?IS')) {
-  echo "<a href=\"?closeIS#kartet\">\n";
+  echo "<a href=\"?closeIS\">\n";
 }
 elseif (strpos($_SERVER[REQUEST_URI], '?IU')) {
-  echo "<a href=\"?closeIU#kartet\">\n";
+  echo "<a href=\"?closeIU\">\n";
 }
 else{
-  echo "<a href=\"?closeII#kartet\">\n";
+  echo "<a href=\"?closeII\">\n";
 }
 ?>
-<img id="Boks_close" src="./img/img_layout/layout_icons/close.png">
+<img id="Boks_close" src="../../img/img_layout/layout_icons/close.png">
 </a>
 
 </div>
@@ -358,29 +331,29 @@ else{
 
 
   <div id="prtybutton_container">
-    <a href="?closeIU#kartet">
-  <img src="./img/img_layout/layout_icons/ol.png" id="Prtybutton_icn" />
+    <a href="?closeIU">
+  <img src="../../img/img_layout/layout_icons/ol.png" id="Prtybutton_icn" />
 </a>
   </div>
 
 
   <div id="stdybutton_container">
-    <a href="?closeIS#kartet">
-  <img src="./img/img_layout/layout_icons/les.png" id="stdybutton_icn">
+    <a href="?closeIS">
+  <img src="../../img/img_layout/layout_icons/les.png" id="stdybutton_icn">
   </div>
 
 
 
   <div id="eatybutton_container">
-    <a href="?closeIR#kartet">
-  <img src="./img/img_layout/layout_icons/burger.png" id="eatybutton_icn">
+    <a href="?closeIR">
+  <img src="../../img/img_layout/layout_icons/burger.png" id="eatybutton_icn">
   </div>
 
 
 
   <div id="sprtybutton_container">
-    <a href="?closeII#kartet">
-  <img src="./img/img_layout/layout_icons/tren.png" id="sprtybutton_icn"/>
+    <a href="?closeII">
+  <img src="../../img/img_layout/layout_icons/tren.png" id="sprtybutton_icn"/>
   </div>
 
   </div>
@@ -395,8 +368,8 @@ else{
       </div>
     </div>
     <div id="Hjem_menu_logo_bar_box">
-      <img id="Hjem_menu_logo_wht" src="./img/img_layout/layout_menubar/w_logo_wht.png"/>
-    <img id="Hjem_menu_logo_bar" src="./img/img_layout/layout_menubar/w_logo_prpl.png"/>
+      <img id="Hjem_menu_logo_wht" src="../../img/img_layout/layout_menubar/w_logo_wht.png"/>
+    <img id="Hjem_menu_logo_bar" src="../../img/img_layout/layout_menubar/w_logo_prpl.png"/>
     </div>
   </a>
 
@@ -407,8 +380,8 @@ else{
       </div>
     </div>
     <div id="Hjem_menu_logo_rest_box">
-      <img id="Hjem_menu_logo_wht" src="./img/img_layout/layout_menubar/w_logo_wht.png"/>
-    <img id="Hjem_menu_logo_rest" src="./img/img_layout/layout_menubar/w_logo_ble.png"/>
+      <img id="Hjem_menu_logo_wht" src="../../img/img_layout/layout_menubar/w_logo_wht.png"/>
+    <img id="Hjem_menu_logo_rest" src="../../img/img_layout/layout_menubar/w_logo_ble.png"/>
     </div>
   </a>
 
@@ -425,7 +398,7 @@ else{
     <div id="Hjem_menu_element_border"></div>
     <div id="Hjem_menu_logo_box">
       <a href="<?php echo$_SERVER['REQUEST_URI']?>">
-      <img id="Hjem_menu_logo" src="./img/img_layout/layout_menubar/w_logo.png"/>
+      <img id="Hjem_menu_logo" src="../../img/img_layout/layout_menubar/w_logo.png"/>
       </a>
     </div>
 
@@ -437,21 +410,21 @@ else{
       </div>
     </div>
     <div id="Hjem_menu_logo_stud_box">
-      <img id="Hjem_menu_logo_wht" src="./img/img_layout/layout_menubar/w_logo_wht.png"/>
-    <img id="Hjem_menu_logo_stud" src="./img/img_layout/layout_menubar/w_logo_ylw.png"/>
+      <img id="Hjem_menu_logo_wht" src="../../img/img_layout/layout_menubar/w_logo_wht.png"/>
+    <img id="Hjem_menu_logo_stud" src="../../img/img_layout/layout_menubar/w_logo_ylw.png"/>
     </div>
   </a>
 
   <div id="Sok_menu_element_bg">
     <div id="search-box-wrapper">
         <input type="text" placeholder="Hvor vil du?" id="search-box-input">
-        <input id="search-box-button" type="image" src="./img/img_layout/layout_icons/search.png" />
+        <input id="search-box-button" type="image" src="../../img/img_layout/layout_icons/search.png" />
     </div>
     <div id="Sok_menu_element_line"></div>
   </div>
   <div id="Hjem_menu_logo_sok_box">
-    <img id="Hjem_menu_logo_wht" src="./img/img_layout/layout_menubar/w_logo_wht.png"/>
-  <img id="Hjem_menu_logo_sok" src="./img/img_layout/layout_menubar/w_logo_grn.png"/>
+    <img id="Hjem_menu_logo_wht" src="../../img/img_layout/layout_menubar/w_logo_wht.png"/>
+  <img id="Hjem_menu_logo_sok" src="../../img/img_layout/layout_menubar/w_logo_grn.png"/>
   </div>
 
   </div>

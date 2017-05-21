@@ -17,7 +17,7 @@
 
 <div id="menubar_container">
 
-  <a href="/pages/utesteder.php">
+  <a href="#Barer">
   <div id="Bar_menu_element_bg">
     <h3 id="Menu_text">BARER</h3>
     <div id="Bar_menu_element_line">
@@ -29,7 +29,7 @@
   </div>
 </a>
 
- <a href="/pages/restaurant.php">
+ <a href="#Restaurant">
   <div id="Restaurant_menu_element_bg">
     <h3 id="Menu_text">RESTAURANTER</h3>
     <div id="Restaurant_menu_element_line">
@@ -57,7 +57,7 @@
   </div>
 </a>
 
-    <a href="/pages/studere.php">
+  <a href="#Studere">
   <div id="Studere_menu_element_bg">
     <h3 id="Menu_text">STUDERE</h3>
     <div id="Studere_menu_element_line">
