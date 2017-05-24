@@ -1,4 +1,4 @@
-<?php header('Content-Type: text/html; charset=ISO-8859-1'); ?>
+
 
 <!DOCTYPE html>
 <html lang="nb">
@@ -6,7 +6,6 @@
 
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/menubar.css">
-    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/filter_menu.css">
     <title>Cafe Sara</title>
@@ -19,15 +18,15 @@
         height: 100%;
         top: 0;
         left: 0;
+        background-color: #eeeeee;
 
       }
       #container_innhold{
         position: absolute;
-        top:2%;
+        top:0%;
         width: 60%;
         height: 100%;
         left:20%;
-        background-color: #fcfcfc;
         z-index: -1;
 
 
@@ -37,7 +36,7 @@
         position: absolute;
         top: 9%;
         width: 100%;
-        height: 50%;
+        height: 60%;
         overflow: hidden;
         left:0%;
       }
@@ -49,23 +48,22 @@
 
       #title {
         position: absolute;
-        top: 55%;
+        top: 65%;
         text-align: center;
         width: 66.6666667%;
-        height: 20%;
+        height: 15%;
         font-family: sans-serif;
         font-size: 2.7vw;
         color: black;
-        border-bottom: solid black 2px;
-
         left:16.666665%;
       }
 
       #textbox {
         position: absolute;
-        top: 75%;
-        width: 100%;
-        height: 20%;
+        top: 85%;
+        left: 10%;
+        width: 80%;
+        height: 10%;
         text-align: center;
         font-size: 1.2vw;
         font-family: sans-serif;
@@ -78,9 +76,11 @@
         position: absolute;
         width: 100%;
         height: 30%;
-        top:100%;
+        top:110%;
         border-top: solid 1px #f1f1f1;
         border-left: solid 1px #f1f1f1;
+        font-family: sans-serif;
+        font-size: 1.5em;
 
       }
 
@@ -226,26 +226,26 @@
         if ($vegetar != NULL) {
           $spisested = array();
           $spisested[0] = "<tr>\n";
-          $spisested[1] = "<th> Vegetar </br> $vegetar </th>\n";
-          $spisested[2] = "<th> <img src=\"$prisniva\"/></th>\n";
-          $spisested[3] = "<th> Levering </br> $levering </th>\n";
+          $spisested[1] = "<th> Vegetar: </br> $vegetar </th>\n";
+          $spisested[2] = "<th> Prisniva: <img src=\"$prisniva\"/></th>\n";
+          $spisested[3] = "<th> Levering: </br> $levering </th>\n";
           $spisested[4] = "</tr>\n";
         };
 
         if ($wifi != NULL) {
           $studie = array();
           $studie[0] = "<tr>\n";
-          $studie[1] = "<th> Wifi </br> $wifi </th>\n";
-          $studie[2] = "<th> Strømuttak </br> $strom </th>\n";
-          $studie[3] = "<th> Pris kaffe </br> $kaffe </th>\n";
+          $studie[1] = "<th> Wifi: </br> $wifi </th>\n";
+          $studie[2] = "<th> Strømuttak: </br> $strom </th>\n";
+          $studie[3] = "<th> Pris kaffe: </br> $kaffe </th>\n";
           $studie[4] = "</tr>\n";
         };
 
         if ($alder != NULL) {
           $baar = array();
           $baar[0] = "<tr>\n";
-          $baar[1] = "<th> Aldersgrense </br> $alder </th>\n";
-          $baar[2] = "<th> Ølpris </br> $olpris </th>\n";
+          $baar[1] = "<th> Aldersgrense: </br> $alder </th>\n";
+          $baar[2] = "<th> Ølpris: </br> $olpris </th>\n";
           $baar[3] = "</tr>\n";
         };
 

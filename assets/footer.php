@@ -1,3 +1,4 @@
+<head><meta charset="utf-8"></head>
 
   <style>
   #footer_container{
@@ -10,6 +11,8 @@
   }
 
   </style>
+
+
 
 <div id="footer_container">
 <div id="footerbox1"><h3> ÅPNINGSTIDER FJERDINGEN</h3> <h4>Mandag - Fredag: 07:30-24:00</br>Lørdag: 10:00-23:00</br>Søndag: 10:00-23:00</h4></div>
