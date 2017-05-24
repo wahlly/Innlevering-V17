@@ -80,22 +80,60 @@
               <a name="oss"></a>
                 <div id="ossWrap">
                   <div class="card" id="Martin">
-                    <div id="letter">
-                    <h5>M</h5>
+                    <div id="Navn">
+                    <h5>MARTIN WAHLBERG</h5>
                   </div>
-                    <div class="navn">
-                    <h4>ARTIN WAHLBERG</h4>
+                    <div id="email">
+                    <h6>studielinje</h4>
+                    <h6>Email: ...</h4>
+                    <h6>mobilnummer</h4>
                   </div>
                   </div>
 
                   <div class="card" id="Ullerikke">
-                    <div id="letter">
-                    <h5>U</h5>
+                    <div id="Navn">
+                    <h5>ULLERIKKE SVENNE</h5>
                   </div>
-                    <div class="navn" id="navnul">
-                    <h4>LLERIKKE SVENNE</h4>
+                    <div id="email">
+                    <h6>Intelligente Systemer</h4>
+                    <h6>sveull16@student.westerdals.no</h4>
+                    <h6>98634356</h4>
                   </div>
                   </div>
+
+                  <div class="card" id="Tobias">
+                    <div id="Navn">
+                    <h5>TOBIAS</h5>
+                  </div>
+                    <div id="email">
+                    <h6>studielinje</h4>
+                    <h6>Email: ...</h4>
+                    <h6>mobilnummer</h4>
+                  </div>
+                  </div>
+
+                  <div class="card" id="Eric">
+                    <div id="Navn">
+                    <h5>ERIC</h5>
+                  </div>
+                    <div id="email">
+                    <h6>studielinje</h4>
+                    <h6>Email: ...</h4>
+                    <h6>mobilnummer</h4>
+                  </div>
+                  </div>
+
+                  <div class="card" id="Tron">
+                    <div id="Navn">
+                    <h5>TRON</h5>
+                  </div>
+                    <div id="email">
+                    <h6>studielinje</h4>
+                    <h6>Email: ...</h4>
+                    <h6>mobilnummer</h4>
+                  </div>
+                  </div>
+
                 </div>
             </div>
           </div>
