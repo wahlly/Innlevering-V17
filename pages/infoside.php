@@ -226,8 +226,8 @@
         if ($vegetar != NULL) {
           $spisested = array();
           $spisested[0] = "<tr>\n";
-          $spisested[1] = "<th> Vegetar: </br> $vegetar </th>\n";
-          $spisested[2] = "<th> Prisniva: <img src=\"$prisniva\"/></th>\n";
+          $spisested[1] = "<th> <img src=\"$vegetar\"/></th>\n";
+          $spisested[2] = "<th> <img src=\"$prisniva\"/></th>\n";
           $spisested[3] = "<th> Levering: </br> $levering </th>\n";
           $spisested[4] = "</tr>\n";
         };
