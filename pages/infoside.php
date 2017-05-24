@@ -6,6 +6,7 @@
 
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/menubar.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/filter_menu.css">
     <title>Cafe Sara</title>
 
@@ -291,35 +292,11 @@
          ?>
       </table>
 
-      <!--
-
-        <table style="width:100%">
-          <tr>
-            <th>Prisnivå:</br><?php echo "$prisniva" ?></th>
-            <th>Vegetarvennelig:</br><?php echo "$vegetar" ?></th>
-            <th>Levering:</br><?php echo "$levering" ?></th>
-          </tr>
-
-          <tr>
-            <th>Strømuttak:</br><?php echo "$strom" ?></th>
-            <th>Wifi:</br><?php echo "$wifi" ?></th>
-            <th>Pris kaffe:</br><?php echo "$kaffe" ?></th>
-          </tr>
-
-          <tr>
-            <th>Ølpris:</br><?php echo "$olpril" ?></th>
-            <th>Aldersgrense:</br><?php echo "$alder" ?></th>
-          </tr>
-           -->
         </div>
-
-        <!---Bruke tabell her istedet --->
-
-
-    <div id="footer"></div>
       </div>
+
 </div>
 
-
+<?php require '../assets/footer.php' ?>
 </body>
 </html>

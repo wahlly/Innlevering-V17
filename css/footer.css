@@ -1,0 +1,50 @@
+#footerbox1{
+  position: absolute;
+  left: 0%;
+  height: 100%;
+  width: 20%;
+  background-color: #fefefe;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+#footerbox2{
+  position: absolute;
+  left: 20%;
+  height: 100%;
+  width: 20%;
+  background-color: #fefefe;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+#footerbox3{
+  position: absolute;
+  left: 40%;
+  height: 100%;
+  width: 20%;
+  background-color: #fefefe;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+#footerbox4{
+  position: absolute;
+  left: 60%;
+  height: 100%;
+  width: 20%;
+  background-color: #fefefe;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+#footerbox5{
+  position: absolute;
+  left: 80%;
+  height: 100%;
+  width: 20%;
+  background-color: #fefefe;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
