@@ -13,7 +13,7 @@
 
     <style>
         #footer_container{
-          bottom: -100%;
+          bottom: -50%;
         }
     </style>
 </head>

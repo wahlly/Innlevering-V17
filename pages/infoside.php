@@ -6,6 +6,7 @@
 
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/menubar.css">
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/filter_menu.css">
     <title>Cafe Sara</title>
