@@ -331,6 +331,7 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
          $boks_navn = $row["Navn"];
          $boks_image = $row["image_path"];
          $boks_info = $row["beskrivelse"];
+
      }
     } else {
      echo "0 results";
@@ -339,9 +340,6 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
     ?>
 <div id="Boks">
   <div id="Spisested_Overskrift_Boks"></div>
-  <div id="Spisested_hurtiginfo_boks1"></div>
-  <div id="Spisested_hurtiginfo_boks2"></div>
-  <div id="Spisested_hurtiginfo_boks3"></div>
   <div id="Studiested_Overskrift_Boks"></div>
   <div id="Utested_Overskrift_Boks"></div>
  <div id="Boks_Overskrift"><h1 id="Txt_Overskift_Box"><?php echo $boks_navn ?></h1></div>
@@ -352,6 +350,7 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
 
 if (strpos($_SERVER[REQUEST_URI], '?IR')) {
   echo "<a href=\"?closeIR#kartet\">\n";
+
 }
 elseif (strpos($_SERVER[REQUEST_URI], '?IS')) {
   echo "<a href=\"?closeIS#kartet\">\n";
@@ -365,7 +364,8 @@ else{
 ?>
 <img id="Boks_close" src="./img/img_layout/layout_icons/close.png">
 </a>
-<p style="position:absolute; bottom:15%;"> <?php echo substr("$boks_info",0,140);?>;</p>
+<a href="/pages/infoside.php?simplename=<?php echo  "$simplename1"?>">
+<p style="position:absolute; top:55%; font-family:sans-serif; text-decoration:none; color:grey;"> <?php echo substr("$boks_info",0,300); echo "<b>Les mer.....</b>"?></p>
 </div>
 
 

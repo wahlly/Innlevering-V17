@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/menubar.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/filter_menu.css">
-    <title>Cafe Sara</title>
+
 
     <style>
 
@@ -282,5 +282,7 @@
 </div>
 <?php require '../assets/menubar.php' ?>
 <?php require '../assets/footer.php' ?>
+
 </body>
+<title><?php echo "$infonavn" ?></title>
 </html>
