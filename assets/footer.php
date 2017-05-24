@@ -2,9 +2,8 @@
   <style>
   #footer_container{
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0%;
+  left: 0%;
+  bottom: 0%
   height: 25%;
   width: 100%;
   background-color: orange;

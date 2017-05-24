@@ -72,10 +72,7 @@
    -webkit-transform: scale(1, 2);
 }
 
-span {
-  background: -webkit-linear-gradient(40deg, #f3c680, #a1e3e2);
 
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  display:block;
+#footer_container{
+  bottom: -100%;
 }

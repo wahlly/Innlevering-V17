@@ -5,10 +5,17 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/menubar.css">
     <link rel="stylesheet" href="../css/filter_menu.css">
-    <link rel="stylesheet" href="../css/kontakt.css"
+    <link rel="stylesheet" href="../css/kontakt.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link href='//fonts.googleapis.com/css?family=Just Another Hand' rel='stylesheet'>
 
     <title>Kontakt oss</title>
+
+    <style>
+        #footer_container{
+          bottom: -100%;
+        }
+    </style>
 
 
 </head>
@@ -96,6 +103,7 @@
           </div>
 
       <?php require '../assets/menubar.php' ?>
+      <?php require '../assets/footer.php' ?>
 
 
 </body>

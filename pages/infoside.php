@@ -89,25 +89,6 @@
         background-color: #fafafa;
       }
 
-      #line1 {
-
-      }
-
-      #line2 {
-      }
-
-      #line3{
-
-      }
-
-      #footer {
-        position: absolute;
-        width: 100%;
-        height: 20%;
-        top: 140%;
-        border-top: solid grey 1px;
-
-      }
 
       .infoline_box {
         position: absolute;
@@ -134,6 +115,9 @@
         //størrelse på celler
       }
 
+      #footer_container{
+        bottom: -60%;
+      }
 
 
     </style>
@@ -215,7 +199,7 @@
 
       <div id"container_main">
 
-        <?php require '../assets/menubar.php' ?>
+
 
       <div id="container_innhold">
 
@@ -294,9 +278,8 @@
 
         </div>
       </div>
-
 </div>
-
+<?php require '../assets/menubar.php' ?>
 <?php require '../assets/footer.php' ?>
 </body>
 </html>
