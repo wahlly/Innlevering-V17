@@ -14,7 +14,7 @@
     left: 0%;
     height: 100%;
     width: 20%;
-    background-color: #6b3e72;
+    background-color: #fefefe;
     color: white;
     text-align: center;
     font-family: sans-serif;
@@ -24,7 +24,7 @@
     left: 20%;
     height: 100%;
     width: 20%;
-    background-color: #38a3bc;
+    background-color: #fefefe;
     color: white;
     text-align: center;
     font-family: sans-serif;
@@ -34,7 +34,7 @@
     left: 40%;
     height: 100%;
     width: 20%;
-    background-color: #ff504a;
+    background-color: #fefefe;
     color: white;
     text-align: center;
     font-family: sans-serif;
@@ -44,7 +44,7 @@
     left: 60%;
     height: 100%;
     width: 20%;
-    background-color: #ffca41;
+    background-color: #fefefe;
     color: white;
     text-align: center;
     font-family: sans-serif;
@@ -54,7 +54,7 @@
     left: 80%;
     height: 100%;
     width: 20%;
-    background-color: #52b97d;
+    background-color: #fefefe;
     color: white;
     text-align: center;
     font-family: sans-serif;
