@@ -328,7 +328,7 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
      while($row = $result->fetch_assoc()) {
          $boks_navn = $row["Navn"];
          $boks_image = $row["image_path"];
-
+         $boks_info = $row["beskrivelse"];
      }
     } else {
      echo "0 results";
@@ -363,7 +363,7 @@ else{
 ?>
 <img id="Boks_close" src="./img/img_layout/layout_icons/close.png">
 </a>
-
+<p style="position:absolute; bottom:15%;"> <?php echo substr("$boks_info",0,140);?>;</p>
 </div>
 
 
