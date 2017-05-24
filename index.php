@@ -7,7 +7,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="./css/menubar.css">
   <link rel="stylesheet" href="./css/filter_menu.css">
+  <link rel="stylesheet" href="./css/footer.css">
 <style>
+#footer_container{
+  bottom:-100%;
+}
 #map {
         position: absolute;
         height: 100%;
@@ -365,7 +369,7 @@ else{
 <img id="Boks_close" src="./img/img_layout/layout_icons/close.png">
 </a>
 <a href="/pages/infoside.php?simplename=<?php echo  "$simplename1"?>">
-<p style="position:absolute; top:55%; font-family:sans-serif; text-decoration:none; color:grey;"> <?php echo substr("$boks_info",0,300); echo "<b>Les mer.....</b>"?></p>
+<p style="position:absolute; width:90%; left:5%; top:55%; font-family:sans-serif; text-decoration:none; color:grey;"> <?php echo substr("$boks_info",0,240); echo "<b> Les mer.....</b>"?></p>
 </div>
 
 
@@ -409,5 +413,6 @@ else{
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeGfGxlzHanho4vezNe-XrqMl4seyw6tw&callback=initMap"
 ></script>
 <?php require './assets/menubar.php' ?>
+<?php require './assets/footer.php' ?>
 </body>
 </html>
