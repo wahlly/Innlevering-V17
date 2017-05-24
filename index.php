@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./css/menubar.css">
   <link rel="stylesheet" href="./css/filter_menu.css">
   <link rel="stylesheet" href="./css/footer.css">
+  <meta charset="utf-8">
 <style>
 #footer_container{
   bottom:-100%;
