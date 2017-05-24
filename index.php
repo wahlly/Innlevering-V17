@@ -2,7 +2,8 @@
 <html>
 
 <head>
-  <link rel="shortcut icon" type="image/png" href="/img/img_layout/layout_menubar/w_logo.png"/>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="./css/menubar.css">
   <link rel="stylesheet" href="./css/filter_menu.css">
