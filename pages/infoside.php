@@ -235,8 +235,8 @@
         if ($wifi != NULL) {
           $studie = array();
           $studie[0] = "<tr>\n";
-          $studie[1] = "<th> Wifi: </br> $wifi </th>\n";
-          $studie[2] = "<th> Strømuttak: </br> $strom </th>\n";
+          $studie[1] = "<th> <img src=\"$wifi\"/></th>\n";
+          $studie[2] = "<th> <img src=\"$strom\"/></th>\n";
           $studie[3] = "<th> Pris kaffe: </br> $kaffe </th>\n";
           $studie[4] = "</tr>\n";
         };
