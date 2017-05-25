@@ -57,6 +57,7 @@
           $uteNAVS = strtoupper($uteNAV[$i]);
           echo "<a href=\"/pages/infoside.php?simplename=$uteSIM[$i]\"a>\n";
           echo "<div id=\"cardwrap\">\n";
+          echo "<p id=\"mere\">LES MER</p>\n";
           echo "                <img id=\"card_imag\" src=\"$uteIMG[$i]\"/>\n";
           echo "                <div id=\"infowrap\">\n";
           echo "                    <div id=\"mer\">\n";
