@@ -212,7 +212,7 @@ else{
 <img id="Boks_close" src="./img/img_layout/layout_icons/close.png">
 </a>
 <a href="/pages/infoside.php?simplename=<?php echo  "$simplename1"?>">
-<p style="position:absolute; width:90%; left:5%; top:55%; font-family:sans-serif; text-decoration:none; color:grey;"> <?php echo substr("$boks_info",0,240); echo "<b> Les mer.....</b>"?></p>
+<p style="position:absolute; width:90%; left:5%; top:55%; font-family:sans-serif; text-decoration:none; color:grey;"> <?php echo substr("$boks_info",0,239); echo "<b> Les mer.....</b>"?></p>
 </div>
 
 
