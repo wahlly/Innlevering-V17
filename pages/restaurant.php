@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/filter_menu.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link href='//fonts.googleapis.com/css?family=Just Another Hand' rel='stylesheet'>
-    <link rel="stylesheet" href="../css/infoside.css"
+    <link rel="stylesheet" href="../css/kategori.css"
 
     <title>Restaurant</title>
 

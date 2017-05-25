@@ -12,6 +12,8 @@
 
     <style>
 
+    
+
       #container_main{
         position: absolute;
         width: 100%;
@@ -279,6 +281,9 @@
 
         </div>
       </div>
+
+
+
 </div>
 <?php require '../assets/menubar.php' ?>
 <?php require '../assets/footer.php' ?>

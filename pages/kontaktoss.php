@@ -84,9 +84,7 @@
                     <h5>MARTIN WAHLBERG</h5>
                   </div>
                     <div id="email">
-                    <h6>E-business</h4>
-                    <h6>wahmar16@student.westerdals.no</h4>
-                    <h6>46814434</h4>
+                    <h6>E-business</br>wahmar16@student.westerdals.no</br>46814434</h6>
                   </div>
                   </div>
 
@@ -95,9 +93,7 @@
                     <h5>ULLERIKKE SVENNE</h5>
                   </div>
                     <div id="email">
-                    <h6>Intelligente Systemer</h4>
-                    <h6>sveull16@student.westerdals.no</h4>
-                    <h6>98634356</h4>
+                    <h6>Intelligente Systemer</br>sveull16@student.westerdals.no</br>98634356</h6>
                   </div>
                   </div>
 
@@ -106,9 +102,7 @@
                     <h5>TOBIAS</h5>
                   </div>
                     <div id="email">
-                    <h6>Programmering</h4>
-                    <h6>tobias.nikolai.mars@gmail.com</h4>
-                    <h6>90278728</h4>
+                    <h6>Programmering</br>tobias.nikolai.mars@gmail.com</br>90278728</h6>
                   </div>
                   </div>
 
@@ -117,9 +111,7 @@
                     <h5>ERIC</h5>
                   </div>
                     <div id="email">
-                    <h6>Frontend- og mobilutvikling</h4>
-                    <h6>isseri16@student.westerdals.no</h4>
-                    <h6>92209505</h4>
+                    <h6>Frontend- og mobilutvikling</br>isseri16@student.westerdals.no</br>92209505</h6>
                   </div>
                   </div>
 
@@ -128,9 +120,7 @@
                     <h5>TRON NÅKKA</h5>
                   </div>
                     <div id="email">
-                    <h6>Programmering</h4>
-                    <h6>andtro16@student.westerdals.no</h4>
-                    <h6>94121981</h4>
+                    <h6>Programmering</br>andtro16@student.westerdals.no</br>94121981</h6>
                   </div>
                   </div>
 
