@@ -20,6 +20,7 @@
         #Restaurant_menu_element_bg {background-color:  #61B0C5;}
         #Menu_text_r { color: white;}
     </style>
+    
 </head>
 <body>
       <?php include '../assets/connection.php' ?>

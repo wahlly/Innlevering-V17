@@ -17,7 +17,6 @@
         }
     </style>
 
-
 </head>
 <body>
       <?php include '../assets/connection.php' ?>
