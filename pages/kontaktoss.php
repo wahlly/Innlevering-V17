@@ -84,9 +84,9 @@
                     <h5>MARTIN WAHLBERG</h5>
                   </div>
                     <div id="email">
-                    <h6>studielinje</h4>
-                    <h6>Email: ...</h4>
-                    <h6>mobilnummer</h4>
+                    <h6>E-business</h4>
+                    <h6>wahmar16@student.westerdals.no</h4>
+                    <h6>46814434</h4>
                   </div>
                   </div>
 
@@ -106,9 +106,9 @@
                     <h5>TOBIAS</h5>
                   </div>
                     <div id="email">
-                    <h6>studielinje</h4>
-                    <h6>Email: ...</h4>
-                    <h6>mobilnummer</h4>
+                    <h6>Programmering</h4>
+                    <h6>tobias.nikolai.mars@gmail.com</h4>
+                    <h6>90278728</h4>
                   </div>
                   </div>
 
@@ -117,20 +117,20 @@
                     <h5>ERIC</h5>
                   </div>
                     <div id="email">
-                    <h6>studielinje</h4>
-                    <h6>Email: ...</h4>
-                    <h6>mobilnummer</h4>
+                    <h6>Frontend- og mobilutvikling</h4>
+                    <h6>isseri16@student.westerdals.no</h4>
+                    <h6>92209505</h4>
                   </div>
                   </div>
 
                   <div class="card" id="Tron">
                     <div id="Navn">
-                    <h5>TRON</h5>
+                    <h5>TRON NÅKKA</h5>
                   </div>
                     <div id="email">
-                    <h6>studielinje</h4>
-                    <h6>Email: ...</h4>
-                    <h6>mobilnummer</h4>
+                    <h6>Programmering</h4>
+                    <h6>andtro16@student.westerdals.no</h4>
+                    <h6>94121981</h4>
                   </div>
                   </div>
 
@@ -146,3 +146,5 @@
 
 </body>
 </html>
+
+<!-- test ->>
