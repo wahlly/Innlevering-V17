@@ -61,7 +61,8 @@ body {background-color: white;
 
   #Boks{
     position: absolute;
-    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.5);
+            box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.5);
     top: 125%;
     left: 40%;
     height: 50%;
@@ -156,7 +157,7 @@ body {background-color: white;
     width: 100%;
     height: 100%;
     background-color: #f1f1f1;
-    background-image: url(http://byhusene.no/assets/img/barcode/Barcode_by_night.jpg);
+    background-image: url(/img/img_pictures/ericbilder/Barcode.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
