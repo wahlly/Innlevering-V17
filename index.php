@@ -8,7 +8,11 @@
   <link rel="stylesheet" href="./css/menubar.css">
   <link rel="stylesheet" href="./css/filter_menu.css">
   <link rel="stylesheet" href="./css/footer.css">
+<<<<<<< HEAD
   <link rel="stylesheet" href="./css/index.css">
+=======
+  <meta charset="utf-8">
+>>>>>>> origin/master
 <style>
 
     <?php include './assets/connection.php' ?>
