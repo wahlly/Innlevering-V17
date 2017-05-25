@@ -15,7 +15,13 @@
         #footer_container{
           bottom: -50%;
         }
+
+        #Bar_menu_element_line  { background-color: #E3E6EA;}
+        #Bar_menu_element_bg {background-color:  #795682;}
+        #Menu_text_b { color: white;}
     </style>
+
+
 </head>
 <body>
       <?php include '../assets/connection.php' ?>

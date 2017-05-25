@@ -14,6 +14,10 @@
     #footer_container{
       bottom: -50%;
     }
+
+    #Studere_menu_element_line  { background-color: #E3E6EA;}
+    #Studere_menu_element_bg {background-color:  #FFD269;}
+    #Menu_text_s { color: white;}
 </style>
 
 

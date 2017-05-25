@@ -38,7 +38,7 @@ if ($sokeord != null) {
 
   <a href="/pages/utesteder.php?u">
   <div id="Bar_menu_element_bg">
-    <h3 id="Menu_text"> UTESTEDER</h3>
+    <h3 class="Menu_text" id="Menu_text_b"> UTESTEDER</h3>
     <div id="Bar_menu_element_line">
     </div>
   </div>
@@ -50,7 +50,7 @@ if ($sokeord != null) {
 
 <a href="/pages/restaurant.php?r">
   <div id="Restaurant_menu_element_bg">
-    <h3 id="Menu_text">RESTAURANTER</h3>
+    <h3 class="Menu_text" id="Menu_text_r">RESTAURANTER</h3>
     <div id="Restaurant_menu_element_line">
     </div>
   </div>
@@ -78,7 +78,7 @@ if ($sokeord != null) {
 
   <a href="/pages/studere.php?s">
   <div id="Studere_menu_element_bg">
-    <h3 id="Menu_text">STUDERE</h3>
+    <h3 class="Menu_text" id="Menu_text_s">STUDERE</h3>
     <div id="Studere_menu_element_line">
     </div>
   </div>
