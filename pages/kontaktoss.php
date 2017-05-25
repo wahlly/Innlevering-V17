@@ -29,9 +29,7 @@
                   som fra Avdelingene kunstfag, kommunikasjon, teknologi og ledelse.
                   I tillegg til funksjonelle klasserom, har bygningen derfor studioer,
                   spesialrom og øvingslokaler for musikkproduksjon, lys for scene,
-                  populærmusikk og programmering. De administrative avdelingene våre,
-                  studieavdelingen, markedsavdelingen og administrasjonen,
-                  holder også til her.</p>
+                  populærmusikk og programmering. </p>
                   <p id="kilde"> -Hentet fra https://www.westerdals.no/hoyskolens-campus/ </p>
                     <div class="apningstider">
                       <h2>Åpningstider</h2>
