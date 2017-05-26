@@ -346,7 +346,7 @@ function initMap() {
     }
     //Slutt Henter spisesteds lokasjoner
 
-    //Henter utesteds lokasjoner
+    //Henter alle lokasjoner
       $sql = "SELECT simplename, googlemaps
       FROM sted";
       $result = $conn->query($sql);
@@ -361,7 +361,7 @@ function initMap() {
              $i++;
          }
       }
-      //Slutt Henter spisesteds lokasjoner
+      //Slutt Henter alle lokasjoner
 
   $conn->close();
   if(strpos($_SERVER[REQUEST_URI], '?IR') || (strpos($_SERVER[REQUEST_URI], '?closeIR')) ){
@@ -405,34 +405,27 @@ elseif(strpos($_SERVER[REQUEST_URI], '?IU') || (strpos($_SERVER[REQUEST_URI], '?
 
   }
 }
-elseif(isset($_POST['sprtybutton'])){
-  $arrlength = count($googlemapsING);
-  for($x = 0; $x < $arrlength; $x++) {
 
-    echo "var IN$googlemapsINS[$x] = new google.maps.Marker({\n";
-    echo "      position: new google.maps.LatLng(\n";
-    echo $googlemapsING[$x];
-    echo "      ),\n";
-    echo "      icon: icons['informasjon'].icon,\n";
-    echo "      map: map\n";
-    echo "    });\n";
-
-  }
-}
 else{
   $arrlength = count($googlemapsING);
   for($x = 0; $x < $arrlength; $x++) {
 
-    echo "var IN$googlemapsINS[$x] = new google.maps.Marker({\n";
-    echo "      position: new google.maps.LatLng(\n";
-    echo $googlemapsING[$x];
-    echo "      ),\n";
-    echo "      icon: icons['informasjon'].icon,\n";
-    echo "      map: map\n";
-    echo "    });\n";
+
+  $arrlength = count($googlemapsING);
+    for($x = 0; $x < $arrlength; $x++) {
+  echo "var IN$googlemapsINS[$x] = new google.maps.Marker({\n";
+  echo "      position: new google.maps.LatLng(\n";
+  echo $googlemapsING[$x];
+  echo "      ),\n";
+  echo "      icon: icons['informasjon'].icon,\n";
+  echo "      map: map\n";
+  echo "    });\n";
+
+    }
+  }
 
   }
-}
+
   ?>
 var fjerdingen = new google.maps.Marker({
 position: new google.maps.LatLng(59.916237, 10.760186),
@@ -544,20 +537,13 @@ echo "window.location.href = '?IU=UT&simplename=$markerUT[$x]#kartet';\n";
 echo "});\n";
 }
 }
-elseif(isset($_POST['sprtybutton'])){
-$arrlength = count($markerIN);
-for($x = 0; $x < $arrlength; $x++) {
-echo "google.maps.event.addDomListener(IN$markerIN[$x], 'click', function() {\n";
-echo "window.location.href = '?II=IN&simplename=$markerIN[$x]#kartet';\n";
-echo "});\n";
-}
-}
+
 else{
 $arrlength = count($markerIN);
 for($x = 0; $x < $arrlength; $x++) {
-echo "google.maps.event.addDomListener(IN$markerIN[$x], 'click', function() {\n";
-echo "window.location.href = '../../pages/infoside.php?simplename=$markerIN[$x]';\n";
-echo "});\n";
+  echo "google.maps.event.addDomListener(IN$markerIN[$x], 'click', function() {\n";
+  echo "window.location.href = '?II=IN&simplename=$markerIN[$x]#kartet';\n";
+  echo "});\n";
 }
 }
 
