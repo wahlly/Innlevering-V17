@@ -5,10 +5,10 @@
 <head>
 
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/menubar.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/filter_menu.css">
-    <link rel="stylesheet" href="../css/infoside.css"
+    <link rel="stylesheet" href="http://tek.westerdals.no/~andtro16/css/menubar.css">
+    <link rel="stylesheet" href="http://tek.westerdals.no/~andtro16/css/footer.css">
+    <link rel="stylesheet" href="http://tek.westerdals.no/~andtro16/css/filter_menu.css">
+    <link rel="stylesheet" href="http://tek.westerdals.no/~andtro16/css/infoside.css"
 
 </head>
 <body>
@@ -92,7 +92,7 @@
             $spisested[0] = "<tr>\n";
             $spisested[1] = "<th> <img src=\"$vegetar\"/></th>\n";
             $spisested[2] = "<th> <img src=\"$prisniva\"/></th>\n";
-            $spisested[3] = "<th> Levering: </br> $levering </th>\n";
+            $spisested[3] = "<th> $levering </th>\n";
             $spisested[4] = "</tr>\n";
           };
 
@@ -109,7 +109,7 @@
             $baar = array();
             $baar[0] = "<tr>\n";
             $baar[1] = "<th> Aldersgrense: </br> $alder </th>\n";
-            $baar[2] = "<th> Ølpris: </br> $olpris </th>\n";
+            $baar[2] = "<th> Ølpris: </br> $olpril </th>\n";
             $baar[3] = "</tr>\n";
           };
 

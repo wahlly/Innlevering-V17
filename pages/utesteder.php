@@ -1,25 +1,18 @@
 <!DOCTYPE html>
 <html lang="nb">
 <head>
-
+    <title>Utesteder - WesterFind</title>
+    <link rel="shortcut icon" href="http://tek.westerdals.no/~andtro16/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://tek.westerdals.no/~andtro16/favicon.ico" type="image/x-icon">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/menubar.css">
-    <link rel="stylesheet" href="../css/filter_menu.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="http://tek.westerdals.no/~andtro16/css/menubar.css">
+    <link rel="stylesheet" href="http://tek.westerdals.no/~andtro16/css/filter_menu.css">
+    <link rel="stylesheet" href="http://tek.westerdals.no/~andtro16/css/footer.css">
     <link href='//fonts.googleapis.com/css?family=Just Another Hand' rel='stylesheet'>
-    <link rel="stylesheet" href="../css/kategori.css"
+    <link rel="stylesheet" href="http://tek.westerdals.no/~andtro16/css/kategori.css"
 
-    <title>Utesteder</title>
 
-    <style>
-        #footer_container{
-          bottom: -50%;
-        }
-
-        #Bar_menu_element_line  { background-color: #E3E6EA;}
-        #Bar_menu_element_bg {background-color:  #795682;}
-        #Menu_text_b { color: white;}
-    </style>
+    
 
 
 </head>
@@ -61,7 +54,7 @@
         $arraylength = count($uteSIM);
         for ($i = 0; $i < $arraylength; $i++) {
           $uteNAVS = strtoupper($uteNAV[$i]);
-          echo "<a href=\"/pages/infoside.php?simplename=$uteSIM[$i]\"a>\n";
+          echo "<a href=\"http://tek.westerdals.no/~andtro16/pages/infoside.php?simplename=$uteSIM[$i]\"a>\n";
           echo "<div id=\"cardwrap\">\n";
           echo "<p id=\"mere\">LES MER</p>\n";
           echo "                <img id=\"card_imag\" src=\"$uteIMG[$i]\"/>\n";

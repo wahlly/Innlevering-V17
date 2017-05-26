@@ -3,10 +3,10 @@
 <head>
 
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/menubar.css">
-    <link rel="stylesheet" href="../css/filter_menu.css">
-    <link rel="stylesheet" href="../css/kontakt.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="http://tek.westerdals.no/~andtro16/css/menubar.css">
+    <link rel="stylesheet" href="http://tek.westerdals.no/~andtro16/css/filter_menu.css">
+    <link rel="stylesheet" href="http://tek.westerdals.no/~andtro16/css/kontakt.css">
+    <link rel="stylesheet" href="http://tek.westerdals.no/~andtro16/css/footer.css">
     <link href='//fonts.googleapis.com/css?family=Just Another Hand' rel='stylesheet'>
 
     <title>Kontakt oss</title>

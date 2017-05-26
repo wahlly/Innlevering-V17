@@ -264,7 +264,7 @@ function initMap() {
 
   });
 
-  var iconBase = '../../img/img_layout/layout_icons/';
+   var iconBase = 'http://tek.westerdals.no/~andtro16/img/img_layout/layout_icons/';
   var icons = {
     utesteder: {
       icon: iconBase + 'poi_purple_min.png'
