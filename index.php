@@ -152,7 +152,7 @@ if (strpos($_SERVER[REQUEST_URI], '?II')) {
     ?>
 
   <div id="sliderbox">
-    <h1 style="position:absolute; left:13%;width:80%; top:35%;  color:#eeeeee; font-family:sans-serif; font-size:5em; text-shadow: 3px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;">Finn interessante steder i nærheten</h1>
+    <h1 style="position:absolute; left:13%;width:80%; top:35%;  color:#eeeeee; font-family:sans-serif; font-size:4em; text-shadow: 3px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;">Finn interessante steder i nærheten</h1>
     <a href="#kartet">
     <div style="z-index:1; position:absolute; top:73%; left:46%; color:white; opacity:0.7; font-family:sans-serif;"> <h2>VIS KART</h2> </div>
   </a>
