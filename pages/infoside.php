@@ -12,7 +12,7 @@
 
 </head>
 <body>
-<?php include './assets/connection.php' ?>
+<?php include '../assets/connection.php' ?>
 
   <?php
       $simplename1 = $_GET['simplename'];

@@ -96,7 +96,7 @@
 
                   <div class="card" id="Tobias">
                     <div id="Navn">
-                    <h5>TOBIAS</h5>
+                    <h5>TOBIAS MARS</h5>
                   </div>
                     <div id="email">
                     <h6>Programmering</br>tobias.nikolai.mars@gmail.com</br>90278728</h6>
@@ -105,7 +105,7 @@
 
                   <div class="card" id="Eric">
                     <div id="Navn">
-                    <h5>ERIC</h5>
+                    <h5>ERIC ISSA</h5>
                   </div>
                     <div id="email">
                     <h6>Frontend- og mobilutvikling</br>isseri16@student.westerdals.no</br>92209505</h6>
