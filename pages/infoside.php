@@ -12,21 +12,10 @@
 
 </head>
 <body>
-
+<?php include './assets/connection.php' ?>
 
   <?php
       $simplename1 = $_GET['simplename'];
-      $servername = "martinwahlberg.no.mysql";
-      $username = "martinwahlberg_no_westerdals_";
-      $password = "westerdals123";
-      $dbname = "martinwahlberg_no_westerdals_";
-
-      // Create connection
-      $conn = new mysqli($servername, $username, $password, $dbname);
-      // Check connection
-      if ($conn->connect_error) {
-       die("Connection failed: " . $conn->connect_error);
-      }
 
       $sql = "SELECT * FROM sted WHERE simplename = '$simplename1'";
       $result = $conn->query($sql);

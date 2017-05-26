@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="./css/menubar.css">
   <link rel="stylesheet" href="./css/filter_menu.css">
   <link rel="stylesheet" href="./css/footer.css">
-<<<<<<< HEAD
+
   <link rel="stylesheet" href="./css/index.css">
-=======
+
   <meta charset="utf-8">
->>>>>>> origin/master
+
 <style>
 
     <?php include './assets/connection.php' ?>
@@ -154,20 +154,10 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
 
 
     </div>
-
+<?php include './assets/connection.php' ?>
     <?php
     $simplename1 = $_GET['simplename'];
-    $servername = "martinwahlberg.no.mysql";
-    $username = "martinwahlberg_no_westerdals_";
-    $password = "westerdals123";
-    $dbname = "martinwahlberg_no_westerdals_";
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
-    }
 
     $sql = "SELECT * FROM sted WHERE simplename = '$simplename1'";
     $result = $conn->query($sql);
