@@ -8,17 +8,29 @@
   <link rel="stylesheet" href="./css/menubar.css">
   <link rel="stylesheet" href="./css/filter_menu.css">
   <link rel="stylesheet" href="./css/footer.css">
-<<<<<<< HEAD
+
   <link rel="stylesheet" href="./css/index.css">
-=======
+
   <meta charset="utf-8">
->>>>>>> origin/master
+
 <style>
 
     <?php include './assets/connection.php' ?>
   <?php
 
-
+  //Start Informasjon
+    $sql = "SELECT Css FROM UI WHERE Type = 'Informasjon'";
+    $result = $conn->query($sql);
+    $CssI = array();
+    $i = 0;
+    if ($result->num_rows > 0) {
+         // output data of each row
+         while($row = $result->fetch_assoc()) {
+             $CssI[$i] = $row["Css"];
+             $i++;
+         }
+    }
+  //Slutt Informasjon
 //Start Restauranter
   $sql = "SELECT Css FROM UI WHERE Type = 'Spisested'";
   $result = $conn->query($sql);
@@ -80,6 +92,12 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
     echo $CssS[$x];
   }
 }
+if (strpos($_SERVER[REQUEST_URI], '?II')) {
+  $arrlength = count($CssI);
+  for($x = 0; $x < $arrlength; $x++) {
+  echo $CssI[$x];
+}
+}
 //Stopp url søk
 ?>
 
@@ -134,7 +152,7 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
     ?>
 
   <div id="sliderbox">
-    <h1 style="position:absolute; left:13%;width:80%; top:35%;  color:#eeeeee; font-family:sans-serif; font-size:5em; text-shadow: 3px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;">Finn interessante steder i nærheten</h1>
+    <h1 style="position:absolute; left:13%;width:80%; top:35%;  color:#eeeeee; font-family:sans-serif; font-size:4em; text-shadow: 3px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;">Finn interessante steder i nærheten</h1>
     <a href="#kartet">
     <div style="z-index:1; position:absolute; top:73%; left:46%; color:white; opacity:0.7; font-family:sans-serif;"> <h2>VIS KART</h2> </div>
   </a>
@@ -154,20 +172,10 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
 
 
     </div>
-
+<?php include './assets/connection.php' ?>
     <?php
     $simplename1 = $_GET['simplename'];
-    $servername = "martinwahlberg.no.mysql";
-    $username = "martinwahlberg_no_westerdals_";
-    $password = "westerdals123";
-    $dbname = "martinwahlberg_no_westerdals_";
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
-    }
 
     $sql = "SELECT * FROM sted WHERE simplename = '$simplename1'";
     $result = $conn->query($sql);
@@ -187,6 +195,7 @@ $sql = "SELECT Css FROM UI WHERE Type = 'Studiested'";
     ?>
 <div id="Boks">
   <div id="Spisested_Overskrift_Boks"></div>
+  <div id="Informasjon_Overskrift_Boks"></div>
   <div id="Studiested_Overskrift_Boks"></div>
   <div id="Utested_Overskrift_Boks"></div>
  <div id="Boks_Overskrift"><h1 id="Txt_Overskift_Box"><?php echo $boks_navn ?></h1></div>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/filter_menu.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link href='//fonts.googleapis.com/css?family=Just Another Hand' rel='stylesheet'>
-    <link rel="stylesheet" href="../css/infoside.css"
+    <link rel="stylesheet" href="../css/kategori.css"
 
     <title>Restaurant</title>
 
@@ -15,7 +15,12 @@
         #footer_container{
           bottom: -50%;
         }
+
+        #Restaurant_menu_element_line  { background-color: #E3E6EA;}
+        #Restaurant_menu_element_bg {background-color:  #61B0C5;}
+        #Menu_text_r { color: white;}
     </style>
+    
 </head>
 <body>
       <?php include '../assets/connection.php' ?>

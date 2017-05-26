@@ -287,99 +287,99 @@ function initMap() {
 
 
   //DATABASEMAT
+  <?php include './assets/connection.php' ?>
 
   <?php
-  $servername = "martinwahlberg.no.mysql";
-  $username = "martinwahlberg_no_westerdals_";
-  $password = "westerdals123";
-  $dbname = "martinwahlberg_no_westerdals_";
 
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  // Check connection
-  if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
-  }
 
 //Henter spisesteds lokasjoner
-  $sql = "SELECT simplename, googlemaps
+  $sql = "SELECT simplename, googlemaps, sted.Navn
   FROM spisested
   INNER JOIN sted ON spisested.Plass_Id = sted.Id";
   $result = $conn->query($sql);
   $googlemapsSPG = array();
   $googlemapsSPS = array();
+  $googlemapsSPN = array();
   $i = 0;
   if ($result->num_rows > 0) {
      // output data of each row
      while($row = $result->fetch_assoc()) {
          $googlemapsSPG[$i] = $row["googlemaps"];
          $googlemapsSPS[$i] = $row["simplename"];
+         $googlemapsSPN[$i] = $row["Navn"];
          $i++;
      }
   }
   //Slutt Henter spisesteds lokasjoner
 
 //Henter studiested lokasjoner
-  $sql = "SELECT simplename, googlemaps
+  $sql = "SELECT simplename, googlemaps, sted.Navn
   FROM studiested
   INNER JOIN sted ON studiested.Studie_id = sted.Id";
   $result = $conn->query($sql);
   $googlemapsSTG = array();
   $googlemapsSTS = array();
+  $googlemapsSTN = array();
   $i = 0;
   if ($result->num_rows > 0) {
      // output data of each row
      while($row = $result->fetch_assoc()) {
          $googlemapsSTG[$i] = $row["googlemaps"];
          $googlemapsSTS[$i] = $row["simplename"];
+         $googlemapsSTN[$i] = $row["Navn"];
          $i++;
      }
   }
   //Slutt Henter studiested lokasjoner
 
   //Henter utesteds lokasjoner
-    $sql = "SELECT simplename, googlemaps
+    $sql = "SELECT simplename, googlemaps, sted.Navn
     FROM utested
     INNER JOIN sted ON utested.Ute_id = sted.Id";
     $result = $conn->query($sql);
     $googlemapsUTG = array();
     $googlemapsUTS = array();
+    $googlemapsUTN = array();
     $i = 0;
     if ($result->num_rows > 0) {
        // output data of each row
        while($row = $result->fetch_assoc()) {
            $googlemapsUTG[$i] = $row["googlemaps"];
            $googlemapsUTS[$i] = $row["simplename"];
+           $googlemapsUTN[$i] = $row["Navn"];
            $i++;
        }
     }
     //Slutt Henter spisesteds lokasjoner
 
-    //Henter utesteds lokasjoner
-      $sql = "SELECT simplename, googlemaps
+    //Henter alle lokasjoner
+      $sql = "SELECT simplename, googlemaps, sted.Navn
       FROM sted";
       $result = $conn->query($sql);
       $googlemapsING = array();
       $googlemapsINS = array();
+      $googlemapsINN = array();
       $i = 0;
       if ($result->num_rows > 0) {
          // output data of each row
          while($row = $result->fetch_assoc()) {
              $googlemapsING[$i] = $row["googlemaps"];
              $googlemapsINS[$i] = $row["simplename"];
+             $googlemapsINN[$i] = $row["Navn"];
              $i++;
          }
       }
-      //Slutt Henter spisesteds lokasjoner
+      //Slutt Henter alle lokasjoner
 
   $conn->close();
   if(strpos($_SERVER[REQUEST_URI], '?IR') || (strpos($_SERVER[REQUEST_URI], '?closeIR')) ){
 $arrlength = count($googlemapsSPG);
   for($x = 0; $x < $arrlength; $x++) {
+    echo "var tooltip = \"$googlemapsSPN[$x]\";\n";
 echo "var SP$googlemapsSPS[$x] = new google.maps.Marker({\n";
 echo "      position: new google.maps.LatLng(\n";
 echo $googlemapsSPG[$x];
-echo "      ),\n";
+echo "      ), title:tooltip,\n";
 echo "      icon: icons['spisesteder'].icon,\n";
 echo "      map: map\n";
 echo "    });\n";
@@ -391,10 +391,11 @@ echo "    });\n";
 elseif(strpos($_SERVER[REQUEST_URI], '?IS') || (strpos($_SERVER[REQUEST_URI], '?closeIS')) ){
   $arrlength = count($googlemapsSTG);
   for($x = 0; $x < $arrlength; $x++) {
+    echo "var tooltip = \"$googlemapsSTN[$x]\";\n";
     echo "var ST$googlemapsSTS[$x] = new google.maps.Marker({\n";
     echo "      position: new google.maps.LatLng(\n";
     echo $googlemapsSTG[$x];
-    echo "      ),\n";
+    echo "      ), title:tooltip,\n";
     echo "      icon: icons['studiesteder'].icon,\n";
     echo "      map: map\n";
     echo "    });\n";
@@ -403,45 +404,39 @@ elseif(strpos($_SERVER[REQUEST_URI], '?IS') || (strpos($_SERVER[REQUEST_URI], '?
 elseif(strpos($_SERVER[REQUEST_URI], '?IU') || (strpos($_SERVER[REQUEST_URI], '?closeIU')) ){
   $arrlength = count($googlemapsUTG);
   for($x = 0; $x < $arrlength; $x++) {
-
+    echo "var tooltip = \"$googlemapsUTN[$x]\";\n";
     echo "var UT$googlemapsUTS[$x] = new google.maps.Marker({\n";
     echo "      position: new google.maps.LatLng(\n";
     echo $googlemapsUTG[$x];
-    echo "      ),\n";
+    echo "      ), title:tooltip,\n";
     echo "      icon: icons['utesteder'].icon,\n";
     echo "      map: map\n";
     echo "    });\n";
 
   }
 }
-elseif(isset($_POST['sprtybutton'])){
-  $arrlength = count($googlemapsING);
-  for($x = 0; $x < $arrlength; $x++) {
 
-    echo "var IN$googlemapsINS[$x] = new google.maps.Marker({\n";
-    echo "      position: new google.maps.LatLng(\n";
-    echo $googlemapsING[$x];
-    echo "      ),\n";
-    echo "      icon: icons['informasjon'].icon,\n";
-    echo "      map: map\n";
-    echo "    });\n";
-
-  }
-}
 else{
   $arrlength = count($googlemapsING);
   for($x = 0; $x < $arrlength; $x++) {
 
-    echo "var IN$googlemapsINS[$x] = new google.maps.Marker({\n";
-    echo "      position: new google.maps.LatLng(\n";
-    echo $googlemapsING[$x];
-    echo "      ),\n";
-    echo "      icon: icons['informasjon'].icon,\n";
-    echo "      map: map\n";
-    echo "    });\n";
+
+  $arrlength = count($googlemapsING);
+    for($x = 0; $x < $arrlength; $x++) {
+      echo "var tooltip = \"$googlemapsINN[$x]\";\n";
+  echo "var IN$googlemapsINS[$x] = new google.maps.Marker({\n";
+  echo "      position: new google.maps.LatLng(\n";
+  echo $googlemapsING[$x];
+  echo "      ), title:tooltip,\n";
+  echo "      icon: icons['informasjon'].icon,\n";
+  echo "      map: map\n";
+  echo "    });\n";
+
+    }
+  }
 
   }
-}
+
   ?>
 var fjerdingen = new google.maps.Marker({
 position: new google.maps.LatLng(59.916237, 10.760186),
@@ -462,19 +457,9 @@ map: map
   // Create markers.
 
   //DATABASEMAT
-
+<?php include './assets/connection.php' ?>
   <?php
-$servername = "martinwahlberg.no.mysql";
-$username = "martinwahlberg_no_westerdals_";
-$password = "westerdals123";
-$dbname = "martinwahlberg_no_westerdals_";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-   die("Connection failed: " . $conn->connect_error);
-}
 //Gjør spisested markørene klikkbare
 $sql = "SELECT simplename
 FROM spisested
@@ -563,20 +548,13 @@ echo "window.location.href = '?IU=UT&simplename=$markerUT[$x]#kartet';\n";
 echo "});\n";
 }
 }
-elseif(isset($_POST['sprtybutton'])){
-$arrlength = count($markerIN);
-for($x = 0; $x < $arrlength; $x++) {
-echo "google.maps.event.addDomListener(IN$markerIN[$x], 'click', function() {\n";
-echo "window.location.href = '?II=IN&simplename=$markerIN[$x]#kartet';\n";
-echo "});\n";
-}
-}
+
 else{
 $arrlength = count($markerIN);
 for($x = 0; $x < $arrlength; $x++) {
-echo "google.maps.event.addDomListener(IN$markerIN[$x], 'click', function() {\n";
-echo "window.location.href = '../../pages/infoside.php?simplename=$markerIN[$x]';\n";
-echo "});\n";
+  echo "google.maps.event.addDomListener(IN$markerIN[$x], 'click', function() {\n";
+  echo "window.location.href = '?II=IN&simplename=$markerIN[$x]#kartet';\n";
+  echo "});\n";
 }
 }
 

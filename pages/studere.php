@@ -7,13 +7,17 @@
     <link rel="stylesheet" href="../css/filter_menu.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link href='//fonts.googleapis.com/css?family=Just Another Hand' rel='stylesheet'>
-    <link rel="stylesheet" href="../css/infoside.css"
+    <link rel="stylesheet" href="../css/kategori.css"
 
     <title>Studie</title>
 <style>
     #footer_container{
       bottom: -50%;
     }
+
+    #Studere_menu_element_line  { background-color: #E3E6EA;}
+    #Studere_menu_element_bg {background-color:  #FFD269;}
+    #Menu_text_s { color: white;}
 </style>
 
 

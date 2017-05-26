@@ -1,4 +1,4 @@
-#Menu_text{
+.Menu_text{
  margin-top: 10%;
  text-align: center;
  font-family: sans-serif;
@@ -344,8 +344,8 @@ height: 70%
 #Studere_menu_element_bg:hover{background-color:  #FFD269;}
 #Sok_menu_element_bg:hover > #Sok_menu_element_line  { background-color: #E3E6EA;}
 #Sok_menu_element_bg:hover{background-color:  #7CC396;}
-#Bar_menu_element_bg:hover > #Menu_text { color: white;}
-#Restaurant_menu_element_bg:hover > #Menu_text { color: white;}
-#Studere_menu_element_bg:hover > #Menu_text { color: white;}
+#Bar_menu_element_bg:hover > .Menu_text { color: white;}
+#Restaurant_menu_element_bg:hover > .Menu_text { color: white;}
+#Studere_menu_element_bg:hover > .Menu_text { color: white;}
 #Sok_menu_element_bg:hover > #search-box-wrapper { background-color: white;}
 #Sok_menu_element_bg:hover > #search-box-input { background-color: white;}
